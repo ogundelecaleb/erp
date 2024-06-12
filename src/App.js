@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import {
+  Routes,
+  Route,
+  BrowserRouter as Router,
+  Navigate,
+} from "react-router-dom";
+import Login from "./authScreen/Login";
+import SignUp from "./authScreen/SignUp";
+import ForgotPassword from "./authScreen/ForgotPassword";
+import CheckMail from "./authScreen/CheckMail";
+import CreateNewPass from "./authScreen/CreateNewPass";
+import ChangePassSuccess from "./authScreen/ChangepassSuccess";
+import Projects from "./screens/Project/Projects";
+import Layout from "./containers/Layout";
+import Home from "./screens/Home";
+import OverView from "./screens/OverView";
+import ProjectAnalytics from "./screens/Project/ProjectAnalytics";
+import ProjectReport from "./screens/Project/ProjectReport";
+import ProjectDetails from "./screens/Project/ProjectDetails";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/forgot-password" component={ForgotPassword} />
+
+          {/* Place new routes over this */}
+          <Route  element={<Layout />}>
+            <Route path="/" exact={true} element={<Home />} />
+            <Route path="/overview" exact={true} element={<OverView />} />
+            <Route path="/project" exact={true} element={<Projects />} />
+            <Route path="/projectanalytics" exact={true} element={<ProjectAnalytics />} />
+            <Route path="/projectreport" exact={true} element={<ProjectReport />} />
+            <Route path="/projectsetup" exact={true} element={<ProjectReport />} />
+            <Route path="/finance" exact={true} element={<Projects />} />
+            <Route path="/analytics" exact={true} element={<Projects />} />
+            <Route path="/projectdetails" exact={true} element={<ProjectDetails />} />
+          </Route>
+          
+        </Routes>
+      </Router>
     </div>
   );
 }
