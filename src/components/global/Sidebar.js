@@ -93,7 +93,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                
                 onClick={() => setIsProject(!isProject)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px] ${
-                  window.location.pathname === "/project"
+                  window.location.pathname === "/project" ||  window.location.pathname === "/projectanalytics"  ||  window.location.pathname === "/projectreport"  || window.location.pathname === "/systemsetup" 
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
@@ -141,7 +141,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   </Link>
 
                   <Link
-                    to="/report"
+                    to="/projectreport"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md    hover:bg-[#F7F9FC]   leading-[18px] md:leading-[24px]  mb-[14px] ${
                       window.location.pathname === "/projectreport"
                         ? "bg-[#F7F9FC] font-medium "
