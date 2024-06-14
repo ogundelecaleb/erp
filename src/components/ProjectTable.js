@@ -164,7 +164,7 @@ const ProjectTable = ({ isLoading, isPreviousData }) => {
                               <MenuItem
                                 onClick={() =>
                                   navigate("/projectdetails", {
-                                    state: "helo",
+                                    state: result,
                                   })
                                 }
                                 w="full"

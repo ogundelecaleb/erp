@@ -175,6 +175,7 @@ const Projects = () => {
               style={{ borderRadius: 12 }}
               motionPreset="slideInBottom"
               className="rounded-[12px]"
+              
             >
               <ModalOverlay />
               <ModalContent>
