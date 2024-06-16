@@ -12,6 +12,21 @@ import {
   Task,
 } from "iconsax-react";
 import { Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+
+import {
+  Grid,
+  Flex,
+  Divider,
+  Modal,
+  Thead,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+} from "@chakra-ui/react";
 import {
   Add,
   Calendar,
@@ -29,6 +44,8 @@ import {
 } from "iconsax-react";
 import ModalLeft from "./ModalLeft";
 import TaskTab from "./TaskTab";
+import { ClipLoader } from "react-spinners";
+import TaskCard from "./TaskCard";
 
 const TaskBoard = ({ project }) => {
   const Project = project;
@@ -213,11 +230,15 @@ const Column = ({ title, headingColor, cards, column, setCards, project }) => {
       >
         {filteredCards.map((c) => {
           return (
-            <Card
+            <TaskCard
               key={c.id}
               c={c}
+              column={column} setCards={setCards}
               project={project}
               handleDragStart={handleDragStart}
+              DropIndicator ={DropIndicator}
+              cards={cards}
+              
             />
           );
         })}
@@ -228,351 +249,6 @@ const Column = ({ title, headingColor, cards, column, setCards, project }) => {
   );
 };
 
-const Card = ({
-  title,
-  id,
-  column,
-  handleDragStart,
-  mode,
-  description,
-  c,
-  project,
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isDOpen, setIsDOpen] = useState(false);
-  const [projectData, setProjectData] = useState([]);
-
-  const [selectId, setSelectId] = useState("");
-
-  function HandleModalClose() {
-    setIsOpen(false);
-  }
-
-  function HandleDropdown(i) {
-    setSelectId(i);
-
-    if (selectId === c.id) {
-      setIsDOpen(!isDOpen);
-    }
-  }
-
-  return (
-    <>
-      <DropIndicator beforeId={c.id} column={c.column} />
-      <motion.div
-        layout
-        layoutId={c.id}
-        draggable="true"
-        onDragStart={(e) => handleDragStart(e, c.id)}
-        className="cursor-grab mb-3 relative px-[16px] overflow-hidden py-[10px] border-[0.2px] border-[#98A2B3] bg-[#fff] rounded-[8px] active:cursor-grabbing"
-      >
-        {isDOpen && (
-          <div className=" absolute top-9 left-1 w-[200px] py-[10px] border-[0.2px] border-[#98A2B3] bg-[#fff] rounded-[8px] px-3">
-            <ul className="flex flex-col gap-3">
-              <li
-                onClick={() => {
-                  setIsOpen(true);
-                  setProjectData(project);
-                  HandleDropdown(c.id);
-                }}
-                className="flex items-center w-full "
-              >
-                {" "}
-                <Eye
-                  variant="Linear"
-                  color="#98A2B3"
-                  size="16"
-                  className="mr-2"
-                />{" "}
-                <p className="text-[12px] md:text-[14px] text-[#475367]  font-normal leading-[18px] md:leading-[20px]">
-                  View
-                </p>
-              </li>
-              <li className="flex items-center w-full">
-                {" "}
-                <Edit
-                  variant="Linear"
-                  color="#98A2B3"
-                  size="16"
-                  className="mr-2"
-                />{" "}
-                <p className="text-[12px] md:text-[14px] text-[#475367]  font-normal leading-[18px] md:leading-[20px]">
-                  Edit
-                </p>
-              </li>
-              <li className="flex items-center w-full ">
-                {" "}
-                <Trash color="#F44336" size="16" className="mr-2" />{" "}
-                <p className="text-[12px] md:text-[14px] text-[#F44336]  font-normal leading-[18px] md:leading-[20px]">
-                  Delete
-                </p>
-              </li>
-            </ul>
-          </div>
-        )}
-        <div className="flex justify-between items-center mb-[16px] ">
-          {" "}
-          <button
-            className={`rounded-[20px] md:rounded-[40px] flex justify-center items-center gap-2 px-[12px]  py-[4px] md:py-[4px] border-[0.5px] ${
-              c.mode === "High"
-                ? "bg-[#FEECEB] text-[#F44336] border-[#F44336]"
-                : c.mode === "Medium"
-                ? "bg-[#FFF5E6] text-[#F44336] border-[#FF9800]"
-                : "bg-[#EDF7EE] text-[#4CAF50] border-[#4CAF50]"
-            }  text-[10px] md:text-[12px]  font-semibold leading-[16px] md:leading-[18px] `}
-          >
-            <div
-              className={` ${
-                c.mode === "High"
-                  ? "bg-[#F44336]"
-                  : c.mode === "Medium"
-                  ? "bg-[#F44336]"
-                  : "bg-[#4CAF50] "
-              } h-[8px] w-[8px] rounded-full `}
-            />
-            <p>{c.mode}</p>
-          </button>{" "}
-          <button
-            onClick={() => HandleDropdown(c.id)}
-            className="  h-[28px] w-[28px]  rounded-sm flex justify-center items-center  hover:bg-[#CBD5E0]  "
-          >
-            <img
-              src="./assets/3dot.png"
-              className="h-[16px] w-[16px] md:h-[20px] md:w-[20px]"
-              alt="3 dots"
-            />
-          </button>
-          {/* <Menu className="overflow-hidden">
-            <MenuButton bg={"none"} as={Button}>
-              <button
-                //onClick={() => handleTransacModalOpen(result)}
-                className="   rounded-sm flex justify-center items-center  hover:bg-[#CBD5E0]  "
-              >
-                <img
-                  src="./assets/3dot.png"
-                  className="h-[16px] w-[16px] md:h-[20px] md:w-[20px]"
-                  alt="3 dots"
-                />
-              </button>
-            </MenuButton>
-            <MenuList maxW="32" className="">
-              <MenuItem
-                onClick={() => {
-                  setIsOpen(true);
-                  setProjectData(project);
-                }}
-                w="full"
-                color="#718096"
-                mb="10px"
-              >
-                <Eye
-                  variant="Linear"
-                  color="#98A2B3"
-                  size="16"
-                  className="mr-2"
-                />{" "}
-                <p className="text-[12px] md:text-[14px] text-[#475367]  font-normal leading-[18px] md:leading-[20px]">
-                  View
-                </p>
-              </MenuItem>
-
-              <MenuItem w="full" color="#bf0d0d" mb="10px">
-                <Edit
-                  variant="Linear"
-                  color="#98A2B3"
-                  size="16"
-                  className="mr-2"
-                />{" "}
-                <p className="text-[12px] md:text-[14px] text-[#475367]  font-normal leading-[18px] md:leading-[20px]">
-                  Edit
-                </p>
-              </MenuItem>
-
-              <MenuItem w="full" color="#bf0d0d" mb="10px">
-                <Trash color="#F44336" size="16" className="mr-2" />{" "}
-                <p className="text-[12px] md:text-[14px] text-[#F44336]  font-normal leading-[18px] md:leading-[20px]">
-                  Delete
-                </p>
-              </MenuItem>
-            </MenuList>
-          </Menu> */}
-        </div>
-
-        <p className="text-[14px] md:text-[16px] text-[#000]  font-semibold leading-[20px] md:leading-[24px] mb-4">
-          {c.title}
-        </p>
-        <p className="text-[12px] md:text-[14px] text-[#667185]  font-normal leading-[18px] md:leading-[20px]">
-          {c.description}
-        </p>
-      </motion.div>
-
-      <ModalLeft isOpen={isOpen} onClose={HandleModalClose}>
-        <div>
-          <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px]  md:flex justify-between items-center ">
-            <div className="flex items-center gap-[16px]">
-              <Maximize4 variant="Linear" color="#667185" size="16" />{" "}
-              <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
-              <div className="flex items-center">
-                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  {projectData?.heading} /
-                </p>
-                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  &nbsp; {c.column}
-                </p>
-              </div>
-            </div>
-            <div className="flex items-center gap-3">
-              <button className="border-[0.8px] px-[14px] py-[8px] flex gap-[6px] md:gap-[10px] items-center border-[#D0D5DD] rounded-[6px]">
-                <Edit variant="Linear" color="#667185" size="16" />
-              </button>
-              <button className="border-[0.8px] px-[14px] py-[8px] flex gap-[6px] md:gap-[10px] items-center border-[#D0D5DD] rounded-[6px]">
-                <Trash variant="Linear" color="#667185" size="16" />
-              </button>
-            </div>
-          </div>
-
-          <div className="p-[12px] md:p-[20px] xl:p-[24px]">
-            <p className="text-[#000] text-[20px] md:text-[24px] xl:text-[28px] font-semibold leading-[24px] ">
-              {c.title}
-            </p>
-
-            <table className="mt-[18px] md:mt-[24px] max-w-[490px]">
-              <tr className="">
-                <th className=" flex items-center gap-2 text-[14px] pb-[20px] text-[#667185] leading-[20px] font-medium text-left ">
-                  <Profile2User variant="Linear" color="#667185" size="20" />
-                  Status:
-                </th>
-                <td className="pb-[20px] pl-4 md:pl-6 ">
-                  <img
-                    src={projectData?.image}
-                    alt="participant"
-                    className="w-[68px] h-[24px] "
-                  />
-                  {/* <button
-                  className={`rounded-[20px] md:rounded-[40px] w-[60px] md:w-[74px] py-[2px] md:py-[4px] mx-auto ${
-                    result?.status === "On Hold"
-                      ? "bg-[rgb(255,245,230)] text-[#FF9800]"
-                      : result?.status === "Ongoing"
-                      ? "bg-[#F9FAFB] text-[#667185]"
-                      : "bg-[#EDF7EE] text-[#4CAF50]"
-                  }  text-[10px] md:text-[12px]  font-semibold leading-[16px] md:leading-[18px]`}
-                >
-                  <p>{result.status}</p>
-                </button> */}
-                </td>
-              </tr>
-              <tr>
-                <th className=" flex items-center gap-2 text-[14px] pb-[20px] text-[#667185] leading-[20px] font-medium text-left ">
-                  <Calendar2 variant="Linear" color="#667185" size="20" /> Start
-                  Date{" "}
-                </th>
-                <td className="pb-[20px] pl-4 md:pl-6 ">
-                  <p className=" text-[14px]  text-[#000] leading-[20px] font-medium text-left ">
-                    {projectData?.time}
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <th className=" flex items-center gap-2 text-[14px] pb-[20px] text-[#667185] leading-[20px] font-medium text-left ">
-                  <Status variant="Linear" color="#667185" size="20" /> Priority
-                </th>
-                <td className="pb-[20px] pl-4 md:pl-6 ">
-                  <button
-                    className={`rounded-[20px] md:rounded-[40px] flex justify-center items-center gap-2 px-[12px]  py-[4px] md:py-[4px] border-[0.5px] ${
-                      c.mode === "High"
-                        ? "bg-[#FEECEB] text-[#F44336] border-[#F44336]"
-                        : c.mode === "Medium"
-                        ? "bg-[#FFF5E6] text-[#F44336] border-[#FF9800]"
-                        : "bg-[#EDF7EE] text-[#4CAF50] border-[#4CAF50]"
-                    }  text-[10px] md:text-[12px]  font-semibold leading-[16px] md:leading-[18px] `}
-                  >
-                    <div
-                      className={` ${
-                        c.mode === "High"
-                          ? "bg-[#F44336]"
-                          : c.mode === "Medium"
-                          ? "bg-[#F44336]"
-                          : "bg-[#4CAF50] "
-                      } h-[8px] w-[8px] rounded-full `}
-                    />
-                    <p>{c.mode}</p>
-                  </button>{" "}
-                </td>
-              </tr>
-              <tr>
-                <th className=" flex items-center gap-2 text-[14px] pb-[20px] text-[#667185] leading-[20px] font-medium text-left ">
-                  <NoteText variant="Linear" color="#667185" size="20" />{" "}
-                  Description
-                </th>
-                <td className="pb-[20px] pl-4 md:pl-6 "></td>
-              </tr>
-            </table>
-            <div className="p-[12px] md:p-[16px] xl:p-[20px] mb-[48px] border-[0.2px] border-[#98A2B3] bg-white shadow-xl rounded-lg shadow-[#F0F2F5]">
-              {" "}
-              <p className=" text-[14px]  text-[#000] leading-[20px] font-medium text-left ">
-                {c.description}
-              </p>
-            </div>
-            <div className="flex-between mb-5 ">
-              <div className="flex-item gap-2">
-                {" "}
-                <Paperclip2 variant="Linear" color="#667185" size="20" />{" "}
-                <p className="text-[14px] md:text-base text-[#667185] leading-[20px] font-medium ">
-                  Files (2)
-                </p>
-              </div>
-
-              <div className="flex-item gap-2">
-                {" "}
-                <Import variant="Linear" color="#F05800" size="24" />{" "}
-                <p className="text-[14px] md:text-base text-[#F05800] leading-[20px] font-medium ">
-                  Download All
-                </p>
-              </div>
-            </div>
-            <ul>
-              <li className="p-[12px] md:p-[16px] xl:p-[20px] mb-[20px] border-[0.2px] border-[#98A2B3] bg-white shadow-xl rounded-lg shadow-[#F0F2F5]">
-                <div className="flex-item gap-4">
-                  <img
-                    src="./assets/download.png"
-                    alt="download"
-                    className="w-[56px] h-[56px] "
-                  />
-
-                  <div className="flex flex-col justify-between h-full">
-                  <p className=" text-[14px] md:text-base  text-[#000] leading-[20px] font-medium text-left ">
-                  Dashboard card.png</p>
-                  <p className="text-[14px]  text-[#667185] leading-[20px] font-medium ">
-                  1.2 MB</p>
-                  </div>
-                </div>
-              </li>
-              <li className="p-[12px] md:p-[16px] xl:p-[20px] mb-[20px] border-[0.2px] border-[#98A2B3] bg-white shadow-xl rounded-lg shadow-[#F0F2F5]">
-                <div className="flex-item gap-4">
-                  <img
-                    src="./assets/download.png"
-                    alt="download"
-                    className="w-[56px] h-[56px] "
-                  />
-
-                  <div className="flex flex-col justify-between h-full">
-                  <p className=" text-[14px] md:text-base  text-[#000] leading-[20px] font-medium text-left ">
-                  Dashboard card.png</p>
-                  <p className="text-[14px]  text-[#667185] leading-[20px] font-medium ">
-                  1.2 MB</p>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-<TaskTab/>
-
-
-        </div>
-      </ModalLeft>
-    </>
-  );
-};
 
 const DropIndicator = ({ beforeId, column }) => {
   return (
