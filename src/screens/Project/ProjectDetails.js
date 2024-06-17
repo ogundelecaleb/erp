@@ -14,6 +14,8 @@ import TaskList from "../../components/ProjectTask";
 import TaskBoard from "../../components/ProjectTaskBoard";
 import { TASKS } from "../../components/Data";
 import Milestone from "../../components/Milestone";
+import Document from "../../components/ProjectDocument";
+import ProjectMembers from "../../components/ProjectMembers";
 
 const ProjectDetails = () => {
   const location = useLocation();
@@ -221,6 +223,12 @@ const ProjectDetails = () => {
             </TabPanel>
             <TabPanel>
           <Milestone/>
+            </TabPanel>
+            <TabPanel>
+          <Document/>
+            </TabPanel>
+            <TabPanel>
+          <ProjectMembers/>
             </TabPanel>
           </TabPanels>
         </Tabs>

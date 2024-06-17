@@ -60,6 +60,36 @@ export const ProjectData = [
     submit:6
   },
 ];
+export const DocumentData = [
+  {
+    ID: "#DOC00002",
+    subject:
+"Marketing Strategy Proposal" ,
+   user: "Kelly Brook",
+    type: "Passport",
+    status: "Pending",
+    
+  },
+  {
+    ID: "#DOC00002",
+    subject:
+"Marketing Strategy Proposal" ,
+   user: "Kelly Brook",
+    type: "Passport",
+    status: "Successful",
+    
+  },
+  {
+    ID: "#DOC00002",
+    subject:
+"Marketing Strategy Proposal" ,
+   user: "Kelly Brook",
+    type: "Passport",
+    status: "Pending",
+    
+  },
+  
+];
 
 
 export const userList = [
@@ -120,6 +150,44 @@ export const Activities = [
     time: "2 month ago"
   },
 
+
+]
+
+export const TeamMembers = [
+  {
+    name: "Ogundele Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+  },
+  {
+    name: "Ogundele Ogi",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+  },
+  {
+    name: "Tosin Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+  },
+
+]
+
+export const Clients = [
+  {
+    name: "Raphh Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+  },
+  {
+    name: "Ogundele Ogi",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+  },
+  {
+    name: "Tosin Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+  },
 
 ]
 
