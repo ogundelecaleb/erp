@@ -365,7 +365,7 @@ const ProjectMembers = () => {
             className=" px-[16px] md:px-[24px] pb-[30px] md:pb-[40px]"
           >
             <p className=" text-[16px] md:text-lg text-center  text-[#000] leading-[24px] font-medium  ">
-              Delete Document
+              Delete Client
             </p>
 
             <p className="text-[14px]  text-[#667185] leading-[20px] font-normal text-center mt-2  ">
@@ -458,7 +458,7 @@ const ProjectMembers = () => {
             className=" px-[16px] md:px-[24px] pb-[30px] md:pb-[40px]"
           >
             <p className=" text-[16px] md:text-lg text-center  text-[#000] leading-[24px] font-medium  ">
-              Delete Document
+              Delete Member
             </p>
 
             <p className="text-[14px]  text-[#667185] leading-[20px] font-normal text-center mt-2  ">
