@@ -20,6 +20,7 @@ import ProjectReport from "./screens/Project/ProjectReport";
 import ProjectDetails from "./screens/Project/ProjectDetails";
 import GanttChat from "./screens/Project/GanttChat";
 import BugReport from "./screens/Project/BugReport";
+import ReportDetails from "./screens/Project/ReportDetails";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             <Route path="/projectdetails" exact={true} element={<ProjectDetails />} />
             <Route path="/ganttchart" exact={true} element={<GanttChat />} />
             <Route path="/bugreport" exact={true} element={<BugReport />} />
+            <Route path="/reportdetails" exact={true} element={<ReportDetails />} />
             
           </Route>
           

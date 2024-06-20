@@ -58,7 +58,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="p-[20px] bg-[#F2F2F2] h-screen ">
+    <div className="p-[20px] bg-[#F2F2F2] ">
       <div className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-full w-full bg-[#ffff] ">
         <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px] block md:flex justify-between items-center ">
           <div className="flex items-center gap-[16px]">

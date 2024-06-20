@@ -131,7 +131,15 @@ const Board = ({ project }) => {
         setCards={setCards}
         project={project}
       />
-      <BurnBarrel setCards={setCards} />
+            <Column
+        title="Verified"
+        column="verified"
+        headingColor="text-emerald-200"
+        cards={cards}
+        setCards={setCards}
+        project={project}
+      />
+      {/* <BurnBarrel setCards={setCards} /> */}
     </div>
   );
 };

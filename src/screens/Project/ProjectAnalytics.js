@@ -80,6 +80,9 @@ export const pieData = {
        
       ],
       borderWidth: 1,
+      borderJoinStyle: "round",
+      spacing: 3,
+      borderRadius:8
     },
   ],
 };
@@ -276,13 +279,32 @@ const ProjectAnalytics = () => {
             </div>
           </div>
         </div>
-        <div className=" rounded-[8px] w-full md:w-[50%]   overflow-auto">
-          <div className="p-[16px] md:p-[20px] flex-between bg-white rounded-tr-lg rounded-tl-lg  border-[0.8px]  border-[#D0D5DD]">
+        <div className=" rounded-[8px] w-full md:w-[50%] h-[500px] border-[0.8px]  border-[#D0D5DD]  ">
+          <div className="p-[16px] md:p-[20px] flex-between bg-white rounded-tr-lg rounded-tl-lg  ">
             <p className="text-[18px]  leading-[27px] text-[#000]  ">Project Status</p>
             
           </div>
-          <div className="flex-center">
-            <Doughnut data={pieData} />
+          <div className="flex-center mt-5 h-[300px] ">
+            <Doughnut data={pieData} options={{
+              responsive: true,
+              maintainAspectRatio: false,
+              
+              // heigth:"600px",
+                    plugins: {
+                      legend: {
+                        position: "top",
+                        labels: {
+                          pointStyle: "square",
+                          usePointStyle: true,
+                          // fullSize: false,
+                          pointStyleWidth: 10,
+                          font: {
+                            size: 10,
+                          },
+                        },
+                      },
+                    },
+                  }}/>
           </div>
         </div>
       </div>

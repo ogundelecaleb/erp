@@ -61,6 +61,101 @@ export const ProjectData = [
   },
 ];
 
+export const UserData = [
+  {
+    name: "Ogundele Caleb",
+    assignedTask: 3,
+    done: 5,
+   
+   
+  },
+  {
+    name: "Ogundele Caleb",
+    assignedTask: 3,
+    done: 1,
+   
+   
+  },
+  {
+    name: "Ogundele Caleb",
+    assignedTask: 4,
+    done: 1,
+   
+   
+  },
+  {
+    name: "Ogundele Caleb",
+    assignedTask: 3,
+    done: 1,
+   
+   
+  },
+  {
+    name: "Ogundele Caleb",
+    assignedTask: 3,
+    done: 1,
+   
+   
+  },
+  {
+    name: "Ogundele Caleb",
+    assignedTask: 3,
+    done: 1,
+   
+   
+  },
+
+]
+
+export const MilestoneData = [
+  {
+    name: "Hiring Individual Position",
+    cost: 200,
+    progress: "30%",
+    status: "Completed",
+    date:"2025 - 05 -19",
+   
+   
+  },
+  {
+    name: "Hiring Individual Position",
+    cost: 200,
+    progress: "30%",
+    status: "Completed",
+    date:"2025 - 05 -19",
+   
+   
+  },
+  {
+    name: "Hiring Individual Position",
+    cost: 200,
+    progress: "30%",
+    status: "Incompleted",
+    date:"2025 - 05 -19",
+   
+   
+  },
+  {
+    name: "Hiring Individual Position",
+    cost: 200,
+    progress: "30%",
+    status: "Completed",
+    date:"2025 - 05 -19",
+   
+   
+  },
+  {
+    name: "Hiring Individual Position",
+    cost: 200,
+    progress: "30%",
+    status: "Inompleted",
+    date:"2025 - 05 -19",
+   
+   
+  },
+
+]
+
 export const TaskAnalytics = [
   {
     task: "Floor Task",
