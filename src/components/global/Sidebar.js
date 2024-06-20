@@ -10,7 +10,17 @@ import { TbFileInvoice } from "react-icons/tb";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useLocation } from "react-router-dom";
 import { GiVirtualMarker } from "react-icons/gi";
-import { Ankr, ArrowDown2, ArrowUp2, Box2, Chart, Home, Layer, Money2 } from "iconsax-react";
+import {
+  Ankr,
+  ArrowDown2,
+  ArrowUp2,
+  Box2,
+  Chart,
+  Folder2,
+  Home,
+  Layer,
+  Money2,
+} from "iconsax-react";
 
 const Sidebar = ({ isSidebarOpen, onClose, role }) => {
   const router = useLocation();
@@ -25,7 +35,6 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
   const [isCrm, setIsCrm] = useState(false);
   const [isInventory, setIsInventory] = useState(false);
   const [isUser, setIsUser] = useState(false);
-  
 
   return (
     <div
@@ -90,20 +99,31 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
 
             <div className="mt-[20px] border-t border-b border-[#98A2B3]/50 w-full py-[20px]">
               <button
-               
                 onClick={() => setIsProject(!isProject)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px] ${
-                  window.location.pathname === "/project" ||  window.location.pathname === "/projectanalytics"  ||  window.location.pathname === "/projectreport"  || window.location.pathname === "/systemsetup" 
+                  window.location.pathname === "/project" ||
+                  window.location.pathname === "/projectdetails" ||
+                  window.location.pathname === "/ganttchart" ||
+                  window.location.pathname === "/bugreport" ||
+                  window.location.pathname === "/projectanalytics" ||
+                  window.location.pathname === "/projectreport" ||
+                  window.location.pathname === "/systemsetup"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
               >
                 <div className="flex items-center">
                   {" "}
-                  <Home
+                  <Folder2
                     className="mr-[12px]"
                     variant={
-                      window.location.pathname === "/project"
+                      window.location.pathname === "/project" ||
+                      window.location.pathname === "/projectdetails" ||
+                      window.location.pathname === "/ganttchart" ||
+                      window.location.pathname === "/bugreport" ||
+                      window.location.pathname === "/projectanalytics" ||
+                      window.location.pathname === "/projectreport" ||
+                      window.location.pathname === "/systemsetup"
                         ? "Bold"
                         : "Linear"
                     }
@@ -111,9 +131,11 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   Projects
                 </div>
 
-                {isProject ?  <ArrowUp2  size="14" variant="Linear" color="#667185"/> : <ArrowDown2  size="14" variant="Linear" color="#667185"/>}
-
-               
+                {isProject ? (
+                  <ArrowUp2 size="14" variant="Linear" color="#667185" />
+                ) : (
+                  <ArrowDown2 size="14" variant="Linear" color="#667185" />
+                )}
               </button>
 
               {isProject && (
@@ -121,7 +143,10 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <Link
                     to="/project"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
-                      window.location.pathname === "/project"
+                      window.location.pathname === "/project" ||
+                      window.location.pathname === "/projectdetails" ||
+                      window.location.pathname === "/ganttchart" ||
+                      window.location.pathname === "/bugreport"
                         ? "bg-[#F7F9FC] font-medium "
                         : " font-normal"
                     }`}
@@ -178,26 +203,22 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <Box2
                     className="mr-[12px]"
                     variant={
-                      window.location.pathname === "/hrm"
-                        ? "Bold"
-                        : "Linear"
+                      window.location.pathname === "/hrm" ? "Bold" : "Linear"
                     }
                   />
                   HRM
                 </div>
 
-                {isHrm ?  <ArrowUp2  size="14" variant="Linear" color="#667185"/> : <ArrowDown2  size="14" variant="Linear" color="#667185"/>}
-
-               
+                {isHrm ? (
+                  <ArrowUp2 size="14" variant="Linear" color="#667185" />
+                ) : (
+                  <ArrowDown2 size="14" variant="Linear" color="#667185" />
+                )}
               </button>
-
-
 
               {/* Crm */}
 
-              
               <button
-                
                 onClick={() => setIsCrm(!isCrm)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   isHrm
@@ -210,25 +231,21 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <Ankr
                     className="mr-[12px]"
                     variant={
-                      window.location.pathname === "/crm"
-                        ? "Bold"
-                        : "Linear"
+                      window.location.pathname === "/crm" ? "Bold" : "Linear"
                     }
                   />
                   CRM
                 </div>
 
-                {isCrm ?  <ArrowUp2  size="14" variant="Linear" color="#667185"/> : <ArrowDown2  size="14" variant="Linear" color="#667185"/>}
-
-               
+                {isCrm ? (
+                  <ArrowUp2 size="14" variant="Linear" color="#667185" />
+                ) : (
+                  <ArrowDown2 size="14" variant="Linear" color="#667185" />
+                )}
               </button>
-
-
-
 
               {/* Inventory */}
               <button
-                
                 onClick={() => setIsInventory(!isInventory)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   isInventory
@@ -249,15 +266,15 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   Inventory
                 </div>
 
-                {isInventory ?  <ArrowUp2  size="14" variant="Linear" color="#667185"/> : <ArrowDown2  size="14" variant="Linear" color="#667185"/>}
-
-               
+                {isInventory ? (
+                  <ArrowUp2 size="14" variant="Linear" color="#667185" />
+                ) : (
+                  <ArrowDown2 size="14" variant="Linear" color="#667185" />
+                )}
               </button>
-
 
               {/* User Management */}
               <button
-                
                 onClick={() => setIsUser(!isUser)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   isUser
@@ -275,16 +292,16 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                         : "Linear"
                     }
                   />
-                User Management
+                  User Management
                 </div>
 
-                {isUser ?  <ArrowUp2  size="14" variant="Linear" color="#667185"/> : <ArrowDown2  size="14" variant="Linear" color="#667185"/>}
-
-               
+                {isUser ? (
+                  <ArrowUp2 size="14" variant="Linear" color="#667185" />
+                ) : (
+                  <ArrowDown2 size="14" variant="Linear" color="#667185" />
+                )}
               </button>
             </div>
-
-
 
             <Link
               to="/finance"
@@ -300,9 +317,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/finance" ? "Bold" : "Linear"
                 }
               />
-            Finance
+              Finance
             </Link>
-
 
             {/* Analytics */}
             <Link
@@ -319,7 +335,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/analytics" ? "Bold" : "Linear"
                 }
               />
-            Analytics
+              Analytics
             </Link>
           </div>
         </div>

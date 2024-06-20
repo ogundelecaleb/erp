@@ -36,8 +36,11 @@ import Document from "../../components/ProjectDocument";
 import ProjectMembers from "../../components/ProjectMembers";
 import { ClipLoader } from "react-spinners";
 import ModalLeft from "../../components/ModalLeft";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const ProjectDetails = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const result = location.state;
   const [value, setValue] = React.useState("1");
@@ -92,7 +95,11 @@ const ProjectDetails = () => {
 
           <div className="flex items-center gap-[16px] ">
             <button
-              // onClick={() => toggleImportModal()}
+              onClick={() =>
+                navigate("/bugreport", {
+                  // state: result,
+                })
+              }
               className="flex items-center gap-[8px] "
             >
               <p className="text-[14px] text-[#667185] leading-[20px]">
@@ -102,7 +109,11 @@ const ProjectDetails = () => {
               <Calendar2 variant="Linear" color="#667185" size="16" />
             </button>
             <button
-              // onClick={() => toggleImportModal()}
+             onClick={() =>
+              navigate("/ganttchart", {
+                // state: result,
+              })
+            }
               className="flex items-center gap-[8px] "
             >
               <p className="text-[14px] text-[#667185] leading-[20px]">
