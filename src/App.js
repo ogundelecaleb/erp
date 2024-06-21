@@ -21,6 +21,7 @@ import ProjectDetails from "./screens/Project/ProjectDetails";
 import GanttChat from "./screens/Project/GanttChat";
 import BugReport from "./screens/Project/BugReport";
 import ReportDetails from "./screens/Project/ReportDetails";
+import ProjectSetup from "./screens/Project/ProjectSetup";
 
 function App() {
   return (
@@ -38,7 +39,7 @@ function App() {
             <Route path="/project" exact={true} element={<Projects />} />
             <Route path="/projectanalytics" exact={true} element={<ProjectAnalytics />} />
             <Route path="/projectreport" exact={true} element={<ProjectReport />} />
-            <Route path="/projectsetup" exact={true} element={<ProjectReport />} />
+            <Route path="/projectsetup" exact={true} element={<ProjectSetup />} />
             <Route path="/finance" exact={true} element={<Projects />} />
             <Route path="/analytics" exact={true} element={<Projects />} />
             <Route path="/projectdetails" exact={true} element={<ProjectDetails />} />

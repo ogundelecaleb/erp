@@ -107,7 +107,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/bugreport" ||
                   window.location.pathname === "/projectanalytics" ||
                   window.location.pathname === "/projectreport" ||
-                  window.location.pathname === "/systemsetup"
+                  window.location.pathname === "/projectsetup"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
@@ -123,7 +123,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/bugreport" ||
                       window.location.pathname === "/projectanalytics" ||
                       window.location.pathname === "/projectreport" ||
-                      window.location.pathname === "/systemsetup"
+                      window.location.pathname === "/projectsetup"
                         ? "Bold"
                         : "Linear"
                     }
@@ -176,9 +176,9 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     <li className="">Reports</li>
                   </Link>
                   <Link
-                    to="/systemsetup"
+                    to="/projectsetup"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185]  rounded-md    hover:bg-[#F7F9FC]   leading-[18px] md:leading-[24px]   ${
-                      window.location.pathname === "/systemsetup"
+                      window.location.pathname === "/projectsetup"
                         ? "bg-[#F7F9FC] font-medium "
                         : " font-normal"
                     }`}

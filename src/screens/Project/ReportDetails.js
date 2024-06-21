@@ -18,6 +18,7 @@ import faker from "faker";
 import { MilestoneData, UserData } from "../../components/Data";
 import { FaLaptopHouse } from "react-icons/fa";
 import { useState } from "react";
+import TaskSummary from "../../components/TaskSummary";
 
 ChartJS.register(
   CategoryScale,
@@ -303,7 +304,7 @@ const ReportDetails = () => {
           </div>
 
           <div className="flex gap-[30px]  mt-[24px]">
-            <div className=" rounded-[8px] w-full md:w-[40%]  overflow-auto">
+            <div className=" rounded-[8px] w-full md:w-[40%] h-[500px] overflow-auto border-[0.8px]  border-[#D0D5DD]">
               <div className="p-[16px] md:p-[20px] flex-between bg-white rounded-tr-lg rounded-tl-lg  border-[0.8px]  border-[#D0D5DD]">
                 <p className="text-[18px]  leading-[27px] text-[#000]  ">
                   Users
@@ -495,6 +496,7 @@ Milestones                </p>
               </div>
             </div>
           </div>
+          <TaskSummary/>
         </div>
       </div>
     </div>
