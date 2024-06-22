@@ -1,5 +1,5 @@
 import React from "react";
-import { ProjectData } from "./Data";
+import { ProjectData } from "../Data";
 import {
   Add,
   Calendar,

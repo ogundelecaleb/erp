@@ -43,10 +43,10 @@ import {
   Trash,
   UserAdd,
 } from "iconsax-react";
-import ModalLeft from "../../components/ModalLeft";
-import TaskTab from "../../components/TaskTab";
+import ModalLeft from "../../components/project/ModalLeft";
+import TaskTab from "../../components/project/TaskTab";
 import { ClipLoader } from "react-spinners";
-import TaskCard from "../../components/TaskCard";
+import TaskCard from "../../components/project/TaskCard";
 
 const BugReport = ({ project }) => {
   const Project = project;

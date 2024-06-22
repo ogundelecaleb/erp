@@ -277,7 +277,9 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
               <button
                 onClick={() => setIsUser(!isUser)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
-                  isUser
+                  window.location.pathname === "/usermanagement" ||
+                  window.location.pathname === "/loghistory" ||
+                  window.location.pathname === "/role"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
@@ -287,7 +289,9 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <Ankr
                     className="mr-[12px]"
                     variant={
-                      window.location.pathname === "/usermanagement"
+                      window.location.pathname === "/usermanagement" ||
+                      window.location.pathname === "/loghistory" ||
+                      window.location.pathname === "/role"
                         ? "Bold"
                         : "Linear"
                     }
@@ -301,6 +305,33 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
+
+              {isUser && (
+                <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
+                  <Link
+                    to="/usermanagement"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/usermanagement" ||
+                      window.location.pathname === "/loghistory"
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Users</li>
+                  </Link>
+
+                  <Link
+                    to="/role"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/role"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Role</li>
+                  </Link>
+                </ul>
+              )}
             </div>
 
             <Link

@@ -33,7 +33,7 @@ import { Edit, Eye, Profile2User, Trash } from "iconsax-react";
 import ModalLeft from "./ModalLeft";
 import TaskTab from "./TaskTab";
 import { ClipLoader } from "react-spinners";
-import { userList } from "./Data";
+import { userList } from "../Data";
 import Select from "react-select";
 
 const TaskCard = ({

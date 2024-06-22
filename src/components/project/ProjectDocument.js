@@ -1,6 +1,6 @@
 import { Add, CloseCircle, Edit, Maximize4, Trash } from "iconsax-react";
 import React, { useState } from "react";
-import { DocumentData } from "./Data";
+import { DocumentData } from "../Data";
 import {
   Grid,
   Flex,

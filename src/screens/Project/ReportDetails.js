@@ -18,7 +18,7 @@ import faker from "faker";
 import { MilestoneData, UserData } from "../../components/Data";
 import { FaLaptopHouse } from "react-icons/fa";
 import { useState } from "react";
-import TaskSummary from "../../components/TaskSummary";
+import TaskSummary from "../../components/project/TaskSummary";
 
 ChartJS.register(
   CategoryScale,

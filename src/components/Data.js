@@ -199,6 +199,118 @@ export const TaskSummaryData = [
     date: "2025 - 05 -19",
   },
 ];
+
+export const Users = [
+  {
+    name: "Ogundele Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/man2.png",
+    role: "Staff",
+  },
+  {
+    name: "Ogundele Tosin",
+    email: "ocaleb13@gmail.com",
+    image: "./assets/woman2.png",
+    role: "HR",
+  },
+  {
+    name: "Tolu Caleb",
+    email: "ogundelecaleb14@gmail.com",
+    image: "./assets/man2.png",
+    role: "Client",
+  },
+  {
+    name: "John Carl",
+    email: "johncarl@gmail.com",
+    image: "./assets/womanman2.png",
+    role: "Vendor",
+  },
+  {
+    name: "Ogundele Tosin",
+    email: "ocaleb13@gmail.com",
+    image: "./assets/woman2.png",
+    role: "HR",
+  },
+  {
+    name: "Tolu Caleb",
+    email: "ogundelecaleb14@gmail.com",
+    image: "./assets/man2.png",
+    role: "Client",
+  },
+  {
+    name: "Ogundele Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/man2.png",
+    role: "Staff",
+  },
+  {
+    name: "Ogundele Tosin",
+    email: "ocaleb13@gmail.com",
+    image: "./assets/woman2.png",
+    role: "HR",
+  },
+  {
+    name: "Tolu Caleb",
+    email: "ogundelecaleb14@gmail.com",
+    image: "./assets/man2.png",
+    role: "Client",
+  },
+  {
+    name: "John Carl",
+    email: "johncarl@gmail.com",
+    image: "./assets/womanman2.png",
+    role: "Vendor",
+  },
+  {
+    name: "Ogundele Tosin",
+    email: "ocaleb13@gmail.com",
+    image: "./assets/woman2.png",
+    role: "HR",
+  },
+  {
+    name: "Tolu Caleb",
+    email: "ogundelecaleb14@gmail.com",
+    image: "./assets/man2.png",
+    role: "Client",
+  },
+  {
+    name: "Ogundele Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/man2.png",
+    role: "Staff",
+  },
+  {
+    name: "Ogundele Tosin",
+    email: "ocaleb13@gmail.com",
+    image: "./assets/woman2.png",
+    role: "HR",
+  },
+  {
+    name: "Tolu Caleb",
+    email: "ogundelecaleb14@gmail.com",
+    image: "./assets/man2.png",
+    role: "Client",
+  },
+  {
+    name: "John Carl",
+    email: "johncarl@gmail.com",
+    image: "./assets/womanman2.png",
+    role: "Vendor",
+  },
+  {
+    name: "Ogundele Tosin",
+    email: "ocaleb13@gmail.com",
+    image: "./assets/woman2.png",
+    role: "HR",
+  },
+  {
+    name: "Tolu Caleb",
+    email: "ogundelecaleb14@gmail.com",
+    image: "./assets/man2.png",
+    role: "Client",
+  },
+
+]
 export const BugSetupData = [
   {
     name: "Unconfirmed",
@@ -237,7 +349,7 @@ export const TaskSetupData = [
   },
   {
     name: "In Progress",
-    color: "#667185",
+    color: "rgba(102, 113, 133, 1)",
   },
 ];
 

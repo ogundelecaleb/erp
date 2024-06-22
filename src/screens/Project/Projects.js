@@ -29,8 +29,8 @@ import { ProjectData } from "../../components/Data";
 import { ClipLoader } from "react-spinners";
 import { userList } from "../../components/Data";
 import Select from "react-select";
-import ProjectGrid from "../../components/ProjectGrid";
-import ProjectTable from "../../components/ProjectTable";
+import ProjectGrid from "../../components/project/ProjectGrid";
+import ProjectTable from "../../components/project/ProjectTable";
 
 const Projects = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);

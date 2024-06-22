@@ -1,6 +1,6 @@
 import { FilterSearch, Trash } from "iconsax-react";
 import React, { useState } from "react";
-import { TaskSummaryData } from "./Data";
+import { TaskSummaryData } from "../Data";
 
 const TaskSummary = () => {
   const [isLoading, setIsLoading] = useState(false);

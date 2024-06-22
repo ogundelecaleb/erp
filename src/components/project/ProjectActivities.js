@@ -1,5 +1,5 @@
 import React from "react";
-import { Activities } from "./Data";
+import { Activities } from "../Data";
 import { Menu } from "iconsax-react";
 
 const ProjectActivities = () => {

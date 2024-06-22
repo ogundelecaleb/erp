@@ -27,15 +27,15 @@ import {
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import ProjectActivities from "../../components/ProjectActivities";
-import TaskList from "../../components/ProjectTask";
-import TaskBoard from "../../components/ProjectTaskBoard";
+import ProjectActivities from "../../components/project/ProjectActivities";
+import TaskList from "../../components/project/ProjectTask";
+import TaskBoard from "../../components/project/ProjectTaskBoard";
 import { TASKS } from "../../components/Data";
-import Milestone from "../../components/Milestone";
-import Document from "../../components/ProjectDocument";
-import ProjectMembers from "../../components/ProjectMembers";
+import Milestone from "../../components/project/Milestone";
+import Document from "../../components/project/ProjectDocument";
+import ProjectMembers from "../../components/project/ProjectMembers";
 import { ClipLoader } from "react-spinners";
-import ModalLeft from "../../components/ModalLeft";
+import ModalLeft from "../../components/project/ModalLeft";
 import { Link, useNavigate } from "react-router-dom";
 
 

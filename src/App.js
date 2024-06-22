@@ -22,6 +22,9 @@ import GanttChat from "./screens/Project/GanttChat";
 import BugReport from "./screens/Project/BugReport";
 import ReportDetails from "./screens/Project/ReportDetails";
 import ProjectSetup from "./screens/Project/ProjectSetup";
+import User from "./screens/User/User";
+import Role from "./screens/User/Role";
+import LogHistory from "./screens/User/LogHistory";
 
 function App() {
   return (
@@ -46,6 +49,9 @@ function App() {
             <Route path="/ganttchart" exact={true} element={<GanttChat />} />
             <Route path="/bugreport" exact={true} element={<BugReport />} />
             <Route path="/reportdetails" exact={true} element={<ReportDetails />} />
+            <Route path="/usermanagement" exact={true} element={<User />} />
+            <Route path="/role" exact={true} element={<Role />} />
+            <Route path="/loghistory" exact={true} element={<LogHistory />} />
             
           </Route>
           

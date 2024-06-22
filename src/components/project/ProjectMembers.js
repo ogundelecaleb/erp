@@ -1,6 +1,6 @@
 import { Trash, UserAdd } from "iconsax-react";
 import React, { useState } from "react";
-import { Clients, TeamMembers } from "./Data";
+import { Clients, TeamMembers } from "../Data";
 import { ClipLoader } from "react-spinners";
 import {
   Grid,
