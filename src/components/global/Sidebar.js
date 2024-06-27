@@ -100,7 +100,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
             <div className="mt-[20px] border-t border-b border-[#98A2B3]/50 w-full py-[20px]">
               <button
                 onClick={() => setIsProject(!isProject)}
-                className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px] ${
+                className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px] 
+                ${
                   window.location.pathname === "/project" ||
                   window.location.pathname === "/projectdetails" ||
                   window.location.pathname === "/ganttchart" ||
@@ -188,7 +189,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                 </ul>
               )}
 
-              {/* HRM */}
+              {/*=====================>>>>> HRM */}
               <button
                 to="/dashboard"
                 onClick={() => setIsHrm(!isHrm)}
@@ -216,12 +217,19 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                 )}
               </button>
 
-              {/* Crm */}
+              {/*===================+>>> Crm */}
 
               <button
                 onClick={() => setIsCrm(!isCrm)}
-                className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
-                  isHrm
+                className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px]
+                ${
+                  window.location.pathname === "/crmlead" ||
+                  window.location.pathname === "/crmdeal" ||
+                  window.location.pathname === "/crmanalytics" ||
+                  window.location.pathname === "/crmreport" ||
+                  window.location.pathname === "/crmsetup" ||
+                  window.location.pathname === "/projectreport" ||
+                  window.location.pathname === "/projectsetup"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
@@ -231,7 +239,15 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <Ankr
                     className="mr-[12px]"
                     variant={
-                      window.location.pathname === "/crm" ? "Bold" : "Linear"
+                      window.location.pathname === "/crmlead" ||
+                      window.location.pathname === "/crmdeal" ||
+                      window.location.pathname === "/crmanalytics" ||
+                      window.location.pathname === "/crmreport" ||
+                      window.location.pathname === "/crmsetup" ||
+                      window.location.pathname === "/projectreport" ||
+                      window.location.pathname === "/projectsetup"
+                        ? "Bold"
+                        : "Linear"
                     }
                   />
                   CRM
@@ -243,8 +259,68 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
+              {isCrm && (
+                <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
+                  <Link
+                    to="/crmlead"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/crmlead" ||
+                      window.location.pathname === "/projectdetails" ||
+                      window.location.pathname === "/ganttchart" ||
+                      window.location.pathname === "/bugreport"
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Lead</li>
+                  </Link>
 
-              {/* Inventory */}
+                  <Link
+                    to="/crmdeal"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/crmdeal"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Deal</li>
+                  </Link>
+                  <Link
+                    to="/crmanalytics"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/crmanalytics"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Analytics</li>
+                  </Link>
+
+                  <Link
+                    to="/crmreport"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md    hover:bg-[#F7F9FC]   leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/crmreport"
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Reports</li>
+                  </Link>
+                  <Link
+                    to="/crmsetup"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185]  rounded-md    hover:bg-[#F7F9FC]   leading-[18px] md:leading-[24px]   ${
+                      window.location.pathname === "/crmsetup"
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">System setup</li>
+                  </Link>
+                </ul>
+              )}
+
+
+              {/*==========================>>>>>>> Inventory */}
               <button
                 onClick={() => setIsInventory(!isInventory)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
@@ -273,13 +349,13 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                 )}
               </button>
 
-              {/* User Management */}
+              {/* =====================>>>>>>User Management */}
               <button
                 onClick={() => setIsUser(!isUser)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   window.location.pathname === "/usermanagement" ||
                   window.location.pathname === "/loghistory" ||
-                  window.location.pathname === "/role"
+                  window.location.pathname === "/role" ||   window.location.pathname === "/updatepermission"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
@@ -291,7 +367,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     variant={
                       window.location.pathname === "/usermanagement" ||
                       window.location.pathname === "/loghistory" ||
-                      window.location.pathname === "/role"
+                      window.location.pathname === "/role" ||
+                      window.location.pathname === "/updatepermission"
                         ? "Bold"
                         : "Linear"
                     }
@@ -323,7 +400,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <Link
                     to="/role"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
-                      window.location.pathname === "/role"
+                      window.location.pathname === "/role" ||
+                      window.location.pathname === "/updatepermission"
                         ? "bg-[#F7F9FC] font-medium  "
                         : " font-normal"
                     }`}

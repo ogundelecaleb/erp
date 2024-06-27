@@ -25,6 +25,12 @@ import ProjectSetup from "./screens/Project/ProjectSetup";
 import User from "./screens/User/User";
 import Role from "./screens/User/Role";
 import LogHistory from "./screens/User/LogHistory";
+import UpdatePermission from "./screens/User/UpdatePermission";
+import CrmLead from "./screens/Crm/CrmLead";
+import CrmDeal from "./screens/Crm/CrmDeal";
+import CrmAnalytics from "./screens/Crm/CrmAnalytics";
+import CrmReport from "./screens/Crm/CrmReport";
+import CrmSetup from "./screens/Crm/CrmSetup";
 
 function App() {
   return (
@@ -52,6 +58,12 @@ function App() {
             <Route path="/usermanagement" exact={true} element={<User />} />
             <Route path="/role" exact={true} element={<Role />} />
             <Route path="/loghistory" exact={true} element={<LogHistory />} />
+            <Route path="/updatepermission" exact={true} element={<UpdatePermission />} />
+            <Route path="/crmlead" exact={true} element={<CrmLead />} />
+            <Route path="/crmdeal" exact={true} element={<CrmDeal />} />
+            <Route path="/crmanalytics" exact={true} element={<CrmAnalytics />} />
+            <Route path="/crmreport" exact={true} element={<CrmReport />} />
+            <Route path="/crmsetup" exact={true} element={<CrmSetup />} />
             
           </Route>
           
