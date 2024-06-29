@@ -43,8 +43,7 @@ import {
   Trash,
   UserAdd,
 } from "iconsax-react";
-import ModalLeft from "../../components/project/ModalLeft";
-import TaskTab from "../../components/project/TaskTab";
+
 import { ClipLoader } from "react-spinners";
 import TaskCard from "../../components/project/TaskCard";
 

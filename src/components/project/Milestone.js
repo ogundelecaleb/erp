@@ -8,7 +8,7 @@ import {
 } from "iconsax-react";
 import React, { useState } from "react";
 import { ClipLoader } from "react-spinners";
-import ModalLeft from "./ModalLeft";
+import ModalLeft from "../ModalLeft";
 import { Seekbar } from 'react-seekbar';
 
 const Milestone = () => {

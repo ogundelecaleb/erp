@@ -19,7 +19,7 @@ import {
   Trash,
   UserAdd,
 } from "iconsax-react";
-import ModalLeft from "./ModalLeft";
+import ModalLeft from "../ModalLeft";
 
 const TaskBoard = ({ project }) => {
   const Project = project;

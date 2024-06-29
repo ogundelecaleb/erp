@@ -38,7 +38,7 @@ import Select from "react-select";
 import ProjectGrid from "../../components/project/ProjectGrid";
 import ProjectTable from "../../components/project/ProjectTable";
 import UserGrid from "../../components/user/UserGrid";
-import ModalLeft from "../../components/project/ModalLeft";
+import ModalLeft from "../../components/ModalLeft";
 import { Link } from "react-router-dom";
 
 const LogHistory = () => {

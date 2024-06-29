@@ -2,13 +2,44 @@ import React, { useState } from "react";
 import { Sms, CloseCircle, Eye, EyeSlash } from "iconsax-react";
 import { GoLock } from "react-icons/go";
 import { Link } from "react-router-dom";
+import { setUserData } from "../utils/utils";
+import { enqueueSnackbar } from "notistack";
+import api from "../api";
+import { Navigate, useNavigate } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [open, setOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const toggle = () => {
     setOpen(!open);
   };
+
+  async function login(e) {
+    e.preventDefault();
+
+    setIsLoading(true);
+    try {
+      const response = await api.signIn({ email, password });
+      if (response.result === true) {
+        enqueueSnackbar("Login Successful!!", { variant: "success" });
+      }
+      setUserData(response);
+      setIsLoading(false);
+      navigate("/");
+      // navigation.navigate(routes.OTP);
+    } catch (error) {
+      console.log(error);
+      enqueueSnackbar(error.message, { variant: "error" });
+      // toast.error(error.message)
+      setIsLoading(false);
+    }
+  }
   return (
     <div className="bg-[#F2F2F2] h-screen w-full flex justify-center items-center ">
       <div className="bg-[#ffff] rounded-[16px] max-w-[628px] pt-[24px] md:pt-[32px]  pb-[24px] px-[40px] md:px-[60px] xl:px-[80px]">
@@ -24,7 +55,10 @@ const Login = () => {
           Sign in to your account to continue
         </p>
 
-        <form className="mt-[40px] max-w-[340px] md:max-w-[486px]">
+        <form
+          onSubmit={login}
+          className="mt-[40px] max-w-[340px] md:max-w-[486px]"
+        >
           <div className="mb-[24px]">
             <label className="text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] text-[#000000] mb-[8px]">
               Email
@@ -46,8 +80,8 @@ const Login = () => {
                 autoFocus
                 name="email"
                 id="email"
-                //value=""
-                //onChange={() => {}}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 autoCapitalize="off"
                 autoCorrect="off"
                 spellCheck="false"
@@ -80,8 +114,8 @@ const Login = () => {
                 autoFocus
                 name="password"
                 id="password"
-                //value=""
-                //onChange={() => {}}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 autoCapitalize="off"
                 autoCorrect="off"
                 spellCheck="false"
@@ -104,6 +138,7 @@ const Login = () => {
             className="w-full py-[14px] text-center text-white bg-[#DA5000] rounded-[8px] flex items-center justify-center mb-[20px] md:mb-[32px]"
           >
             <p className="text-sm font-medium leading-[20px]">Sign in</p>
+            {isLoading && <ClipLoader color={"white"} size={20} />}
           </button>
 
           <div className="text-[14px] leading-[20px] flex justify-center items-center mb-[30px] md:mb-[40px]">

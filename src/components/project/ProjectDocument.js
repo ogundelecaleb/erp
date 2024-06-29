@@ -17,7 +17,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { ClipLoader } from "react-spinners";
-import ModalLeft from "./ModalLeft";
+import ModalLeft from "../ModalLeft";
 
 const Document = () => {
   const [isLoading, setIsLoading] = useState(false);

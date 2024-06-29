@@ -21,7 +21,7 @@ import {
 } from "iconsax-react";
 import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { useNavigate, useNavigation } from "react-router-dom";
-import ModalLeft from "../project/ModalLeft";
+import ModalLeft from "../ModalLeft";
 import { ClipLoader } from "react-spinners";
 import {
   Grid,

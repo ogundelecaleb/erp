@@ -35,7 +35,7 @@ import Milestone from "../../components/project/Milestone";
 import Document from "../../components/project/ProjectDocument";
 import ProjectMembers from "../../components/project/ProjectMembers";
 import { ClipLoader } from "react-spinners";
-import ModalLeft from "../../components/project/ModalLeft";
+import ModalLeft from "../../components/ModalLeft";
 import { Link, useNavigate } from "react-router-dom";
 
 
