@@ -1,5 +1,5 @@
 import {
-  CREATEPROFILE,
+ 
   ADDUSER,
   EXPORTTRANSACTION,
   TRANSACTION,
@@ -26,22 +26,8 @@ import {
 } from "../utils/config";
 import { apiGet, apiGetCSV, apiPost, apiPut } from "../utils/utils";
 
-// Merchant Profile
-export function createProfile(data) {
-  return apiPut(CREATEPROFILE, data);
-}
-export function createTransactionAccess(data) {
-  return apiPut(CREATEACCESS, data);
-}
-export function getMerchantProfile(data = null) {
-  return apiGet(GETPROFILE, data);
-}
-export function createPin(data) {
-  return apiPost(SETPIN, data);
-}
-export function uploadLogo(data, headers) {
-  return apiPost(UPLOAD, data, headers);
-}
+
+
 
 //dashboard
 export function getDashboardTransactions(data = null) {

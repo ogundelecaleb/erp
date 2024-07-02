@@ -34,6 +34,11 @@ import CrmDeal from "./screens/Crm/CrmDeal";
 import CrmAnalytics from "./screens/Crm/CrmAnalytics";
 import CrmReport from "./screens/Crm/CrmReport";
 import CrmSetup from "./screens/Crm/CrmSetup";
+import InventorySystemSetup from "./screens/Inventory/SystemSetup";
+import ProductStock from "./screens/Inventory/ProductStock";
+import InventoryManagement from "./screens/Inventory/InventoryManagement";
+import CreateItem from "./screens/Inventory/CreateItem";
+import ItemsDetails from "./screens/Inventory/ItemsDetails";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -110,6 +115,11 @@ function App() {
               />
               <Route path="/crmreport" exact={true} element={<CrmReport />} />
               <Route path="/crmsetup" exact={true} element={<CrmSetup />} />
+              <Route path="/inventorysetup" exact={true} element={<InventorySystemSetup />} />
+              <Route path="/productstock" exact={true} element={<ProductStock />} />
+              <Route path="/inventorymanagement" exact={true} element={<InventoryManagement />} />
+              <Route path="/createitem" exact={true} element={<CreateItem />} />
+              <Route path="/itemdetails" exact={true} element={<ItemsDetails />} />
             </Route>
           </Routes>
         </Router>

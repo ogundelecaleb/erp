@@ -319,12 +319,15 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                 </ul>
               )}
 
-
               {/*==========================>>>>>>> Inventory */}
               <button
                 onClick={() => setIsInventory(!isInventory)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
-                  isInventory
+                  window.location.pathname === "/inventorymanagement" ||
+                  window.location.pathname === "/productstock" ||
+                  window.location.pathname === "/inventorysetup" ||
+                  window.location.pathname === "/createitem" ||
+                  window.location.pathname === "/itemdetails"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
@@ -334,7 +337,11 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <Layer
                     className="mr-[12px]"
                     variant={
-                      window.location.pathname === "/inventory"
+                      window.location.pathname === "/inventorymanagement" ||
+                      window.location.pathname === "/productstock" ||
+                      window.location.pathname === "/inventorysetup" ||
+                      window.location.pathname === "/createitem" ||
+                      window.location.pathname === "/itemdetails"
                         ? "Bold"
                         : "Linear"
                     }
@@ -348,6 +355,44 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
+              {isInventory && (
+                <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
+                  <Link
+                    to="/inventorymanagement"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/inventorymanagement" ||
+                      window.location.pathname === "/createitem" ||
+                      window.location.pathname === "/itemdetails"
+
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Inventory Management</li>
+                  </Link>
+
+                  <Link
+                    to="/productstock"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/productstock"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Product Stock</li>
+                  </Link>
+                  <Link
+                    to="/inventorysetup"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/inventorysetup"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">System Setup</li>
+                  </Link>
+                </ul>
+              )}
 
               {/* =====================>>>>>>User Management */}
               <button
@@ -355,7 +400,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   window.location.pathname === "/usermanagement" ||
                   window.location.pathname === "/loghistory" ||
-                  window.location.pathname === "/role" ||   window.location.pathname === "/updatepermission"
+                  window.location.pathname === "/role" ||
+                  window.location.pathname === "/updatepermission"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}

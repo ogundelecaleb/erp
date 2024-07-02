@@ -188,7 +188,7 @@ const CrmLead = ({ project }) => {
 
         </div>
         </div>
-    <div className="h-screen w-full bg-[#F9FAFB] ">
+    <div className="h-screen w-full overflow-auto bg-[#F9FAFB] ">
       <Board project={Project} />
     </div>
     </div>

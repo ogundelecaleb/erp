@@ -39,6 +39,8 @@ import UserGrid from "../../components/user/UserGrid";
 import ModalLeft from "../../components/ModalLeft";
 import { Link } from "react-router-dom";
 import UserTable from "../../components/user/UserTable";
+import api from "../../api";
+import { useQuery } from "@tanstack/react-query";
 
 const User = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
@@ -46,6 +48,33 @@ const User = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [enableLogin, setEnableLogin] = useState(false);
   const [isGrid, setIsGrid] = useState(true);
+
+
+  
+
+
+    const getUsersQuery = useQuery(
+      ["users"],
+      () => getUsers(),
+      {
+        keepPreviousData: true,
+        refetchOnWindowFocus: "always",
+      }
+    );
+  
+   
+
+    
+    async function getUsers() {
+      try {
+        const response = await api.getUsers();
+        console.log("users===>", response);
+        
+        return response;
+      } catch (error) {
+        return error;
+      }
+    }
 
   const toggleGrid = () => {
     setIsGrid(!isGrid);

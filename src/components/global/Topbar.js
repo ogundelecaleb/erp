@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import {IoMdInformationCircleOutline} from "react-icons/io"
+import { clearUserData } from "../../utils/utils";
 // import {IoMdInformationCircleOutline} from "react-icons/io"
 
 const Topbar = ({ setIsSidebar, userData }) => {
@@ -164,6 +165,7 @@ const Topbar = ({ setIsSidebar, userData }) => {
           <div
             class="bg-[#FAFAFA] rounded-md  items-center lg:pl-[8px] lg:pr-[16px] pl-[6px] pr-[14px] py-2 flex cursor-pointer "
             onClick={() => {
+              clearUserData();
               if (isModalOpen === false) {
                 setIsModalOpen(true);
               } else {

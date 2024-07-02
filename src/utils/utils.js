@@ -5,8 +5,9 @@ export async function getHeaders() {
   // console.log(userData.data.accessToken, "header");
   if (userData) {
     userData = JSON.parse(userData);
-    const token = "Bearer " + userData.access_token;
+    const token = "Bearer " + userData.access_token.substring(3);
     // console.log(userData.data.accessToken, "header");
+    console.log("token====>>>",token)
     return {
       authorization: token,
       Accept: "application/json",

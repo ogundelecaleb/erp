@@ -2,12 +2,12 @@
 // export const API_BASE_URL = 'http://94.229.79.27:55412/api/v1';
 
 //live server
-export const API_BASE_URL = 'https://pgmerchantsapi.paylodeservices.com/api/v1';
+export const API_BASE_URL = 'https://erp-dev.duckdns.org/api';
 export const getApiUrl = (endpoint) => API_BASE_URL + endpoint
 
 
 
-export const CREATEPROFILE = getApiUrl('/merchant/update');
+export const GETUSERS = getApiUrl('/users');
 export const GETPROFILE = getApiUrl('/merchant/profile');
 export const SETPIN= getApiUrl('/merchant/setpin');
 export const DASHBOARDOVERVIEW = getApiUrl('/dashboard/overview');
