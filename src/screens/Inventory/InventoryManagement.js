@@ -5,12 +5,14 @@ import {
   CloseCircle,
   DocumentDownload,
   DocumentUpload,
+  Edit,
   ElementEqual,
   Eye,
   FilterSearch,
   Layer,
   Maximize4,
   Message2,
+  More,
   RowHorizontal,
   SearchNormal1,
   Trash,
@@ -40,6 +42,8 @@ import ProjectTable from "../../components/project/ProjectTable";
 import UserGrid from "../../components/user/UserGrid";
 import ModalLeft from "../../components/ModalLeft";
 import { Link, useNavigate } from "react-router-dom";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+
 
 const InventoryManagement = () => {
     const navigate = useNavigate();
@@ -365,13 +369,65 @@ const InventoryManagement = () => {
                   </td>
 
                   <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
-                    <div className="flex-center gap-2">
+                    
+                    <Menu>
+                            <MenuButton bg={"none"} as={Button}>
+                            <div className="flex-center gap-2">
                       <img
                         src="./assets/3dot.png"
                         className="h-[16px] w-[16px] md:h-[20px] md:w-[20px]"
                         alt="3 dots"
                       />
                     </div>
+                            </MenuButton>
+                            <MenuList maxW="32" className="">
+                              <MenuItem
+                                onClick={() =>
+                                  navigate("/projectdetails", {
+                                    state: result,
+                                  })
+                                }
+                                w="full"
+                                color="#718096"
+                                mb="10px"
+                              >
+                                <Eye
+                                  variant="Linear"
+                                  color="#98A2B3"
+                                  size="16"
+                                  className="mr-2"
+                                />{" "}
+                                <p className="text-[12px] md:text-[14px] text-[#475367]  font-normal leading-[18px] md:leading-[20px]">
+                                  View
+                                </p>
+                              </MenuItem>
+
+                              <MenuItem w="full" color="#bf0d0d" mb="10px">
+                                <Edit
+                                  variant="Linear"
+                                  color="#98A2B3"
+                                  size="16"
+                                  className="mr-2"
+                                />{" "}
+                                <p className="text-[12px] md:text-[14px] text-[#475367]  font-normal leading-[18px] md:leading-[20px]">
+                                  Edit
+                                </p>
+                              </MenuItem>
+                             
+                             
+                              
+                              <MenuItem w="full" color="#bf0d0d" mb="10px">
+                                <Trash
+                                  color="#F44336"
+                                  size="16"
+                                  className="mr-2"
+                                />{" "}
+                                <p className="text-[12px] md:text-[14px] text-[#F44336]  font-normal leading-[18px] md:leading-[20px]">
+                                  Delete
+                                </p>
+                              </MenuItem>
+                            </MenuList>
+                          </Menu>
                   </td>
                 </tr>
                 {/* ))} */}
