@@ -53,7 +53,12 @@ import { Link } from "react-router-dom";
 import { TaskAnalytics } from "../../components/Data";
 import Vendors from "../../components/inventory/Vendors";
 import Purchase from "../../components/inventory/Purchase";
-import { LogTime, PriceDetails, Reports, WarehouseDetails } from "../../components/inventory/InvetoryDetails";
+import {
+  LogTime,
+  PriceDetails,
+  Reports,
+  WarehouseDetails,
+} from "../../components/inventory/InvetoryDetails";
 
 const ItemsDetails = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
@@ -185,12 +190,10 @@ const ItemsDetails = () => {
               </div>
             </div>
             <div className=" w-full md:w-[40%]    ">
-
-
-                <PriceDetails/>
-                <WarehouseDetails/>
-                <Reports/>
-                <LogTime/>
+              <PriceDetails />
+              <WarehouseDetails />
+              <Reports />
+              <LogTime />
             </div>
           </div>
         </div>
