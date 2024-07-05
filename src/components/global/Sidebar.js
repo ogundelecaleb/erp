@@ -327,7 +327,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/productstock" ||
                   window.location.pathname === "/inventorysetup" ||
                   window.location.pathname === "/createitem" ||
-                  window.location.pathname === "/itemdetails"
+                  window.location.pathname === "/itemdetails" ||
+                  window.location.pathname === "/edititem"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
@@ -341,7 +342,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/productstock" ||
                       window.location.pathname === "/inventorysetup" ||
                       window.location.pathname === "/createitem" ||
-                      window.location.pathname === "/itemdetails"
+                      window.location.pathname === "/itemdetails" ||
+                      window.location.pathname === "/edititem"
                         ? "Bold"
                         : "Linear"
                     }

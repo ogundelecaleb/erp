@@ -11,6 +11,7 @@ import {
   Maximize4,
   NoteText,
   Paperclip2,
+  Refresh2,
   SearchNormal1,
   Status,
   Task,
@@ -51,7 +52,7 @@ import TaskTab from "../../components/project/TaskTab";
 import { ClipLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 
-const CreateItem = () => {
+const EditItem = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isCreateModal, setIsCreateModal] = useState(false);
@@ -86,7 +87,7 @@ const CreateItem = () => {
                 </p>
               </Link>
               <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
-                &nbsp; New item
+                &nbsp; Edit item
               </p>
             </div>
           </div>
@@ -351,25 +352,48 @@ const CreateItem = () => {
         </div>
       </div>
       <div className="border-[0.2px] border-[#98a2b3] rounded-[8px] overflow-hidden h-full w-full bg-[#ffff] p-[10px] md:p-[20px] mb-[20px] ">
-        <div className="h-[160px] md:h-[264px] w-full border-[0.5px] border-dashed border-[#667185] rounded-[6px]"></div>
-      </div>
-      <div className="border-[0.8px]  border-[#E4E7EC] mb-[20px]"/>
-      <div className=" flex-item  justify-end">
-              <div className="flex-item gap-2">
-                {" "}
-                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
-                  Cancel
-                </button>
-                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
-                  {!isLoading ? (
-                    <ClipLoader color={"white"} size={20} />
-                  ) : (
-                    <> Save changes</>
-                  )}
-                </button>
-              </div>
+        <div className="flex-between p-[12px] md:p-[16px] xl:p-[20px] mb-[20px] border-[0.2px] border-[#98A2B3] bg-white shadow-xl rounded-lg shadow-[#F0F2F5]">
+          <div className="flex-item gap-4">
+            <img
+              src="./assets/download.png"
+              alt="download"
+              className="w-[56px] h-[56px] "
+            />
+
+            <div className="flex flex-col justify-between h-full">
+              <p className=" text-[14px] md:text-base  text-[#000] leading-[20px] font-medium text-left ">
+                Dashboard card.png
+              </p>
+              <p className="text-[14px]  text-[#667185] leading-[20px] font-medium ">
+                1.2 MB
+              </p>
             </div>
+          </div>
+          <div className="flex-item gap-2">   <buttion className="h-[44px] w-[44px] flex justify-center items-center bg-[#4CAF50] rounded-md">
+              <Refresh2 variant="Linear" color="#fff" size="20" />
+            </buttion>
+            <buttion className="h-[44px] w-[44px] flex justify-center items-center bg-[#F44336] rounded-md">
+              <Trash variant="Linear" color="#fff" size="20" />
+            </buttion></div>
+        </div>{" "}
+      </div>
+      <div className="border-[0.8px]  border-[#E4E7EC] mb-[20px]" />
+      <div className=" flex-item  justify-end">
+        <div className="flex-item gap-2">
+          {" "}
+          <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
+            Cancel
+          </button>
+          <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+            {!isLoading ? (
+              <ClipLoader color={"white"} size={20} />
+            ) : (
+              <> Submit</>
+            )}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
-export default CreateItem;
+export default EditItem;

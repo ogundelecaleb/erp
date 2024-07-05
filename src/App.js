@@ -39,6 +39,7 @@ import ProductStock from "./screens/Inventory/ProductStock";
 import InventoryManagement from "./screens/Inventory/InventoryManagement";
 import CreateItem from "./screens/Inventory/CreateItem";
 import ItemsDetails from "./screens/Inventory/ItemsDetails";
+import EditItem from "./screens/Inventory/EditItem";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -120,6 +121,7 @@ function App() {
               <Route path="/inventorymanagement" exact={true} element={<InventoryManagement />} />
               <Route path="/createitem" exact={true} element={<CreateItem />} />
               <Route path="/itemdetails" exact={true} element={<ItemsDetails />} />
+              <Route path="/edititem" exact={true} element={<EditItem />} />
             </Route>
           </Routes>
         </Router>
