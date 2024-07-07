@@ -110,14 +110,14 @@ const Procurement = () => {
               className="flex items-center gap-[8px] "
             >
               <p className="text-[14px] text-[#667185] leading-[20px]">
-                Create purchase
+                Create Warehouse
               </p>
 
               <Add variant="Linear" color="#667185" size="16" />
             </button>
             <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
             <button
-              onClick={() => toggleImportModal()}
+              onClick={() => navigate("/warehouse")}
               className="flex items-center gap-[8px] "
             >
               <p className="text-[14px] text-[#667185] leading-[20px]">
