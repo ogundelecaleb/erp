@@ -1,51 +1,5 @@
 import React, { useState } from "react";
-import { FiPlus, FiTrash } from "react-icons/fi";
-import { motion } from "framer-motion";
-import { FaFire } from "react-icons/fa";
-import {
-  Calendar2,
-  CloseCircle,
-  DocumentDownload,
-  DocumentUpload,
-  Import,
-  Maximize4,
-  NoteText,
-  Paperclip2,
-  SearchNormal1,
-  Status,
-  Task,
-} from "iconsax-react";
-import { Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 
-import {
-  Grid,
-  Flex,
-  Divider,
-  Modal,
-  Thead,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
-  Text,
-} from "@chakra-ui/react";
-import {
-  Add,
-  Calendar,
-  Chart,
-  ChartCircle,
-  Clipboard,
-  DocumentText,
-  Edit,
-  Eye,
-  Happyemoji,
-  More,
-  Profile2User,
-  Trash,
-  UserAdd,
-} from "iconsax-react";
 import ModalLeft from "../../components/ModalLeft";
 import TaskTab from "../../components/project/TaskTab";
 import { ClipLoader } from "react-spinners";
@@ -353,22 +307,22 @@ const CreateItem = () => {
       <div className="border-[0.2px] border-[#98a2b3] rounded-[8px] overflow-hidden h-full w-full bg-[#ffff] p-[10px] md:p-[20px] mb-[20px] ">
         <div className="h-[160px] md:h-[264px] w-full border-[0.5px] border-dashed border-[#667185] rounded-[6px]"></div>
       </div>
-      <div className="border-[0.8px]  border-[#E4E7EC] mb-[20px]"/>
+      <div className="border-[0.8px]  border-[#E4E7EC] mb-[20px]" />
       <div className=" flex-item  justify-end">
-              <div className="flex-item gap-2">
-                {" "}
-                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
-                  Cancel
-                </button>
-                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
-                  {!isLoading ? (
-                    <ClipLoader color={"white"} size={20} />
-                  ) : (
-                    <> Save changes</>
-                  )}
-                </button>
-              </div>
-            </div>
+        <div className="flex-item gap-2">
+          {" "}
+          <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
+            Cancel
+          </button>
+          <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+            {!isLoading ? (
+              <ClipLoader color={"white"} size={20} />
+            ) : (
+              <> Save changes</>
+            )}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

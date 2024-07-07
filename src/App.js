@@ -40,6 +40,11 @@ import InventoryManagement from "./screens/Inventory/InventoryManagement";
 import CreateItem from "./screens/Inventory/CreateItem";
 import ItemsDetails from "./screens/Inventory/ItemsDetails";
 import EditItem from "./screens/Inventory/EditItem";
+import Warehouse from "./screens/Inventory/Warehouse";
+import Purchasedetails from "./screens/Inventory/Purchasedetails";
+import Procurement from "./screens/Inventory/Procurement";
+import Warehousestock from "./screens/Inventory/Warehousestock";
+import CreatePurchase from "./screens/Inventory/CreatePurchase";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -122,6 +127,15 @@ function App() {
               <Route path="/createitem" exact={true} element={<CreateItem />} />
               <Route path="/itemdetails" exact={true} element={<ItemsDetails />} />
               <Route path="/edititem" exact={true} element={<EditItem />} />
+              <Route path="/warehouse" exact={true} element={<Warehouse />} />
+              <Route path="/purchasedetails" exact={true} element={<Purchasedetails />} />
+              <Route path="/procurement" exact={true} element={<Procurement />} />
+              <Route path="/warehousestock" exact={true} element={<Warehousestock />} />
+              <Route path="/createpurchase" exact={true} element={<CreatePurchase />} />
+
+
+
+
             </Route>
           </Routes>
         </Router>

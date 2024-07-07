@@ -328,6 +328,11 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/inventorysetup" ||
                   window.location.pathname === "/createitem" ||
                   window.location.pathname === "/itemdetails" ||
+                  window.location.pathname === "/procurement"||
+                  window.location.pathname === "/createpurchase" ||
+                  window.location.pathname === "/warehousestock" ||
+                  window.location.pathname === "/purchasedetails" ||
+                  window.location.pathname === "/warehouse" ||
                   window.location.pathname === "/edititem"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
@@ -343,6 +348,11 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/inventorysetup" ||
                       window.location.pathname === "/createitem" ||
                       window.location.pathname === "/itemdetails" ||
+                      window.location.pathname === "/procurement"||
+                      window.location.pathname === "/createpurchase" ||
+                      window.location.pathname === "/warehousestock" ||
+                      window.location.pathname === "/purchasedetails" ||
+                      window.location.pathname === "/warehouse" ||
                       window.location.pathname === "/edititem"
                         ? "Bold"
                         : "Linear"
@@ -364,6 +374,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
                       window.location.pathname === "/inventorymanagement" ||
                       window.location.pathname === "/createitem" ||
+                    
                       window.location.pathname === "/itemdetails"
 
                         ? "bg-[#F7F9FC] font-medium "
@@ -382,6 +393,20 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     }`}
                   >
                     <li className="">Product Stock</li>
+                  </Link>
+                  <Link
+                    to="/procurement"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/procurement"||
+                      window.location.pathname === "/createpurchase" ||
+                      window.location.pathname === "/warehousestock" ||
+                      window.location.pathname === "/purchasedetails" ||
+                      window.location.pathname === "/warehouse" 
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Procurement</li>
                   </Link>
                   <Link
                     to="/inventorysetup"
