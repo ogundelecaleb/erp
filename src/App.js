@@ -45,6 +45,9 @@ import Purchasedetails from "./screens/Inventory/Purchasedetails";
 import Procurement from "./screens/Inventory/Procurement";
 import Warehousestock from "./screens/Inventory/Warehousestock";
 import CreatePurchase from "./screens/Inventory/CreatePurchase";
+import ViewWarehouse from "./screens/Inventory/WarehouseTransfer";
+import WarehouseTransfer from "./screens/Inventory/WarehouseTransfer";
+import ReportInventory from "./screens/Inventory/ReportInventory";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -132,6 +135,9 @@ function App() {
               <Route path="/procurement" exact={true} element={<Procurement />} />
               <Route path="/warehousestock" exact={true} element={<Warehousestock />} />
               <Route path="/createpurchase" exact={true} element={<CreatePurchase />} />
+              <Route path="/warehousetransfer" exact={true} element={<WarehouseTransfer />} />
+              <Route path="/inventoryreport" exact={true} element={<ReportInventory />} />
+
 
 
 

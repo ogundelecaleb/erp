@@ -128,7 +128,7 @@ const Procurement = () => {
             </button>
             <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
             <button
-              onClick={() => navigate("/createitem")}
+              onClick={() => navigate("/warehousetransfer")}
               className="flex items-center gap-[8px] "
             >
               <p className="text-[14px] text-[#667185] leading-[20px]">

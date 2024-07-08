@@ -217,7 +217,7 @@ import {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex px-5   gap-[6px] md:gap-[12px] items-center">
-                        Item
+                   Name
                       </div>
                     </th>
                     <th
@@ -225,7 +225,7 @@ import {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        SKU
+                       Address
                       </div>
                     </th>
                     <th
@@ -233,7 +233,7 @@ import {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Sales Price
+                       City
                       </div>
                     </th>
                     <th
@@ -241,42 +241,11 @@ import {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Tax
+                        Zip Code
                       </div>
                     </th>
   
-                    <th
-                      scope="col"
-                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                    >
-                      <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Category
-                      </div>
-                    </th>
-                    <th
-                      scope="col"
-                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                    >
-                      <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Unit
-                      </div>
-                    </th>
-                    <th
-                      scope="col"
-                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                    >
-                      <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Quantity
-                      </div>
-                    </th>
-                    <th
-                      scope="col"
-                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                    >
-                      <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Types
-                      </div>
-                    </th>
+                   
                     <th
                       scope="col"
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
@@ -306,37 +275,21 @@ import {
                   {TaskSummaryData &&
                     TaskSummaryData?.map((result) => ( */}
                   <tr key="_" className="mb-2 hover:bg-light-gray">
-                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium flex-item gap-2  ">
-                      <img
-                        src="./assets/fridge.png"
-                        className="h-[32px] w-[26px] md:h-[40px] md:w-[34px]"
-                        alt="product"
-                      />
-                      <p className="text-[#667185] text-[12px] md:text-[14px]  font-medium leading-[22px] ">
-                        Refrigerator
-                      </p>
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                    
+                        Ogundele Caleb
                     </td>
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      BC008ACC{" "}
+                    723 N. Tillamook Street Portland, OR Portland, United States
                     </td>
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      $90,000.0
+                    Portland
                     </td>
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      CGST, SGST
+                    100001
                     </td>
-                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      Electronics
-                    </td>
-                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      Piece
-                    </td>
-                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      117{" "}
-                    </td>
-                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      Product
-                    </td>
+                   
+                   
   
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
                       <Menu>
@@ -352,7 +305,7 @@ import {
                         <MenuList maxW="32" className="">
                           <MenuItem
                             onClick={() =>
-                              navigate("/purchasedetails", {
+                              navigate("/warehousestock", {
                                 state: result,
                               })
                             }
@@ -471,11 +424,11 @@ import {
                                 className=" px-[16px] md:px-[24px] pb-[30px] md:pb-[40px]"
                               >
                                 <p className=" text-[16px] md:text-lg text-center  text-[#000] leading-[24px] font-medium  ">
-                                  Delete Item
+                                  Delete Warehouse
                                 </p>
   
                                 <p className="text-[14px]  text-[#667185] leading-[20px] font-normal text-center mt-2  ">
-                                Are you sure you want to delete this item? This action cannot be undone.
+                                Are you sure you want to delete this warehouse? This action cannot be undone.
                                 </p>
                               </ModalBody>
                               <ModalFooter gap={"16px"}>
@@ -520,7 +473,7 @@ import {
               <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
               <div className="flex items-center">
                 <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                Edit Warehouse
+                Create Warehouse
                 </p>
               </div>
             </div>
