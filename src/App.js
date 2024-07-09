@@ -62,6 +62,8 @@ import Report from "./screens/Hrm/Report";
 import SetUp from "./screens/Hrm/SetUp";
 import CreateEmployee from "./screens/Hrm/CreateEmployee";
 import ViewEmployee from "./screens/Hrm/ViewEmployee";
+import EditEmployee from "./screens/Hrm/EditEmployee";
+import SetEmployeeSalary from "./screens/Hrm/SetEmployeeSalary";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -206,31 +208,41 @@ function App() {
                 exact={true}
                 element={<ManageEmployeeSalary />}
               />
-             
+
               <Route path="/hradmin" exact={true} element={<HrAdmin />} />
-              <Route
-                path="/employeesalary"
-                exact={true}
-                element={<EmployeeSalary />}
-              />
 
               {/* ============>>>>>> eployeee */}
-              <Route path="/employee" exact={true} element={<Employee />} >
-              <Route
-                path="/employee/manageemployee"
-                exact={true}
-                element={<ManageEmployee />}
-              />
-              <Route
-                path="/employee/createemployee"
-                exact={true}
-                element={<CreateEmployee />}
-              />
+              <Route path="/employee" exact={true} element={<Employee />}>
                 <Route
-                path="/employee/viewemployee"
-                exact={true}
-                element={<ViewEmployee />}
-              />
+                  path="/employee/manageemployee"
+                  exact={true}
+                  element={<ManageEmployee />}
+                />
+                <Route
+                  path="/employee/createemployee"
+                  exact={true}
+                  element={<CreateEmployee />}
+                />
+                <Route
+                  path="/employee/viewemployee"
+                  exact={true}
+                  element={<ViewEmployee />}
+                />
+                <Route
+                  path="/employee/editemployee"
+                  exact={true}
+                  element={<EditEmployee />}
+                />
+                <Route
+                  path="/employee/employeesalary"
+                  exact={true}
+                  element={<EmployeeSalary />}
+                />
+                 <Route
+                  path="/employee/setemployeesalary"
+                  exact={true}
+                  element={<SetEmployeeSalary />}
+                />
               </Route>
               <Route
                 path="/companyanddocument"
@@ -243,7 +255,6 @@ function App() {
                 exact={true}
                 element={<Analytics />}
               />
-
             </Route>
           </Routes>
         </Router>

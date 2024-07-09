@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RiUploadCloud2Line } from "react-icons/ri";
 import { ClipLoader } from "react-spinners";
 
-const PersonalDetails = () => {
+const EditPersonalDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
   return (
     <div>
@@ -602,4 +602,4 @@ const PersonalDetails = () => {
   );
 };
 
-export default PersonalDetails;
+export default EditPersonalDetails;

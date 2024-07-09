@@ -2,12 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 // import { motion as m } from "framer-motion";
 import { Link, useOutletContext } from "react-router-dom";
-import { FiSettings } from "react-icons/fi";
-import { MdOutlineContactSupport, MdReceiptLong } from "react-icons/md";
-import { BiBookAlt } from "react-icons/bi";
-import { BsBoxArrowUpRight } from "react-icons/bs";
-import { TbFileInvoice } from "react-icons/tb";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+
 import { useLocation } from "react-router-dom";
 import { GiVirtualMarker } from "react-icons/gi";
 import {

@@ -365,7 +365,7 @@ const ManageEmployee = () => {
 
                         <MenuItem
                           onClick={() =>
-                            navigate("/edititem", {
+                            navigate("/employee/editemployee", {
                               state: result,
                             })
                           }
@@ -466,11 +466,11 @@ const ManageEmployee = () => {
                               className=" px-[16px] md:px-[24px] pb-[30px] md:pb-[40px]"
                             >
                               <p className=" text-[16px] md:text-lg text-center  text-[#000] leading-[24px] font-medium  ">
-                                Delete Item
+                                Delete Employee
                               </p>
 
                               <p className="text-[14px]  text-[#667185] leading-[20px] font-normal text-center mt-2  ">
-                              Are you sure you want to delete this item? This action cannot be undone.
+                              Are you sure you want to delete this employee? This action cannot be undone.
                               </p>
                             </ModalBody>
                             <ModalFooter gap={"16px"}>

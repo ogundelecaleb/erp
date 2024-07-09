@@ -6,30 +6,17 @@ import { ClipLoader } from "react-spinners";
 import { Link } from "react-router-dom";
 import PersonalDetails from "../../components/hrm/PersonalDetails";
 import CompanyDetails from "../../components/hrm/CompanyDetails.js";
-import ViewPersonalDetails from "../../components/hrm/ViewPersonalDetails.js";
-import ViewCompanyDetails from "../../components/hrm/ViewCompanyDetails.js";
-import ViewPayslipDetails from "../../components/hrm/ViewPayslipDetails.js";
+import EditPersonalDetails from "../../components/hrm/EditPersonalDetails.js";
+import EditCompanyDetails from "../../components/hrm/EditCompanyDetails.js";
 
-const ViewEmployee = () => {
+const EditEmployee = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isCreateModal, setIsCreateModal] = useState(false);
   const [state, setState] = useState("personal");
 
-  const toggleCreateModal = () => {
-    setIsCreateModal(!isCreateModal);
-  };
 
-  const closeCreateModal = () => {
-    setIsCreateModal(false);
-  };
 
-  const toggleImportModal = () => {
-    setIsOpenImportModal(!isOpenImportModal);
-  };
-  const closeImportModal = () => {
-    setIsOpenImportModal(false);
-  };
 
   return (
     <div className="p-[20px] bg-[#F2F2F2]  ">
@@ -51,7 +38,7 @@ const ViewEmployee = () => {
                 </p>
               </Link>
               <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
-                &nbsp; View Employee
+                &nbsp; Edit Employee
               </p>
             </div>
           </div>
@@ -82,27 +69,13 @@ const ViewEmployee = () => {
                   Company Details
                 </p>
               </li>
-              <li
-                onClick={() => setState("payslip")}
-                className={`px-[20px] md:px-[28px] py-[5px] rounded-md cursor-pointer ${
-                  state === "payslip"
-                    ? "bg-[#fff] border-[0.2px] border-[#D0D5DD]"
-                    : ""
-                }`}
-              >
-                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  Payslip Details
-                </p>
-              </li>
             </ul>
           </div>
         </div>
-       
-    </div>
-    {state==="personal" ? (<ViewPersonalDetails/>) :state==="company" ? (<ViewCompanyDetails/>) :  (<ViewPayslipDetails/>)}
+      </div>
+      {state === "personal" ? <EditPersonalDetails /> : <EditCompanyDetails />}
     </div>
   );
 };
 
-
-export default ViewEmployee
+export default EditEmployee;
