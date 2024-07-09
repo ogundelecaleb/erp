@@ -194,7 +194,20 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                 to="/dashboard"
                 onClick={() => setIsHrm(!isHrm)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
-                  isHrm
+                  window.location.pathname === "/hrmanalytics" ||
+                  window.location.pathname === "/attendance" ||
+                  window.location.pathname === "/companyanddocument" ||
+                  window.location.pathname === "/employee/manageemployee" ||
+                  window.location.pathname === "/employeesalary" ||
+                  window.location.pathname === "/hradmin" ||
+                  window.location.pathname === "/manageemployee" ||
+                  window.location.pathname === "/manageemployeesalary" ||
+                  window.location.pathname === "/manageleave" ||
+                  window.location.pathname === "/payslip" ||
+                  window.location.pathname === "/hrmsetup" ||
+                  window.location.pathname === "/employee/viewemployee" ||
+                  window.location.pathname === "/employee/createemployee" ||
+                  window.location.pathname === "/hrmreport"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
@@ -204,7 +217,22 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <Box2
                     className="mr-[12px]"
                     variant={
-                      window.location.pathname === "/hrm" ? "Bold" : "Linear"
+                      window.location.pathname === "/hrmanalytics" ||
+                      window.location.pathname === "/attendance" ||
+                      window.location.pathname === "/companyanddocument" ||
+                      window.location.pathname === "/employee/manageemployee" ||
+                      window.location.pathname === "/employeesalary" ||
+                      window.location.pathname === "/hradmin" ||
+                      window.location.pathname === "/manageemployee" ||
+                      window.location.pathname === "/manageemployeesalary" ||
+                      window.location.pathname === "/manageleave" ||
+                      window.location.pathname === "/payslip" ||
+                      window.location.pathname === "/hrmsetup" ||
+                      window.location.pathname === "/employee/viewemployee" ||
+                      window.location.pathname === "/employee/createemployee" ||
+                      window.location.pathname === "/hrmreport"
+                        ? "Bold"
+                        : "Linear"
                     }
                   />
                   HRM
@@ -216,6 +244,75 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
+              {isHrm && (
+                <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
+                  <Link
+                    to="/employee/manageemployee"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/employee/manageemployee" ||
+                      window.location.pathname === "/employeemanagement" ||
+                      window.location.pathname === "/employee/viewemployee" ||
+                      window.location.pathname === "/employee/createemployee" ||
+                      window.location.pathname === "/attendance" ||
+                      window.location.pathname === "/manageleave"
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Employee</li>
+                  </Link>
+                  <Link
+                    to="/hradmin"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/hradmin" 
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">HR Admin</li>
+                  </Link>
+                  <Link
+                    to="/companyanddocument"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/companyanddocument" 
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Company & Document</li>
+                  </Link>
+                  <Link
+                    to="/hrmanalytics"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/hrmanalytics" 
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Analytics</li>
+                  </Link>
+                  <Link
+                    to="/hrmreport"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/hrmreport" 
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Report</li>
+                  </Link>
+                  <Link
+                    to="/hrmsetup"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/hrmsetup" 
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">System Setup</li>
+                  </Link>
+                </ul>
+              )}
 
               {/*===================+>>> Crm */}
 

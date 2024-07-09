@@ -48,6 +48,20 @@ import CreatePurchase from "./screens/Inventory/CreatePurchase";
 import ViewWarehouse from "./screens/Inventory/WarehouseTransfer";
 import WarehouseTransfer from "./screens/Inventory/WarehouseTransfer";
 import ReportInventory from "./screens/Inventory/ReportInventory";
+import Analytics from "./screens/Hrm/Analytics";
+import Attendance from "./screens/Hrm/Attendance";
+import CompanyDocument from "./screens/Hrm/Company&Document";
+import Employee from "./screens/Hrm/Employee";
+import EmployeeSalary from "./screens/Hrm/EmployeeSalary";
+import HrAdmin from "./screens/Hrm/HrAdmin";
+import ManageEmployee from "./screens/Hrm/ManageEmployee";
+import ManageEmployeeSalary from "./screens/Hrm/ManageEmployeeSalary";
+import ManageLeave from "./screens/Hrm/ManageLeave";
+import Payslip from "./screens/Hrm/Payslip";
+import Report from "./screens/Hrm/Report";
+import SetUp from "./screens/Hrm/SetUp";
+import CreateEmployee from "./screens/Hrm/CreateEmployee";
+import ViewEmployee from "./screens/Hrm/ViewEmployee";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -124,23 +138,111 @@ function App() {
               />
               <Route path="/crmreport" exact={true} element={<CrmReport />} />
               <Route path="/crmsetup" exact={true} element={<CrmSetup />} />
-              <Route path="/inventorysetup" exact={true} element={<InventorySystemSetup />} />
-              <Route path="/productstock" exact={true} element={<ProductStock />} />
-              <Route path="/inventorymanagement" exact={true} element={<InventoryManagement />} />
+              <Route
+                path="/inventorysetup"
+                exact={true}
+                element={<InventorySystemSetup />}
+              />
+              <Route
+                path="/productstock"
+                exact={true}
+                element={<ProductStock />}
+              />
+              <Route
+                path="/inventorymanagement"
+                exact={true}
+                element={<InventoryManagement />}
+              />
               <Route path="/createitem" exact={true} element={<CreateItem />} />
-              <Route path="/itemdetails" exact={true} element={<ItemsDetails />} />
+              <Route
+                path="/itemdetails"
+                exact={true}
+                element={<ItemsDetails />}
+              />
               <Route path="/edititem" exact={true} element={<EditItem />} />
               <Route path="/warehouse" exact={true} element={<Warehouse />} />
-              <Route path="/purchasedetails" exact={true} element={<Purchasedetails />} />
-              <Route path="/procurement" exact={true} element={<Procurement />} />
-              <Route path="/warehousestock" exact={true} element={<Warehousestock />} />
-              <Route path="/createpurchase" exact={true} element={<CreatePurchase />} />
-              <Route path="/warehousetransfer" exact={true} element={<WarehouseTransfer />} />
-              <Route path="/inventoryreport" exact={true} element={<ReportInventory />} />
+              <Route
+                path="/purchasedetails"
+                exact={true}
+                element={<Purchasedetails />}
+              />
+              <Route
+                path="/procurement"
+                exact={true}
+                element={<Procurement />}
+              />
+              <Route
+                path="/warehousestock"
+                exact={true}
+                element={<Warehousestock />}
+              />
+              <Route
+                path="/createpurchase"
+                exact={true}
+                element={<CreatePurchase />}
+              />
+              <Route
+                path="/warehousetransfer"
+                exact={true}
+                element={<WarehouseTransfer />}
+              />
+              <Route
+                path="/inventoryreport"
+                exact={true}
+                element={<ReportInventory />}
+              />
+              <Route path="/hrmsetup" exact={true} element={<SetUp />} />
 
+              <Route path="/hrmreport" exact={true} element={<Report />} />
+              <Route path="/payslip" exact={true} element={<Payslip />} />
 
+              <Route
+                path="/manageleave"
+                exact={true}
+                element={<ManageLeave />}
+              />
+              <Route
+                path="/manageemployeesalary"
+                exact={true}
+                element={<ManageEmployeeSalary />}
+              />
+             
+              <Route path="/hradmin" exact={true} element={<HrAdmin />} />
+              <Route
+                path="/employeesalary"
+                exact={true}
+                element={<EmployeeSalary />}
+              />
 
-
+              {/* ============>>>>>> eployeee */}
+              <Route path="/employee" exact={true} element={<Employee />} >
+              <Route
+                path="/employee/manageemployee"
+                exact={true}
+                element={<ManageEmployee />}
+              />
+              <Route
+                path="/employee/createemployee"
+                exact={true}
+                element={<CreateEmployee />}
+              />
+                <Route
+                path="/employee/viewemployee"
+                exact={true}
+                element={<ViewEmployee />}
+              />
+              </Route>
+              <Route
+                path="/companyanddocument"
+                exact={true}
+                element={<CompanyDocument />}
+              />
+              <Route path="/attendance" exact={true} element={<Attendance />} />
+              <Route
+                path="/hrmanalytics"
+                exact={true}
+                element={<Analytics />}
+              />
 
             </Route>
           </Routes>

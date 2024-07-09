@@ -1,0 +1,275 @@
+import React, { useState } from "react";
+import { ClipLoader } from "react-spinners";
+
+const PersonalDetails = () => {
+    const [isLoading, setIsLoading] = useState(false)
+  return (
+    <div>
+      {" "}
+      <div>
+        <div className=" w-full overflow-auto bg-[#fff] p-[10px] md:p-[20px] ">
+          <div className="flex-item flex-col md:flex-row gap-[20px] mb-[24px]">
+            <div className=" w-full md:w-[50%]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Name <sup className="text-[#F44336]">*</sup>
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <input
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  name="full-name"
+                  id="full-name"
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+
+            <div className="w-full md:w-[50%] ">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                SKU <sup className="text-[#F44336]">*</sup>
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <input
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  name="full-name"
+                  id="full-name"
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex-item flex-col md:flex-row gap-[20px] mb-[24px]">
+            <div className=" w-full md:w-[50%]">
+              <div className="flex-between mb-[8px] md:mb-[16px]">
+                <label className="text-[14px] text-[#667185] leading-[20px]  ">
+                  Category <sup className="text-[#F44336]">*</sup>
+                </label>
+                <button className="text-[14px] text-[#F44336] leading-[20px] font-semibold  ">
+                  Add new category
+                </button>
+              </div>
+
+              <div className=" relative  mt-[16px]  flex items-center">
+                <select
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  name="full-name"
+                  id="full-name"
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                >
+                  <option value="Medium">Products</option>
+                  <option value="Low">Services</option>
+                  <option value="Low">Parts</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="flex-item flex-col md:flex-row w-full md:w-[50%] gap-[20px] ">
+              <div className=" w-full md:w-[50%] ">
+                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                  Tax <sup className="text-[#F44336]">*</sup>
+                </label>
+                <div className=" relative  mt-[16px]  flex items-center">
+                  <select
+                    type="text"
+                    placeholder=""
+                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                    required
+                    autoComplete="on"
+                    autoFocus
+                    name="full-name"
+                    id="full-name"
+                    //value=""
+                    //onChange={() => {}}
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    spellCheck="false"
+                  >
+                    <option value="Medium">Products</option>
+                    <option value="Low">Services</option>
+                    <option value="Low">Parts</option>
+                  </select>
+                </div>
+              </div>
+              <div className=" w-full md:w-[50%] ">
+                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                  Unit <sup className="text-[#F44336]">*</sup>
+                </label>
+                <div className=" relative  mt-[16px]  flex items-center">
+                  <select
+                    type="text"
+                    placeholder=""
+                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                    required
+                    autoComplete="on"
+                    autoFocus
+                    name="full-name"
+                    id="full-name"
+                    //value=""
+                    //onChange={() => {}}
+                    autoCapitalize="off"
+                    autoCorrect="off"
+                    spellCheck="false"
+                  >
+                    <option value="Medium">Products</option>
+                    <option value="Low">Services</option>
+                    <option value="Low">Parts</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="border-[0.2px] border-[#98a2b3] rounded-[8px] overflow-hidden h-full w-full bg-[#ffff] p-[10px] md:p-[20px] mb-[20px] ">
+        <div className="flex-item flex-col md:flex-row gap-[20px] mb-[24px]">
+          <div className=" w-full md:w-[50%]">
+            <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+              Sales Price <sup className="text-[#F44336]">*</sup>
+            </label>
+            <div className=" relative  mt-[16px]  flex items-center">
+              <input
+                type="text"
+                placeholder=""
+                className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                required
+                autoComplete="on"
+                autoFocus
+                name="full-name"
+                id="full-name"
+                //value=""
+                //onChange={() => {}}
+                autoCapitalize="off"
+                autoCorrect="off"
+                spellCheck="false"
+              />
+            </div>
+          </div>
+
+          <div className="w-full md:w-[50%] ">
+            <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+              Purchase Price <sup className="text-[#F44336]">*</sup>
+            </label>
+            <div className=" relative  mt-[16px]  flex items-center">
+              <input
+                type="text"
+                placeholder=""
+                className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                required
+                autoComplete="on"
+                autoFocus
+                name="full-name"
+                id="full-name"
+                //value=""
+                //onChange={() => {}}
+                autoCapitalize="off"
+                autoCorrect="off"
+                spellCheck="false"
+              />
+            </div>
+          </div>
+        </div>
+        <div className="flex-item flex-col md:flex-row gap-[20px] mb-[24px]">
+          <div className=" w-full md:w-[50%]">
+            <div className="flex-between mb-[8px] md:mb-[16px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]  ">
+                Warehouse <sup className="text-[#F44336]">*</sup>
+              </label>
+            </div>
+
+            <div className=" relative  mt-[16px]  flex items-center">
+              <select
+                type="text"
+                placeholder=""
+                className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                required
+                autoComplete="on"
+                autoFocus
+                name="full-name"
+                id="full-name"
+                //value=""
+                //onChange={() => {}}
+                autoCapitalize="off"
+                autoCorrect="off"
+                spellCheck="false"
+              >
+                <option value="Medium">Products</option>
+                <option value="Low">Services</option>
+                <option value="Low">Parts</option>
+              </select>
+            </div>
+          </div>
+
+          <div className="w-full md:w-[50%] ">
+            <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+              Quantity <sup className="text-[#F44336]">*</sup>
+            </label>
+            <div className=" relative  mt-[16px]  flex items-center">
+              <input
+                type="text"
+                placeholder=""
+                className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] bg-[#F9FAFB] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                required
+                autoComplete="on"
+                autoFocus
+                name="full-name"
+                id="full-name"
+                //value=""
+                //onChange={() => {}}
+                autoCapitalize="off"
+                autoCorrect="off"
+                spellCheck="false"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="border-[0.2px] border-[#98a2b3] rounded-[8px] overflow-hidden h-full w-full bg-[#ffff] p-[10px] md:p-[20px] mb-[20px] ">
+        <div className="h-[160px] md:h-[264px] w-full border-[0.5px] border-dashed border-[#667185] rounded-[6px]"></div>
+      </div>
+      <div className="border-[0.8px]  border-[#E4E7EC] mb-[20px]" />
+      <div className=" flex-item  justify-end">
+        <div className="flex-item gap-2">
+          {" "}
+          <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
+            Cancel
+          </button>
+          <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+            {!isLoading ? (
+              <ClipLoader color={"white"} size={20} />
+            ) : (
+              <> Save changes</>
+            )}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default PersonalDetails;
