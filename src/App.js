@@ -64,6 +64,7 @@ import CreateEmployee from "./screens/Hrm/CreateEmployee";
 import ViewEmployee from "./screens/Hrm/ViewEmployee";
 import EditEmployee from "./screens/Hrm/EditEmployee";
 import SetEmployeeSalary from "./screens/Hrm/SetEmployeeSalary";
+import ViewPayslip from "./screens/Hrm/ViewPayslip";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -196,7 +197,6 @@ function App() {
               <Route path="/hrmsetup" exact={true} element={<SetUp />} />
 
               <Route path="/hrmreport" exact={true} element={<Report />} />
-              <Route path="/payslip" exact={true} element={<Payslip />} />
 
               <Route
                 path="/manageleave"
@@ -243,13 +243,32 @@ function App() {
                   exact={true}
                   element={<SetEmployeeSalary />}
                 />
+                  <Route
+                  path="/employee/payslip"
+                  exact={true}
+                  element={<Payslip />}
+                />
+                 <Route
+                  path="/employee/viewpayslip"
+                  exact={true}
+                  element={<ViewPayslip />}
+                />
+                <Route
+                  path="/employee/attendance"
+                  exact={true}
+                  element={<Attendance />}
+                />
+                <Route
+                  path="/employee/manageleave"
+                  exact={true}
+                  element={<ManageLeave />}
+                />
               </Route>
               <Route
                 path="/companyanddocument"
                 exact={true}
                 element={<CompanyDocument />}
               />
-              <Route path="/attendance" exact={true} element={<Attendance />} />
               <Route
                 path="/hrmanalytics"
                 exact={true}

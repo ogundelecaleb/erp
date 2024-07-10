@@ -13,6 +13,7 @@ import BasicSalary from "../../components/hrm/BasicSalary.js";
 import Allowance from "../../components/hrm/Allowance.js";
 import Loan from "../../components/hrm/Loan.js";
 import Commission from "../../components/hrm/Commission.js";
+import SaturationDeduction from "../../components/hrm/SaturationDeduction.js";
 
 const SetEmployeeSalary = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
@@ -68,11 +69,12 @@ const SetEmployeeSalary = () => {
         </div>
       </div>
       <div className=" w-full overflow-hidden bg-[#fff] p-[10px] border-l-[0.2px] border-b-[0.2px] border-r-[0.2px] border-[#98a2b3] rounded-br-[8px] rounded-bl-[8px]  md:p-[20px] ">
-<BasicSalary/>
-<Allowance/>
-<Loan/>
-<Commission/>
-    </div>
+        <BasicSalary />
+        <Allowance />
+        <Loan />
+        <Commission />
+        <SaturationDeduction/>
+      </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const Commission = () => {
+const SaturationDeduction = () => {
   const [isCreate, setIsCreate] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
@@ -51,7 +51,7 @@ const Commission = () => {
       <div className="p-[14px] md:p-[20px]  border-b-[0.2px] border-[#98a2b3] flex-between ">
         {" "}
         <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-medium leading-[24px] ">
-       Commission
+        Saturation Deduction
         </p>
         <button onClick={toggleCreate}>
           <AddSquare variant="Bold" size={24} color="#F44336" />
@@ -68,6 +68,13 @@ const Commission = () => {
                     className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                   >
                     <div className="flex px-5   gap-[6px] md:gap-[12px] items-center">
+                    Deduction Options                    </div>
+                  </th>
+                  <th
+                    scope="col"
+                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                  >
+                    <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
                     Title                    </div>
                   </th>
                   <th
@@ -75,14 +82,7 @@ const Commission = () => {
                     className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                   >
                     <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                    Type                    </div>
-                  </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                    Amount
+                    Type
                     </div>
                   </th>
                   <th
@@ -90,23 +90,9 @@ const Commission = () => {
                     className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                   >
                     <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                    Start Date                    </div>
+                    Amount                   </div>
                   </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                    Due Date                    </div>
-                  </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                    Status                    </div>
-                  </th>
-
+                  
                   <th
                     scope="col"
                     className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
@@ -137,12 +123,12 @@ const Commission = () => {
                   TaskSummaryData?.map((result) => ( */}
                 <tr key="_" className="mb-2 hover:bg-light-gray">
                   <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                  PHP Developer                  </td>
+                  Mutual Fund               </td>
                   <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                  Fixed
+                  Allowance
                   </td>
                   <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                  5,000,000.00                  </td>
+                  Fixed                </td>
                   <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
                     {/* <button
                       className={`rounded-[20px] md:rounded-[40px] w-[60px] md:w-[74px] py-[2px] md:py-[4px] mx-auto ${
@@ -155,24 +141,9 @@ const Commission = () => {
                     >
                       <p>{result.status}</p>
                     </button> */}
-                    07-07-2024
+                   5,000,000.00
                   </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    07-07-2024
-                  </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                  <button
-                      className={`rounded-[20px] md:rounded-[40px] w-[60px] md:w-[74px] py-[2px] md:py-[4px] mx-auto ${
-                        result?.status === "On Hold"
-                          ? "bg-[rgb(255,245,230)] text-[#FF9800]"
-                          : result?.status === "Ongoing"
-                          ? " text-[#667185]"
-                          : " text-[#4CAF50]"
-                      }  text-[10px] md:text-[12px]  font-semibold leading-[16px] md:leading-[18px]`}
-                    >
-                      <p>{result.status}</p>
-                    </button>
-                  </td>
+                  
                   <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
                     <div className="flex gap-2">
                       <Edit
@@ -306,7 +277,7 @@ const Commission = () => {
               <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
               <div className="flex items-center">
                 <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  Create Commision
+                  Create Saturation Deduction
                 </p>
               </div>
             </div>
@@ -340,7 +311,31 @@ const Commission = () => {
                 />
               </div>
             </div>
-
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Deduction Option
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <select
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  name="full-name"
+                  id="full-name"
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                >
+                  <option value="">Select Deduction Option</option>
+                  <option value="Vant Bank"></option>
+                </select>
+              </div>
+            </div>
             <div className="mb-[24px]">
               <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
                 Type
@@ -361,7 +356,7 @@ const Commission = () => {
                   autoCorrect="off"
                   spellCheck="false"
                 >
-                  <option value="">Select commision Type</option>
+                  <option value="">Select Type</option>
                   <option value="Vant Bank"></option>
                 </select>
               </div>
@@ -388,75 +383,7 @@ const Commission = () => {
                 />
               </div>
             </div>
-            <div className="mb-[24px]">
-              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                Start Date
-              </label>
-              <div className=" relative  mt-[16px]  flex items-center">
-                <input
-                  type="date"
-                  placeholder=""
-                  className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
-                  autoComplete="on"
-                  autoFocus
-                  name="date"
-                  id="full-name"
-                  //   value={formData.date}
-                  //   onChange={(e) => handleChange(e)}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                />
-              </div>
-            </div>
-            <div className="mb-[24px]">
-              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                End Date
-              </label>
-              <div className=" relative  mt-[16px]  flex items-center">
-                <input
-                  type="text"
-                  placeholder="Enter amount"
-                  className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
-                  autoComplete="on"
-                  autoFocus
-                  name="date"
-                  id="full-name"
-                  //   value={formData.date}
-                  //   onChange={(e) => handleChange(e)}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                />
-              </div>
-            </div>
-            <div className="mb-[24px]">
-              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                Status
-              </label>
-              <div className=" relative  mt-[16px]  flex items-center">
-                <select
-                  type="text"
-                  placeholder="Name"
-                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
-                  autoComplete="on"
-                  autoFocus
-                  name="full-name"
-                  id="full-name"
-                  //value=""
-                  //onChange={() => {}}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                >
-                  <option value="">Select status</option>
-                  <option value="Vant Bank"></option>
-                </select>
-              </div>
-            </div>
+           
             <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
               <div className="flex-item gap-2">
                 {" "}
@@ -522,7 +449,31 @@ const Commission = () => {
                 />
               </div>
             </div>
-
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Deduction Option
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <select
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  name="full-name"
+                  id="full-name"
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                >
+                  <option value="">Select Deduction Option</option>
+                  <option value="Vant Bank"></option>
+                </select>
+              </div>
+            </div>
             <div className="mb-[24px]">
               <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
                 Type
@@ -543,7 +494,7 @@ const Commission = () => {
                   autoCorrect="off"
                   spellCheck="false"
                 >
-                  <option value="">Select commision Type</option>
+                  <option value="">Select Type</option>
                   <option value="Vant Bank"></option>
                 </select>
               </div>
@@ -570,75 +521,7 @@ const Commission = () => {
                 />
               </div>
             </div>
-            <div className="mb-[24px]">
-              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                Start Date
-              </label>
-              <div className=" relative  mt-[16px]  flex items-center">
-                <input
-                  type="date"
-                  placeholder=""
-                  className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
-                  autoComplete="on"
-                  autoFocus
-                  name="date"
-                  id="full-name"
-                  //   value={formData.date}
-                  //   onChange={(e) => handleChange(e)}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                />
-              </div>
-            </div>
-            <div className="mb-[24px]">
-              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                End Date
-              </label>
-              <div className=" relative  mt-[16px]  flex items-center">
-                <input
-                  type="text"
-                  placeholder="Enter amount"
-                  className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
-                  autoComplete="on"
-                  autoFocus
-                  name="date"
-                  id="full-name"
-                  //   value={formData.date}
-                  //   onChange={(e) => handleChange(e)}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                />
-              </div>
-            </div>
-            <div className="mb-[24px]">
-              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                Status
-              </label>
-              <div className=" relative  mt-[16px]  flex items-center">
-                <select
-                  type="text"
-                  placeholder="Name"
-                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
-                  autoComplete="on"
-                  autoFocus
-                  name="full-name"
-                  id="full-name"
-                  //value=""
-                  //onChange={() => {}}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                >
-                  <option value="">Select status</option>
-                  <option value="Vant Bank"></option>
-                </select>
-              </div>
-            </div>
+           
             <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
               <div className="flex-item gap-2">
                 {" "}
@@ -664,4 +547,4 @@ const Commission = () => {
   );
 };
 
-export default Commission;
+export default SaturationDeduction;
