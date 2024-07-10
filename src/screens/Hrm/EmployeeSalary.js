@@ -114,7 +114,7 @@ const EmployeeSalary = () => {
           </div>
           <div className="flex items-center gap-[16px] ">
             <button
-              onClick={() => navigate("/employee/createemployee")}
+              onClick={() => navigate("/employee/setemployeesalary")}
               className="flex items-center gap-[8px] "
             >
               <p className="text-[14px] text-[#667185] leading-[20px]">
