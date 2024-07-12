@@ -65,6 +65,16 @@ import ViewEmployee from "./screens/Hrm/ViewEmployee";
 import EditEmployee from "./screens/Hrm/EditEmployee";
 import SetEmployeeSalary from "./screens/Hrm/SetEmployeeSalary";
 import ViewPayslip from "./screens/Hrm/ViewPayslip";
+import Award from "./screens/Hrm/Award";
+import Transfer from "./screens/Hrm/Transfer";
+import Resignation from "./screens/Hrm/Resignation";
+import Trip from "./screens/Hrm/Trip";
+import Promotion from "./screens/Hrm/Promotion";
+import Compliants from "./screens/Hrm/Compliants";
+import Warning from "./screens/Hrm/Warning";
+import Termination from "./screens/Hrm/Termination";
+import Annoucement from "./screens/Hrm/Annoucement";
+import Holidays from "./screens/Hrm/Holidays";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -238,17 +248,17 @@ function App() {
                   exact={true}
                   element={<EmployeeSalary />}
                 />
-                 <Route
+                <Route
                   path="/employee/setemployeesalary"
                   exact={true}
                   element={<SetEmployeeSalary />}
                 />
-                  <Route
+                <Route
                   path="/employee/payslip"
                   exact={true}
                   element={<Payslip />}
                 />
-                 <Route
+                <Route
                   path="/employee/viewpayslip"
                   exact={true}
                   element={<ViewPayslip />}
@@ -264,6 +274,60 @@ function App() {
                   element={<ManageLeave />}
                 />
               </Route>
+              {/*=========>>>>>> End of employee management */}
+
+              {/*==============>>>>>>> Begining of HR Admin */}
+              <Route path="/hradmin" exact={true} element={<HrAdmin />}>
+                <Route path="/hradmin/award" exact={true} element={<Award />} />
+                <Route
+                  path="/hradmin/transfer"
+                  exact={true}
+                  element={<Transfer />}
+                />
+                 <Route
+                  path="/hradmin/resignation"
+                  exact={true}
+                  element={<Resignation />}
+                />
+                 <Route
+                  path="/hradmin/trip"
+                  exact={true}
+                  element={<Trip />}
+                />
+                 <Route
+                  path="/hradmin/promotion"
+                  exact={true}
+                  element={<Promotion />}
+                />
+                 <Route
+                  path="/hradmin/compliant"
+                  exact={true}
+                  element={<Compliants />}
+                />
+                 <Route
+                  path="/hradmin/warning"
+                  exact={true}
+                  element={<Warning />}
+                />
+                 <Route
+                  path="/hradmin/termination"
+                  exact={true}
+                  element={<Termination />}
+                />
+                 <Route
+                  path="/hradmin/annoucement"
+                  exact={true}
+                  element={<Annoucement />}
+                />
+                 <Route
+                  path="/hradmin/holidays"
+                  exact={true}
+                  element={<Holidays />}
+                />
+              </Route>
+
+              {/*==============>>>>>>> End of HR Admin */}
+
               <Route
                 path="/companyanddocument"
                 exact={true}

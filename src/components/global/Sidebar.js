@@ -190,18 +190,33 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                 onClick={() => setIsHrm(!isHrm)}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   window.location.pathname === "/hrmanalytics" ||
-                  window.location.pathname === "/attendance" ||
+
                   window.location.pathname === "/companyanddocument" ||
                   window.location.pathname === "/employee/manageemployee" ||
                   window.location.pathname === "/employeesalary" ||
                   window.location.pathname === "/hradmin" ||
                   window.location.pathname === "/manageemployee" ||
                   window.location.pathname === "/manageemployeesalary" ||
-                  window.location.pathname === "/manageleave" ||
-                  window.location.pathname === "/payslip" ||
                   window.location.pathname === "/hrmsetup" ||
                   window.location.pathname === "/employee/viewemployee" ||
                   window.location.pathname === "/employee/createemployee" ||
+                  window.location.pathname === "/employee/editemployee" ||
+                  window.location.pathname === "/employee/employeesalary" ||
+                  window.location.pathname === "/employee/setemployeesalary" ||
+                  window.location.pathname === "/employee/payslip" ||
+                  window.location.pathname === "/employee/viewpayslip" ||
+                  window.location.pathname === "/employee/attendance" ||
+                  window.location.pathname === "/employee/manageleave" ||
+                  window.location.pathname === "/hradmin/holidays" ||
+                  window.location.pathname === "/hradmin/annoucement" ||
+                  window.location.pathname === "/hradmin/termination" ||
+                  window.location.pathname === "/hradmin/warning" ||
+                  window.location.pathname === "/hradmin/compliant" ||
+                  window.location.pathname === "/hradmin/promotion" ||
+                  window.location.pathname === "hradmin/trip" ||
+                  window.location.pathname === "/hradmin/resignation" ||
+                  window.location.pathname === "/hradmin/transfer" ||
+                  window.location.pathname === "/hradmin/award" ||
                   window.location.pathname === "/hrmreport"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
@@ -213,18 +228,33 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     className="mr-[12px]"
                     variant={
                       window.location.pathname === "/hrmanalytics" ||
-                      window.location.pathname === "/attendance" ||
+
                       window.location.pathname === "/companyanddocument" ||
                       window.location.pathname === "/employee/manageemployee" ||
                       window.location.pathname === "/employeesalary" ||
                       window.location.pathname === "/hradmin" ||
                       window.location.pathname === "/manageemployee" ||
                       window.location.pathname === "/manageemployeesalary" ||
-                      window.location.pathname === "/manageleave" ||
-                      window.location.pathname === "/payslip" ||
                       window.location.pathname === "/hrmsetup" ||
                       window.location.pathname === "/employee/viewemployee" ||
                       window.location.pathname === "/employee/createemployee" ||
+                      window.location.pathname === "/employee/editemployee" ||
+                      window.location.pathname === "/employee/employeesalary" ||
+                      window.location.pathname === "/employee/setemployeesalary" ||
+                      window.location.pathname === "/employee/payslip" ||
+                      window.location.pathname === "/employee/viewpayslip" ||
+                      window.location.pathname === "/employee/attendance" ||
+                      window.location.pathname === "/employee/manageleave" ||
+                      window.location.pathname === "/hradmin/holidays" ||
+                      window.location.pathname === "/hradmin/annoucement" ||
+                      window.location.pathname === "/hradmin/termination" ||
+                      window.location.pathname === "/hradmin/warning" ||
+                      window.location.pathname === "/hradmin/compliant" ||
+                      window.location.pathname === "/hradmin/promotion" ||
+                      window.location.pathname === "hradmin/trip" ||
+                      window.location.pathname === "/hradmin/resignation" ||
+                      window.location.pathname === "/hradmin/transfer" ||
+                      window.location.pathname === "/hradmin/award" ||
                       window.location.pathname === "/hrmreport"
                         ? "Bold"
                         : "Linear"
@@ -248,8 +278,15 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/employeemanagement" ||
                       window.location.pathname === "/employee/viewemployee" ||
                       window.location.pathname === "/employee/createemployee" ||
-                      window.location.pathname === "/attendance" ||
-                      window.location.pathname === "/manageleave"
+                      window.location.pathname === "/employee/viewemployee" ||
+                      window.location.pathname === "/employee/createemployee" ||
+                      window.location.pathname === "/employee/editemployee" ||
+                      window.location.pathname === "/employee/employeesalary" ||
+                      window.location.pathname === "/employee/setemployeesalary" ||
+                      window.location.pathname === "/employee/payslip" ||
+                      window.location.pathname === "/employee/viewpayslip" ||
+                      window.location.pathname === "/employee/attendance" ||
+                      window.location.pathname === "/employee/manageleave" 
                         ? "bg-[#F7F9FC] font-medium "
                         : " font-normal"
                     }`}
@@ -257,8 +294,19 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     <li className="">Employee</li>
                   </Link>
                   <Link
-                    to="/hradmin"
+                    to="/hradmin/award"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/hradmin/holidays" ||
+                      window.location.pathname === "/hradmin/annoucement" ||
+                      window.location.pathname === "/hradmin/termination" ||
+                      window.location.pathname === "/hradmin/warning" ||
+                      window.location.pathname === "/hradmin/compliant" ||
+                      window.location.pathname === "/hradmin/promotion" ||
+                      window.location.pathname === "hradmin/trip" ||
+                      window.location.pathname === "/hradmin/resignation" ||
+                      window.location.pathname === "/hradmin/transfer" ||
+                      window.location.pathname === "/hradmin/award" ||
+                     
                       window.location.pathname === "/hradmin" 
                         ? "bg-[#F7F9FC] font-medium "
                         : " font-normal"

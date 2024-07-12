@@ -399,7 +399,7 @@ const Attendance = () => {
                     <Trash
                       onClick={() => ToggleDeleteModal()}
                       variant="Linear"
-                      color="#667185"
+                      color="#F44336"
                       size="24"
                     />
                     <Modal

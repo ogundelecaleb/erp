@@ -127,7 +127,6 @@ const Employee = () => {
       <div className="px-[10px] md:px-[20px] ">
         <Outlet />
 
-        {/* {state === "Employee" && (<ManageEmployee/>)} */}
       </div>
     </div>
   );
