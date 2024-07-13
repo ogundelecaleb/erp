@@ -50,7 +50,7 @@ import WarehouseTransfer from "./screens/Inventory/WarehouseTransfer";
 import ReportInventory from "./screens/Inventory/ReportInventory";
 import Analytics from "./screens/Hrm/Analytics";
 import Attendance from "./screens/Hrm/Attendance";
-import CompanyDocument from "./screens/Hrm/Company&Document";
+import CompanyDocument from "./screens/Hrm/CompanyDocument";
 import Employee from "./screens/Hrm/Employee";
 import EmployeeSalary from "./screens/Hrm/EmployeeSalary";
 import HrAdmin from "./screens/Hrm/HrAdmin";
@@ -75,6 +75,11 @@ import Warning from "./screens/Hrm/Warning";
 import Termination from "./screens/Hrm/Termination";
 import Annoucement from "./screens/Hrm/Annoucement";
 import Holidays from "./screens/Hrm/Holidays";
+import CompanyPolicy from "./screens/Hrm/CompanyPolicy";
+import Document from "./screens/Hrm/Document";
+import MonthlyAttendance from "./screens/Hrm/MonthlyAttendance";
+import Leave from "./screens/Hrm/Leave";
+import PayrollReport from "./screens/Hrm/PayrollReport";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -206,7 +211,23 @@ function App() {
               />
               <Route path="/hrmsetup" exact={true} element={<SetUp />} />
 
-              <Route path="/hrmreport" exact={true} element={<Report />} />
+              <Route path="/hrmreport" exact={true} element={<Report />} >
+              <Route
+                path="/hrmreport/monthlyattendance"
+                exact={true}
+                element={<MonthlyAttendance />}
+              />
+               <Route
+                path="/hrmreport/leave"
+                exact={true}
+                element={<Leave />}
+              />
+               <Route
+                path="/hrmreport/payroll"
+                exact={true}
+                element={<PayrollReport />}
+              />
+              </Route>
 
               <Route
                 path="/manageleave"
@@ -332,7 +353,18 @@ function App() {
                 path="/companyanddocument"
                 exact={true}
                 element={<CompanyDocument />}
+              >
+                  <Route
+                path="/companyanddocument/companypolicy"
+                exact={true}
+                element={<CompanyPolicy />}
               />
+                <Route
+                path="/companyanddocument/document"
+                exact={true}
+                element={<Document />}
+              />
+              </Route>
               <Route
                 path="/hrmanalytics"
                 exact={true}

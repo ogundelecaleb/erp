@@ -217,6 +217,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/hradmin/resignation" ||
                   window.location.pathname === "/hradmin/transfer" ||
                   window.location.pathname === "/hradmin/award" ||
+                  window.location.pathname === "/companyanddocument/document" ||
+                  window.location.pathname === "/companyanddocument/companypolicy" ||
                   window.location.pathname === "/hrmreport"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
@@ -255,6 +257,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/hradmin/resignation" ||
                       window.location.pathname === "/hradmin/transfer" ||
                       window.location.pathname === "/hradmin/award" ||
+                      window.location.pathname === "/companyanddocument/document" ||
+                      window.location.pathname === "/companyanddocument/companypolicy" ||
                       window.location.pathname === "/hrmreport"
                         ? "Bold"
                         : "Linear"
@@ -315,8 +319,12 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     <li className="">HR Admin</li>
                   </Link>
                   <Link
-                    to="/companyanddocument"
+                    to="/companyanddocument/companypolicy"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      
+                      window.location.pathname === "/companyanddocument/document" ||
+                      window.location.pathname === "/companyanddocument/companypolicy" ||
+                      
                       window.location.pathname === "/companyanddocument" 
                         ? "bg-[#F7F9FC] font-medium "
                         : " font-normal"

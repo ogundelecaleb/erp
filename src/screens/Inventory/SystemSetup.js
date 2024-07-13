@@ -38,10 +38,20 @@ const InventorySystemSetup = () => {
               </button>
             ))}
         </div>
-        {staged === "Item Category" ? <CategorySetup /> :staged === "Purchase Category" ?  <PurchaseSetup />: staged === "Tax" ?  <TaxSetup />: staged === "Unit" ?  <UnitSetup /> : ""}
+        {staged === "Item Category" ? (
+          <CategorySetup />
+        ) : staged === "Purchase Category" ? (
+          <PurchaseSetup />
+        ) : staged === "Tax" ? (
+          <TaxSetup />
+        ) : staged === "Unit" ? (
+          <UnitSetup />
+        ) : (
+          ""
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default InventorySystemSetup
+export default InventorySystemSetup;

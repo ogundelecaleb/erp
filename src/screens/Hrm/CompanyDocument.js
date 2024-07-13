@@ -4,7 +4,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { Menu, MenuButton, MenuList, MenuItem, Button } from "@chakra-ui/react";
 
-const Report = () => {
+const CompanyDocument = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -14,17 +14,17 @@ const Report = () => {
       <div className="px-[10px] md:px-[16px] xl:px-[20px] pt-[16px] md:pt-[18px] bg-white border border-[#98A2B38F]/50 overflow-auto">
         <ul className="flex items-center gap-[20px] md:gap-[32px]">
           {/* <button onClick={() => setState("Employee")}> */}
-          <Link to="/hrmreport/monthlyattendance">
+          <Link to="/companyanddocument/companypolicy">
             <li
               className={`py-[18px] cursor-pointer text-[14px] ${
 
-                window.location.pathname === "/hrmreport/monthlyattendance"
+                window.location.pathname === "/companyanddocument/companypolicy"
                   ? "font-medium text-[#000] border-b-[2.4px]"
                   : "font-normal text-[#667185]"
               }  flex items-center justify-between border-b-[#F05800]`}
             >
               <div className="cursor-pointer">
-                <p className="">Monthly Attendance</p>
+                <p className="">Company Policy</p>
               </div>
             </li>
           </Link>
@@ -32,31 +32,17 @@ const Report = () => {
           {/* <button onClick={() => setState("Payroll")}> */}
          
 
-          <Link to="/hrmreport/leave">
+          <Link to="/companyanddocument/document">
             <li
               className={`py-[18px] cursor-pointer text-[14px] ${
                
-                window.location.pathname === "/hrmreport/leave"
+                window.location.pathname === "/companyanddocument/document"
                   ? "font-medium text-[#000] border-b-[2.4px]"
                   : "font-normal text-[#667185]"
               }  flex items-center justify-between border-b-[#F05800]`}
             >
               <div className="">
-                <p className="">Leave</p>
-              </div>
-            </li>
-          </Link>
-          <Link to="/hrmreport/payroll">
-            <li
-              className={`py-[18px] cursor-pointer text-[14px] ${
-               
-                window.location.pathname === "/hrmreport/payroll"
-                  ? "font-medium text-[#000] border-b-[2.4px]"
-                  : "font-normal text-[#667185]"
-              }  flex items-center justify-between border-b-[#F05800]`}
-            >
-              <div className="">
-                <p className="">Payroll</p>
+                <p className="">Document</p>
               </div>
             </li>
           </Link>
@@ -71,4 +57,4 @@ const Report = () => {
   );
 };
 
-export default Report;
+export default CompanyDocument;
