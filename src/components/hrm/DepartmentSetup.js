@@ -6,4 +6,4 @@ const DepartmentSetup = () => {
   )
 }
 
-export default DesignationSetup
+export default DepartmentSetup
