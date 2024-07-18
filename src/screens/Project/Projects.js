@@ -31,12 +31,45 @@ import { userList } from "../../components/Data";
 import Select from "react-select";
 import ProjectGrid from "../../components/project/ProjectGrid";
 import ProjectTable from "../../components/project/ProjectTable";
+import { useQuery } from "@tanstack/react-query";
+import { getUsers } from "../../utils/helperFunctions";
+import CreatableSelect from "react-select/creatable";
+import api from "../../api";
+import { enqueueSnackbar } from "notistack";
+
 
 const Projects = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
   const [isCreateModal, setIsCreateModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isGrid, setIsGrid] = useState(false)
+  const [isGrid, setIsGrid] = useState(false);
+  const [users, setUsers] = useState([]);
+  const [formValue, setFormValue] = useState({
+    name:"",
+    description:"",
+  })
+
+
+  console.log("user State", users.newValuesArr);
+
+  const getUsersQuery = useQuery(["user"], () => getUsers(), {
+    keepPreviousData: true,
+    refetchOnWindowFocus: "always",
+  });
+ const handleChange = (newValue) => {
+    const newValuesArr = newValue ? newValue.map(item => item.value) : [];
+    setUsers( {newValuesArr} );
+  };
+  const handleInputChange = (e) => {
+    setFormValue({...formValue, [e.target.name]: e.target.value });
+  };
+
+ 
+  const countArray = (getUsersQuery?.data?.data?.data || []).map((user, index) => {
+    return { label: user.name, value: user.id };
+  });
+
+  console.log("countarray", countArray ?? []);
 
   const toggleGrid = () => {
     setIsGrid(!isGrid);
@@ -56,6 +89,29 @@ const Projects = () => {
   const closeImportModal = () => {
     setIsOpenImportModal(false);
   };
+  function clearForm (){
+    setFormValue({name: "", description: ""})
+  }
+
+  async function createProject() {
+    setIsLoading(true)
+    try {
+      const response = await api.createProject({
+        name: formValue.name,
+        description: formValue.description,
+        user: users.newValuesArr
+      });
+      console.log("createusers===>", response);
+      enqueueSnackbar(response?.message, { variant: "success" });
+      setIsCreateModal(false)
+      clearForm()
+      // getUsersQuery.refetch()
+     setIsLoading(false)
+    } catch (error) {
+      setIsLoading(false)
+      enqueueSnackbar(error?.message, { variant: "error" });
+    }
+  }
 
   return (
     <div className="p-[20px] bg-[#F2F2F2] ">
@@ -175,7 +231,6 @@ const Projects = () => {
               style={{ borderRadius: 12 }}
               motionPreset="slideInBottom"
               className="rounded-[12px]"
-              
             >
               <ModalOverlay />
               <ModalContent>
@@ -205,10 +260,10 @@ const Projects = () => {
                         required
                         autoComplete="on"
                         autoFocus
-                        name="full-name"
+                        name="name"
                         id="full-name"
-                        //value=""
-                        //onChange={() => {}}
+                        value={formValue.name}
+                        onChange={(e) => handleInputChange(e)}
                         autoCapitalize="off"
                         autoCorrect="off"
                         spellCheck="false"
@@ -227,10 +282,10 @@ const Projects = () => {
                         required
                         autoComplete="on"
                         autoFocus
-                        name="full-name"
+                        name="description"
                         id="full-name"
-                        //value=""
-                        //onChange={() => {}}
+                        value={formValue.description}
+                        onChange={(e) => handleInputChange(e)}
                         autoCapitalize="off"
                         autoCorrect="off"
                         spellCheck="false"
@@ -239,40 +294,42 @@ const Projects = () => {
                   </div>
                   <div className="">
                     <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                      Description
+                      Users
                     </label>
-                  <Select
-                  
-                    isMulti
-                    name="colors"
-                    options={userList}
-                    className="w-full   text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    styles={{
-                      control: (base, state) => ({
-                        ...base,
-                        border: state.isFocused ? '0.2px solid #D0D5DD': '0.2px solid #F05800',
-                        borderRadius: '8px',
-                        boxShadow: 'none',
-                        '&:hover': {
-                            border: '0.2px solid #F05800',
-                        }
-                       
-                    })
-                    }}
-                    classNamePrefix="react-select"
-                  />
+                    <CreatableSelect
+                      // onInputChange={(e) => {
+                      //   setUsers(e);
+                      //   console.log("console===>",e);
+                      // }}
+                      onChange={handleChange}
+                      isMulti
+                      name="colors"
+                      options={countArray?.length > 0 ? countArray : []}
+                      className="w-full   text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                      styles={{
+                        control: (base, state) => ({
+                          ...base,
+                          border: state.isFocused
+                            ? "0.2px solid #D0D5DD"
+                            : "0.2px solid #F05800",
+                          borderRadius: "8px",
+                          boxShadow: "none",
+                          "&:hover": {
+                            border: "0.2px solid #F05800",
+                          },
+                        }),
+                      }}
+                      classNamePrefix="react-select"
+                    />
                   </div>
-
-
-                 
                 </ModalBody>
                 <Divider />
                 <ModalFooter gap={"16px"}>
                   <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
                     Cancel
                   </button>
-                  <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
-                    {!isLoading ? (
+                  <button onClick={createProject} className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+                    {isLoading ? (
                       <ClipLoader color={"white"} size={20} />
                     ) : (
                       <> Create </>
@@ -285,10 +342,18 @@ const Projects = () => {
             <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
             <div className="flex items-center gap-[8px]">
               <button onClick={toggleGrid}>
-                <RowHorizontal variant="Linear" color={!isGrid ?"#667185" : "#F05800" } size="20" />
+                <RowHorizontal
+                  variant="Linear"
+                  color={!isGrid ? "#667185" : "#F05800"}
+                  size="20"
+                />
               </button>
               <button onClick={toggleGrid}>
-                <ElementEqual variant="Linear" color={isGrid ?"#667185" : "#F05800" } size="20" />
+                <ElementEqual
+                  variant="Linear"
+                  color={isGrid ? "#667185" : "#F05800"}
+                  size="20"
+                />
               </button>
             </div>
           </div>
@@ -336,8 +401,7 @@ const Projects = () => {
           </li>
         </ul>
 
-        {isGrid ? <ProjectGrid/> : <ProjectTable/>}
-        
+        {isGrid ? <ProjectGrid /> : <ProjectTable />}
       </div>
     </div>
   );

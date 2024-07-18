@@ -6,39 +6,48 @@ export const API_BASE_URL = 'https://erp-dev.duckdns.org/api';
 export const getApiUrl = (endpoint) => API_BASE_URL + endpoint
 
 
-
+//=======>>>> USER SECTION
 export const GETUSERS = getApiUrl('/users');
-export const GETPROFILE = getApiUrl('/merchant/profile');
-export const SETPIN= getApiUrl('/merchant/setpin');
-export const DASHBOARDOVERVIEW = getApiUrl('/dashboard/overview');
-export const CREATEACCESS = getApiUrl('/merchant/access');
-export const UPLOAD = getApiUrl('/merchant/upload');
-export const GETSETTLEMENTRECORD = getApiUrl('/settlement/getall');
-export const EXPORTSETTLEMENT = getApiUrl('/settlement/export');
-export const CREATESETTLEMENTACCT = getApiUrl('/settlementaccount/create');
-export const UPDATESETTLEMENTACCT = getApiUrl('/settlementaccount/update');
-export const GETSETTLEMENTACCOUNT = getApiUrl('/settlementaccount');
-export const TRANSACTION = getApiUrl('/transaction/getall');
-export const SUBMERCHANTTRANSACTION = getApiUrl('/transaction/getsubmerchanttransactions');
-export const EXPORTTRANSACTION = getApiUrl('/transaction/export');
-export const ADDUSER= getApiUrl('/usermanagement/adduser');
-export const GETUSER= getApiUrl('/usermanagement/users');
-export const GETBANK= getApiUrl('/supportedservices/getallbanks');
-export const GETCOUNTRY= getApiUrl('/supportedservices/getallcountries');
-export const GETCURRENCY= getApiUrl('/supportedservices/getallcurrencies');
-export const INVOICE= getApiUrl('/invoice');
-export const INVOICELIST= getApiUrl('/invoice/list');
-export const SUBMERCHANTINVOICELIST= getApiUrl('/invoice/sub-merchant-pay-list');
-export const INITIATEVIRTUALACCOUNNT= getApiUrl('/virtualaccount/initiate');
-export const VALIDATEVIRTUALACCOUNNT= getApiUrl('/virtualaccount/validate');
-export const GETVIRTUALACCOUNNT= getApiUrl('/virtualaccount');
+export const CREATEUSERS = getApiUrl('/users');
+export const GETAUSER = getApiUrl('/users/');
+export const UPDATEAUSER = getApiUrl('/users/');
+export const DELETEAUSER = getApiUrl('/users/');
 
 
-export const GENERATEKEY = getApiUrl('/applicationprofile/generate');
-export const GETALLKEYS = getApiUrl('/applicationprofile/getmerchantapplicationprofile');
+//=======>>>> PERMISSION SECTION
+export const GETPERMISSIONS = getApiUrl('/permissions');
+export const CREATEPERMISSIONS = getApiUrl('/permissions');
+export const GETAPERMISSIONS = getApiUrl('/permissions/');
+export const UPDATEAPERMISSIONS = getApiUrl('/permissions/');
+export const DELETEAPERMISSIONS= getApiUrl('/permissions/');
 
 
+//=======>>>> PROJECT SECTION
+export const GETPROJECT = getApiUrl('/taskly/projects');
+export const CREATEPROJECT = getApiUrl('/taskly/projects/');
+export const GETAPROJECT = getApiUrl('/taskly/projects/');
+export const UPDATEAPROJECT = getApiUrl('/taskly/projects/');
+export const DELETEAPROJECT= getApiUrl('/taskly/projects/');
 
 
+//=======>>>> TASK SECTION
+export const GETTASK = getApiUrl('/taskly/projects');
+export const CREATETASK = getApiUrl('/taskly/projects/'); 
+export const GETATASK = getApiUrl('/taskly/projects/');
+export const UPDATETASK = getApiUrl('/taskly/projects/');
+export const DELETETASK= getApiUrl('/taskly/projects/');
+
+//======>>>>ROLE SECTION
+export const GETROLE = getApiUrl('/roles');
+export const CREATEROLE = getApiUrl('/roles'); 
+export const GETAROLE = getApiUrl('/roles');
+export const UPDATEROLE = getApiUrl('/roles');
+export const DELETEROLE= getApiUrl('/roles');
 
 
+//=======>>>> USER SECTION
+// export const GETUSER = getApiUrl('/users');
+// export const CREATEUSER = getApiUrl('/users'); 
+// export const GETAUSER = getApiUrl('/users/');
+// export const UPDATEUSER = getApiUrl('/users/');
+// export const DELETEUSER= getApiUrl('/users/');

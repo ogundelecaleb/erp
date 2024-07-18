@@ -39,7 +39,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const UserGrid = () => {
+const UserGrid = ({data}) => {
   const navigate = useNavigate();
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isDeleteOpen, setIsDeleteOpen] = useState(false);
@@ -75,9 +75,9 @@ const UserGrid = () => {
   return (
     <div className="overflow-auto">
       <div className="bg-[#F9FAFB] p-[10px] md:p-[16px] h-full overflow-auto lg:p-[20px] grid grid-cols-2  md:grid-cols-4 gap-[20px] ">
-        {!Users
+        {!data
           ? ""
-          : Users.map((user) => (
+          : data.map((user) => (
               <div className="shadow shadow-[#F0F2F5]/32 px-[16px] py-[16px] md:py-[20px] bg-white rounded-[8px]">
                 <div className="flex justify-between items-center mb-[10px] md:mb-[24px] lg:mb-[32px]">
                   <button
@@ -164,11 +164,14 @@ const UserGrid = () => {
 
                 <div>
                   <img
-                    src={user?.image}
-                    className="h-[100px] w-[90px] md:h-[120px] md:w-[120px] mx-auto"
+                    // src={user?.image}
+                    src="./assets/userimage.png"
+                    className="h-[100px] w-[90px] md:h-[120px] md:w-[120px] mx-auto rounded-[80px]"
                     alt="3 dots"
                   />
-
+ <p className="text-[12px] md:text-[14px] text-[#667185] mt-2 text-center  font-normal leading-[18px] md:leading-[20px]">
+                    {user?.name}
+                  </p>
                   <p className="text-[12px] md:text-[14px] text-[#667185] mt-2 text-center  font-normal leading-[18px] md:leading-[20px]">
                     {user?.email}
                   </p>

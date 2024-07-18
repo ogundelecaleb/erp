@@ -1,119 +1,99 @@
 import {
- 
-  ADDUSER,
-  EXPORTTRANSACTION,
-  TRANSACTION,
-  UPDATESETTLEMENTACCT,
-  CREATESETTLEMENTACCT,
-  EXPORTSETTLEMENT,
-  GETSETTLEMENTRECORD,
-  CREATEACCESS,
-  SETPIN,
-  GETPROFILE,
-  GETSETTLEMENTACCOUNT,
-  GENERATEKEY,
-  DASHBOARDOVERVIEW,
-  GETUSER,
-  GETBANK,
-  GETCOUNTRY,
-  GETCURRENCY,
-  UPLOAD,
-  GETALLKEYS,
-  INVOICE,
-  INVOICELIST,
-  SUBMERCHANTTRANSACTION,
-  SUBMERCHANTINVOICELIST,INITIATEVIRTUALACCOUNNT, VALIDATEVIRTUALACCOUNNT
+  DELETEROLE,
+  UPDATEROLE,
+  GETROLE,
+  GETAPERMISSIONS,
+  UPDATEAPERMISSIONS,
+  CREATEPERMISSIONS,
+  DELETEAPERMISSIONS,
+  GETPERMISSIONS,
+  CREATEUSERS,
+  GETUSERS,
+  GETAUSER,
+  UPDATEAUSER,
+  DELETEAUSER,
+  GETPROJECT,
+  UPDATEAPROJECT,
+  CREATEPROJECT,
+  GETAPROJECT,
+  DELETEAPROJECT,
+  GETTASK,
+  UPDATETASK,
+  CREATETASK,
+  GETATASK,
+  DELETEATASK,
+  CREATEROLE,
 } from "../utils/config";
-import { apiGet, apiGetCSV, apiPost, apiPut } from "../utils/utils";
-
-
-
+import { apiDelete, apiGet, apiGetCSV, apiPost, apiPut } from "../utils/utils";
 
 //dashboard
-export function getDashboardTransactions(data = null) {
-  return apiGet(DASHBOARDOVERVIEW, data);
+export function getRoles(data = null) {
+  return apiGet(GETROLE, data);
+}
+export function getARoles(id, data = null) {
+  return apiGet(GETROLE + id, data);
+}
+export function createRoles(data) {
+  return apiPost(CREATEROLE, data);
+}
+export function updateRoles(id, data) {
+  return apiPut(UPDATEROLE + id, data);
+}
+export function deleteRoles(id, data) {
+  return apiDelete(DELETEROLE + id, data);
 }
 
-//settlement
-export function exportSettlement(data) {
-  return apiGetCSV(EXPORTSETTLEMENT, data);
+//user
+export function getUsers(data = null) {
+  return apiGet(GETUSERS, data);
 }
-export function getSettlement(data = null) {
-  return apiGet(GETSETTLEMENTRECORD, data);
+export function getUser(id, data = null) {
+  return apiGet(GETUSERS + id, data);
 }
-
-//transaction
-export function exportTransactions(data) {
-  return apiGetCSV(EXPORTTRANSACTION, data);
+export function createUser(data) {
+  return apiPost(CREATEUSERS, data);
 }
-export function getTransaction(data = null) {
-  return apiGet(TRANSACTION, data);
+export function updateUser(id, data) {
+  return apiPut(UPDATEAUSER + id, data);
 }
-
-export function getSubmerchantTransaction(data = null) {
-  return apiGet(SUBMERCHANTTRANSACTION, data);
+export function deleteUser(id, data) {
+  return apiDelete(DELETEAUSER + id, data);
 }
 
-//settle account
-export function createSettlementAcct(data) {
-  return apiPost(CREATESETTLEMENTACCT, data);
+//permission
+export function getPermissions(data = null) {
+  return apiGet(GETPERMISSIONS, data);
 }
-export function updateSettlementAcct(data) {
-  return apiPut(UPDATESETTLEMENTACCT, data);
+export function getAPermissions(id, data = null) {
+  return apiGet(GETPERMISSIONS + id, data);
 }
-export function getSettlementAcct(data = null) {
-  return apiGet(GETSETTLEMENTACCOUNT, data);
+export function createPermission(data) {
+  return apiPost(CREATEPERMISSIONS, data);
 }
-
-// user Management
-export function addUser(data) {
-  return apiPost(ADDUSER, data);
+export function updatePermission(id, data) {
+  return apiPut(GETPERMISSIONS + id, data);
 }
-export function getUser(data) {
-  return apiGet(GETUSER, data);
-}
-// Aplication Profile
-
-export function generatekey(data) {
-  return apiPost(GENERATEKEY, data);
-}
-export function getuserkey(data) {
-  return apiGet(GETALLKEYS, data);
+export function deletePermission(id, data) {
+  return apiDelete(GETPERMISSIONS + id, data);
 }
 
-//All countries
-export function getContries(data) {
-  return apiGet(GETCOUNTRY, data);
+//project
+export function getProjects(data = null) {
+  return apiGet(GETPROJECT, data);
+}
+export function getAProject(id, data = null) {
+  return apiGet(GETPROJECT + id, data);
+}
+export function createProject(data) {
+  return apiPost(CREATEPROJECT, data);
+}
+export function updateProject(id, data) {
+  return apiPut(UPDATEAPROJECT + id, data);
+}
+export function deleteProject(id, data) {
+  return apiDelete(DELETEAPROJECT + id, data);
 }
 
-//All Currency
+//task
 
-export function getCurrency(data) {
-  return apiGet(GETCURRENCY, data);
-}
 
-//All Bank
-export function getBank(data) {
-  return apiGet(GETBANK, data);
-}
-
-//Payment Link
-export function createInvoice(data) {
-  return apiPost(INVOICE, data);
-}
-
-export function getInvoice(data) {
-  return apiGet(INVOICELIST, data);
-}
-export function getSubmerchantInvoice(data) {
-  return apiGet(SUBMERCHANTINVOICELIST, data);
-}
-
-//vIRTUAL aCCOUNT
-export function initiateVirtualAccount(data) {
-  return apiPost(INITIATEVIRTUALACCOUNNT, data);
-}
-
-export function validateVirtualAccount(data) {
-  return apiPost(VALIDATEVIRTUALACCOUNNT, data);
-}

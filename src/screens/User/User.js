@@ -41,6 +41,8 @@ import { Link } from "react-router-dom";
 import UserTable from "../../components/user/UserTable";
 import api from "../../api";
 import { useQuery } from "@tanstack/react-query";
+import { getRoles } from "../../utils/helperFunctions";
+import { enqueueSnackbar } from "notistack";
 
 const User = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
@@ -48,33 +50,59 @@ const User = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [enableLogin, setEnableLogin] = useState(false);
   const [isGrid, setIsGrid] = useState(true);
+  const [formValue, setFormValue] = useState({name: "",email: "",role: "", phone: "", password: ""})
 
+  const grantQuery = useQuery(["roles"], () => getRoles(), {
+    keepPreviousData: true,
+    refetchOnWindowFocus: "always",
+  });
 
-  
+  // let grantData = grantQuery?.data?.data || [];
 
+  console.log("rolless ===>>", grantQuery?.data);
+  const getUsersQuery = useQuery(["users"], () => getUsers(), {
+    keepPreviousData: true,
+    refetchOnWindowFocus: "always",
+  });
 
-    const getUsersQuery = useQuery(
-      ["users"],
-      () => getUsers(),
-      {
-        keepPreviousData: true,
-        refetchOnWindowFocus: "always",
-      }
-    );
-  
-   
+  async function getUsers() {
+    try {
+      const response = await api.getUsers();
+      console.log("users===>", response);
 
-    
-    async function getUsers() {
-      try {
-        const response = await api.getUsers();
-        console.log("users===>", response);
-        
-        return response;
-      } catch (error) {
-        return error;
-      }
+      return response;
+    } catch (error) {
+      return error;
     }
+  }
+  function clearForm (){
+    setFormValue({name: "", email: "", role: "", phone: "", password: ""})
+  }
+
+  // const handleInputChange = (e) => {
+  //   setFormValue({...formValue, [e.target.name]: e.target.value });
+  // };
+  async function createUsers() {
+    setIsLoading(true)
+    try {
+      const response = await api.createUser({
+        name: formValue.name,
+        email: formValue.email,
+        role: formValue.role,
+        mobile_no: formValue.phone,
+        password: formValue.password,
+      });
+      console.log("createusers===>", response);
+      enqueueSnackbar(response?.message, { variant: "success" });
+      setIsCreateModal(false)
+      clearForm()
+      getUsersQuery.refetch()
+     setIsLoading(false)
+    } catch (error) {
+      setIsLoading(false)
+      enqueueSnackbar(error?.message, { variant: "error" });
+    }
+  }
 
   const toggleGrid = () => {
     setIsGrid(!isGrid);
@@ -102,7 +130,7 @@ const User = () => {
           <div className="flex items-center gap-[16px]">
             <div className="flex items-center">
               <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-             User Management /{" "}
+                User Management /{" "}
               </p>
               <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
                 &nbsp; User
@@ -231,7 +259,7 @@ const User = () => {
           </div>
         </div>
 
-        {isGrid ? <UserGrid /> : <UserTable />}
+        {isGrid ? <UserGrid  data={getUsersQuery?.data?.data?.data}/> : <UserTable data={getUsersQuery?.data?.data?.data} />}
       </div>
 
       {/* Edit Modal */}
@@ -264,13 +292,13 @@ const User = () => {
                   type="text"
                   placeholder="Name"
                   className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
+                  
                   autoComplete="on"
                   autoFocus
                   name="full-name"
                   id="full-name"
-                  //value=""
-                  //onChange={() => {}}
+                  value={formValue.name}
+                  onChange={(e) => {setFormValue({...formValue, name: e.target.value})}}
                   autoCapitalize="off"
                   autoCorrect="off"
                   spellCheck="false"
@@ -286,13 +314,13 @@ const User = () => {
                   type="email"
                   placeholder="Email"
                   className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
+                  
                   autoComplete="on"
                   autoFocus
                   name="full-name"
                   id="full-name"
-                  //value=""
-                  //onChange={() => {}}
+                  value={formValue.email}
+                  onChange={(e) => {setFormValue({...formValue, email: e.target.value})}}
                   autoCapitalize="off"
                   autoCorrect="off"
                   spellCheck="false"
@@ -313,11 +341,14 @@ const User = () => {
                   autoFocus
                   name="role"
                   id="role"
+                  value={formValue.role}
+                  onChange={(e) => {setFormValue({...formValue, role: e.target.value})}}
                 >
-                  <option value="High">HR</option>
-                  <option value="Medium">Staff</option>
-                  <option value="Low">Client</option>
-                  <option value="Low">Vendor</option>
+                  <option value="">Selecte Role</option>
+                  {grantQuery?.data?.data  &&
+                    grantQuery?.data?.data.data.map((result) => (
+                      <option value={result?.id}>{result?.name}</option>
+                    ))}
                 </select>
               </div>
             </div>
@@ -335,8 +366,8 @@ const User = () => {
                   autoFocus
                   name=""
                   id="full-name"
-                  //value=""
-                  //onChange={() => {}}
+                  value={formValue.phone}
+                  onChange={(e) => {setFormValue({...formValue, phone: e.target.value})}}
                   autoCapitalize="off"
                   autoCorrect="off"
                   spellCheck="false"
@@ -359,7 +390,7 @@ const User = () => {
             {enableLogin && (
               <div className="mb-[24px]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-               Password
+                  Password
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <input
@@ -371,8 +402,8 @@ const User = () => {
                     autoFocus
                     name=""
                     id="full-name"
-                    //value=""
-                    //onChange={() => {}}
+                    value={formValue.password}
+                    onChange={(e) => {setFormValue({...formValue, password: e.target.value})}}
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck="false"
@@ -387,11 +418,11 @@ const User = () => {
                 <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
                   Cancel
                 </button>
-                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
-                  {!isLoading ? (
+                <button onClick={createUsers} className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+                  {isLoading ? (
                     <ClipLoader color={"white"} size={20} />
                   ) : (
-                    <> Save changes</>
+                    <> Create user</>
                   )}
                 </button>
               </div>

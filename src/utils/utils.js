@@ -5,7 +5,21 @@ export async function getHeaders() {
   // console.log(userData.data.accessToken, "header");
   if (userData) {
     userData = JSON.parse(userData);
-    const token = "Bearer " + userData.access_token.substring(3);
+    function cutTokenBeforeSymbol(token) {
+      const symbol = '|';
+      const symbolIndex = token.indexOf(symbol);
+    
+      if (symbolIndex !== -1) {
+        // Cut out the values before and including the symbol
+        return token.slice(symbolIndex + 1);
+      }
+    
+      // If the symbol is not found, return the original token
+      return token;
+    }
+   
+    
+    const token = "Bearer " +  cutTokenBeforeSymbol(userData.access_token);
     // console.log(userData.data.accessToken, "header");
     console.log("token====>>>",token)
     return {
