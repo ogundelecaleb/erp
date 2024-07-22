@@ -42,7 +42,7 @@ const Projects = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
   const [isCreateModal, setIsCreateModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [isGrid, setIsGrid] = useState(false);
+  const [isGrid, setIsGrid] = useState(true);
   const [users, setUsers] = useState([]);
   const [formValue, setFormValue] = useState({
     name:"",
@@ -64,6 +64,25 @@ const Projects = () => {
     setFormValue({...formValue, [e.target.name]: e.target.value });
   };
 
+
+
+  const getProjectQuery = useQuery(["project"], () => getProject(), {
+    keepPreviousData: true,
+    refetchOnWindowFocus: "always",
+  });
+
+  async function getProject() {
+    try {
+      const response = await api.getProjects();
+      console.log("projectsss===>", response);
+
+      return response;
+    } catch (error) {
+      return error;
+    }
+  }
+
+  console.log("project getttt====>" , getProjectQuery?.data)
  
   const countArray = (getUsersQuery?.data?.data?.data || []).map((user, index) => {
     return { label: user.name, value: user.id };
@@ -105,7 +124,7 @@ const Projects = () => {
       enqueueSnackbar(response?.message, { variant: "success" });
       setIsCreateModal(false)
       clearForm()
-      // getUsersQuery.refetch()
+       getProjectQuery.refetch()
      setIsLoading(false)
     } catch (error) {
       setIsLoading(false)
@@ -114,7 +133,7 @@ const Projects = () => {
   }
 
   return (
-    <div className="p-[20px] bg-[#F2F2F2] ">
+    <div className="p-[20px] min-h-screen bg-[#F2F2F2] ">
       <div className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-full w-full bg-[#ffff] ">
         <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px] block md:flex justify-between items-center ">
           <div className="flex items-center gap-[16px]">
@@ -401,7 +420,7 @@ const Projects = () => {
           </li>
         </ul>
 
-        {isGrid ? <ProjectGrid /> : <ProjectTable />}
+        {isGrid ? <ProjectGrid data={getProjectQuery?.data?.data} refetch={getProjectQuery.refetch()} /> : <ProjectTable  data={getProjectQuery?.data?.data} refetch={getProjectQuery.refetch()} />}
       </div>
     </div>
   );

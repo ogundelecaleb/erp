@@ -13,13 +13,13 @@ import {
   } from "iconsax-react";
 
 
-const ProjectGrid = () => {
+const ProjectGrid = ({data}) => {
   return (
     <div className="overflow-auto">
           <div className="bg-[#F9FAFB] p-[10px] md:p-[16px] h-[526px] overflow-auto lg:p-[20px] grid grid-cols-2  md:grid-cols-4 gap-[20px] ">
-            {!ProjectData
+            {!data
               ? ""
-              : ProjectData.map((project) => (
+              : data.map((project) => (
                   <div className="shadow shadow-[#F0F2F5]/32 px-[16px] py-[16px] md:py-[20px] bg-white rounded-[8px]">
                     <div className="flex justify-between items-center mb-[10px] md:mb-[16px]">
                       <button
@@ -45,17 +45,17 @@ const ProjectGrid = () => {
 
                     <div>
                       <p className="text-[14px] md:text-[16px]  text-[#000]  font-semibold leading-[20px] md:leading-[24px] tracking-[0.2px] mb-[18px]">
-                        {project?.heading}
+                        {project?.name}
                       </p>
 
                       <p className="text-[12px] md:text-[14px] text-[#667185]  font-normal leading-[18px] md:leading-[20px]">
-                        {project?.summary}
+                        {project?.description}
                       </p>
                     </div>
                     <div className="flex items-center gap-[8px] mt-[16px] md:mt-[20px]">
                       <Calendar variant="Linear" color="#667185" size="20" />
                       <p className="text-[12px] md:text-[14px] text-[#667185]  font-normal leading-[18px] md:leading-[20px]">
-                        {project?.time}
+                        {project?.end_date}
                       </p>
                     </div>
 

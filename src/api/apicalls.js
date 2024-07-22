@@ -90,8 +90,8 @@ export function createProject(data) {
 export function updateProject(id, data) {
   return apiPut(UPDATEAPROJECT + id, data);
 }
-export function deleteProject(id, data) {
-  return apiDelete(DELETEAPROJECT + id, data);
+export function deleteProject(id) {
+  return apiDelete(DELETEAPROJECT + id);
 }
 
 //task

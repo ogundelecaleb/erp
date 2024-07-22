@@ -37,23 +37,97 @@ import ProjectMembers from "../../components/project/ProjectMembers";
 import { ClipLoader } from "react-spinners";
 import ModalLeft from "../../components/ModalLeft";
 import { Link, useNavigate } from "react-router-dom";
-
+import api from "../../api";
+import { enqueueSnackbar } from "notistack";
+import { updateProject } from "../../api/apicalls";
 
 const ProjectDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  const result = location.state;
+  const {result} = location.state;
   const [value, setValue] = React.useState("1");
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isDeleteModal, setIsDeleteModal] = useState(false);
+  const [formValue, setFormValue] = useState({
+    name: "",
+    description: "",
+    start_date: "",
+    due_date: "",
+    status: "",
+    budget: "",
+  });
+
+  const handleInputChange = (e) => {
+    setFormValue({ ...formValue, [e.target.name]: e.target.value });
+  };
 
   function HandleEditModalClose() {
     setIsEditOpen(false);
   }
 
-  function ToggleEditModal() {
+  function ToggleEditModal(result) {
     setIsEditOpen(!isEditOpen);
+    setFormValue({
+      ...formValue,
+      name: result.name,
+      description: result.description,
+      start_date: result.start_date,
+      due_date: result.due_date,
+      status: result.status,
+      budget: result.budget,
+    });
+  }
+
+  function clearForm (){
+    setFormValue({
+      name: "",
+      description: "",
+      start_date: "",
+      due_date: "",
+      status: "",
+      budget: "",
+    });
+  }
+
+  async function editProject() {
+    setIsLoading(true)
+    try {
+      const response = await api.updateProject(result.id,{
+        name: formValue.name,
+        description: formValue.description,
+        start_date: formValue.start_date,
+        due_date: formValue.due_date,
+        status: formValue.status,
+        budget: formValue.budget,
+      });
+      console.log("update prject ===>", response);
+      enqueueSnackbar(response?.message, { variant: "success" });
+      HandleEditModalClose(false)
+      clearForm()
+      //refetch()
+     setIsLoading(false)
+    } catch (error) {
+      setIsLoading(false)
+      enqueueSnackbar(error?.message, { variant: "error" });
+    }
+  }
+
+  async function deleteProject() {
+    setIsLoading(true)
+    try {
+      const response = await api.deleteProject(result.id);
+      console.log("delete prject ===>", response);
+      enqueueSnackbar(response?.message, { variant: "success" });
+      closeDeleteModal(false)
+   
+      navigate("/project")
+      //refetch()
+     setIsLoading(false)
+    } catch (error) {
+      setIsLoading(false)
+      enqueueSnackbar(error?.message, { variant: "error" });
+    }
   }
 
   const handleChange = (event, newValue) => {
@@ -109,11 +183,11 @@ const ProjectDetails = () => {
               <Calendar2 variant="Linear" color="#667185" size="16" />
             </button>
             <button
-             onClick={() =>
-              navigate("/ganttchart", {
-                // state: result,
-              })
-            }
+              onClick={() =>
+                navigate("/ganttchart", {
+                  // state: result,
+                })
+              }
               className="flex items-center gap-[8px] "
             >
               <p className="text-[14px] text-[#667185] leading-[20px]">
@@ -127,7 +201,7 @@ const ProjectDetails = () => {
         <div className="p-[8px] md:p-[16px] xl:p-[20px]">
           <div className="flex items-center justify-between">
             <p className="text-[18px] md:text-[20px] text-[#000] leading-[20px] md:leading-[25px] font-medium">
-              {result.heading}
+              {result.name}
             </p>
             <div className="flex items-center gap-[12px] ">
               {" "}
@@ -145,7 +219,7 @@ const ProjectDetails = () => {
                 </p>
               </button>
               <button
-                onClick={ToggleEditModal}
+                onClick={()=>ToggleEditModal(result)}
                 className="border-[0.8px] px-[14px] py-[8px] flex gap-[6px] md:gap-[10px] items-center border-[#D0D5DD] rounded-[6px]"
               >
                 <Edit variant="Linear" color="#667185" size="16" />
@@ -184,7 +258,7 @@ const ProjectDetails = () => {
               </th>
               <td className="pb-[20px] pl-4 md:pl-6 ">
                 <p className=" text-[14px]  text-[#000] leading-[20px] font-medium text-left ">
-                  {result.time}
+                  {result.start_date}
                 </p>
               </td>
             </tr>
@@ -194,7 +268,7 @@ const ProjectDetails = () => {
               </th>
               <td className="pb-[20px] pl-4 md:pl-6 ">
                 <p className=" text-[14px]  text-[#000] leading-[20px] font-medium text-left ">
-                  {result.time}
+                  {result.end_date}
                 </p>
               </td>
             </tr>
@@ -204,7 +278,7 @@ const ProjectDetails = () => {
               </th>
               <td className="pb-[20px] pl-4 md:pl-6 ">
                 <p className=" text-[14px]  text-[#000] leading-[20px] font-medium text-left ">
-                  {result?.summary}
+                  {result?.description}
                 </p>
               </td>
             </tr>
@@ -375,7 +449,7 @@ const ProjectDetails = () => {
                 Cancel
               </button>
               <button
-                // onClick={handleDelete}
+                onClick={deleteProject}
                 className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white"
               >
                 {isLoading ? (
@@ -396,7 +470,7 @@ const ProjectDetails = () => {
                 <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
                 <div className="flex items-center">
                   <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                    Edit Milestone
+                    Edit Project
                   </p>
                 </div>
               </div>
@@ -410,7 +484,7 @@ const ProjectDetails = () => {
             <div className="p-[12px] md:p-[20px] xl:p-[24px]">
               <div className="mb-[24px]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Milestone Title
+                  Project Title
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <input
@@ -420,10 +494,10 @@ const ProjectDetails = () => {
                     required
                     autoComplete="on"
                     autoFocus
-                    name="full-name"
-                    id="full-name"
-                    //value=""
-                    //onChange={() => {}}
+                    name="name"
+                    id="name"
+                    value={formValue.name}
+                    onChange={(e) => handleInputChange(e)}
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck="false"
@@ -432,7 +506,7 @@ const ProjectDetails = () => {
               </div>
               <div className="mb-[24px]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Summary
+                  Project Description
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <textarea
@@ -442,10 +516,10 @@ const ProjectDetails = () => {
                     required
                     autoComplete="on"
                     autoFocus
-                    name="full-name"
+                    name="description"
                     id="full-name"
-                    //value=""
-                    //onChange={() => {}}
+                    value={formValue.description}
+                    onChange={(e) => handleInputChange(e)}
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck="false"
@@ -457,7 +531,7 @@ const ProjectDetails = () => {
                 {" "}
                 <div className="mb-[24px] w-[60%]">
                   <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                    Cost
+                    Budget
                   </label>
                   <div className=" relative  mt-[16px]  flex items-center">
                     <input
@@ -467,10 +541,10 @@ const ProjectDetails = () => {
                       required
                       autoComplete="on"
                       autoFocus
-                      name="full-name"
-                      id="full-name"
-                      //value=""
-                      //onChange={() => {}}
+                      name="budget"
+                      id=""
+                      value={formValue.budget}
+                      onChange={(e) => handleInputChange(e)}
                       autoCapitalize="off"
                       autoCorrect="off"
                       spellCheck="false"
@@ -484,14 +558,16 @@ const ProjectDetails = () => {
                   <div className=" relative  mt-[16px]  flex items-center">
                     <select
                       type="text"
-                      placeholder="Dashboard cards"
+                      placeholder=""
                       className="w-full h-[48px] pl-[16px] px-2 py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                       required
                       autoComplete="on"
-                      autoFocus
-                      name="full-name"
+                      name="status"
                       id="full-name"
+                      value={formValue.status}
+                      onChange={(e) => handleInputChange(e)}
                     >
+                      <option value="">Select Status</option>
                       <option value="High">On Hold</option>
                       <option value="Medium">Ongoing</option>
                       <option value="Low">Completed</option>
@@ -514,15 +590,14 @@ const ProjectDetails = () => {
                     />
                     <input
                       type="date"
-                      placeholder="Project Name"
+                      placeholder=""
                       className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                       required
                       autoComplete="on"
-                      autoFocus
-                      name="date"
+                      name="start_date"
                       id="full-name"
-                      //   value={formData.date}
-                      //   onChange={(e) => handleChange(e)}
+                      value={formValue.start_date}
+                      onChange={(e) => handleInputChange(e)}
                       autoCapitalize="off"
                       autoCorrect="off"
                       spellCheck="false"
@@ -545,11 +620,10 @@ const ProjectDetails = () => {
                       className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                       required
                       autoComplete="on"
-                      autoFocus
-                      name="date"
+                      name="due_date"
                       id="full-name"
-                      //   value={formData.date}
-                      //   onChange={(e) => handleChange(e)}
+                      value={formValue.due_date}
+                      onChange={(e) => handleInputChange(e)}
                       autoCapitalize="off"
                       autoCorrect="off"
                       spellCheck="false"
@@ -557,28 +631,7 @@ const ProjectDetails = () => {
                   </div>
                 </div>
               </div>
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Summary
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <textarea
-                    type="text"
-                    placeholder="Add Description"
-                    className="w-full h-[137px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px] placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="full-name"
-                    id="full-name"
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                </div>
-              </div>
+              
 
               <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
                 <div className="flex-item gap-2">
@@ -586,8 +639,8 @@ const ProjectDetails = () => {
                   <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
                     Cancel
                   </button>
-                  <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
-                    {!isLoading ? (
+                  <button onClick={editProject} className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+                    {isLoading ? (
                       <ClipLoader color={"white"} size={20} />
                     ) : (
                       <> Save changes</>

@@ -19,7 +19,7 @@ import { IoShareSocialOutline } from "react-icons/io5";
 import { Button, Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
 
-const ProjectTable = ({ isLoading, isPreviousData }) => {
+const ProjectTable = ({ isLoading, refetch, data }) => {
   const navigate = useNavigate();
   return (
     <div class="flex flex-col overflow-x-auto">
@@ -93,8 +93,8 @@ const ProjectTable = ({ isLoading, isPreviousData }) => {
                 </tr>
               </thead>
               <tbody>
-                {isLoading && !isPreviousData && <div>Loading...</div>}
-                {!isLoading && ProjectData.length === 0 && (
+                {isLoading && !data && <div>Loading...</div>}
+                {!isLoading && data.length === 0 && (
                   <tr>
                     <td className="text-center" colspan="6">
                       <img
@@ -108,14 +108,14 @@ const ProjectTable = ({ isLoading, isPreviousData }) => {
                     </td>
                   </tr>
                 )}
-                {ProjectData &&
-                  ProjectData?.map((result) => (
+                {data &&
+                  data?.map((result) => (
                     <tr key={result.id} className="mb-2 hover:bg-light-gray">
                       <td className="whitespace-nowrap py-[6px]  px-5 border-r-[0.8px] border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
-                        {result.heading}
+                        {result.name}
                       </td>
                       <td className=" py-[6px] max-w-[300px] px-3 md:px-5 border-t border-r-[0.8px] border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
-                        <p className="line-clamp-2 ">{result.summary}</p>
+                        <p className="line-clamp-2 ">{result.description}</p>
                       </td>
 
                       <td className="whitespace-nowra py-[6px] px-3 md:px-5 border-t border-r-[0.8px] border-b-[0.8px] border-[#E4E7EC] text-[16px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
@@ -134,7 +134,7 @@ const ProjectTable = ({ isLoading, isPreviousData }) => {
                       </td>
                       <td className=" py-[6px] px-3 md:px-5 border-r-[0.8px] border-b-[0.8px] border-[#E4E7EC] text-[16px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
                         {" "}
-                        {result.time}
+                        {result.end_date}
                       </td>
                       <td className=" py-[6px] px-3 md:px-5 border-r-[0.8px] border-b-[0.8px] border-[#E4E7EC] text-[16px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
                         {" "}
@@ -164,7 +164,7 @@ const ProjectTable = ({ isLoading, isPreviousData }) => {
                               <MenuItem
                                 onClick={() =>
                                   navigate("/projectdetails", {
-                                    state: result,
+                                    state:{ result}
                                   })
                                 }
                                 w="full"
