@@ -23,6 +23,11 @@ import {
   GETATASK,
   DELETEATASK,
   CREATEROLE,
+  GETCATEGORY,
+  CREATECATEGORY,
+  UPDATECATEGORY,
+  DELETECATEGORY,
+  GETACATEGORY,
 } from "../utils/config";
 import { apiDelete, apiGet, apiGetCSV, apiPost, apiPut } from "../utils/utils";
 
@@ -97,3 +102,21 @@ export function deleteProject(id) {
 //task
 
 
+// ========>>>> Inventory
+
+// category
+export function getCategory(data = null) {
+  return apiGet(GETCATEGORY, data);
+}
+export function getACategory(id, data = null) {
+  return apiGet(GETACATEGORY + id, data);
+}
+export function createCategory(data) {
+  return apiPost(CREATECATEGORY, data);
+}
+export function updateCategory(id, data) {
+  return apiPut(UPDATECATEGORY + id, data);
+}
+export function deleteCategory(id) {
+  return apiDelete(DELETECATEGORY + id);
+}

@@ -25,6 +25,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
 
   const [settings, setSettings] = useState(false);
   const [openOption, setOpenOption] = useState(false);
+  const [isActive, setIsActive] = useState("project")
   const [isProject, setIsProject] = useState(false);
   const [isHrm, setIsHrm] = useState(false);
   const [isCrm, setIsCrm] = useState(false);
@@ -94,7 +95,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
 
             <div className="mt-[20px] border-t border-b border-[#98A2B3]/50 w-full py-[20px]">
               <button
-                onClick={() => setIsProject(!isProject)}
+                onClick={() => setIsActive("project")}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px] 
                 ${
                   window.location.pathname === "/project" ||
@@ -127,14 +128,14 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   Projects
                 </div>
 
-                {isProject ? (
+                {isActive === "project" ? (
                   <ArrowUp2 size="14" variant="Linear" color="#667185" />
                 ) : (
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
 
-              {isProject && (
+              {isActive === "project" && (
                 <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
                   <Link
                     to="/project"
@@ -187,7 +188,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
               {/*=====================>>>>> HRM */}
               <button
                 to="/dashboard"
-                onClick={() => setIsHrm(!isHrm)}
+                onClick={() => setIsActive("hrm")}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   window.location.pathname === "/hrmanalytics" ||
 
@@ -267,13 +268,13 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   HRM
                 </div>
 
-                {isHrm ? (
+                {isActive === "hrm" ? (
                   <ArrowUp2 size="14" variant="Linear" color="#667185" />
                 ) : (
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
-              {isHrm && (
+              {isActive === "hrm" && (
                 <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
                   <Link
                     to="/employee/manageemployee"
@@ -368,7 +369,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
               {/*===================+>>> Crm */}
 
               <button
-                onClick={() => setIsCrm(!isCrm)}
+                onClick={() => setIsActive("crm")}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px]
                 ${
                   window.location.pathname === "/crmlead" ||
@@ -401,13 +402,13 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   CRM
                 </div>
 
-                {isCrm ? (
+                {isActive === "crm" ? (
                   <ArrowUp2 size="14" variant="Linear" color="#667185" />
                 ) : (
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
-              {isCrm && (
+              {isActive === "crm" && (
                 <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
                   <Link
                     to="/crmlead"
@@ -469,7 +470,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
 
               {/*==========================>>>>>>> Inventory */}
               <button
-                onClick={() => setIsInventory(!isInventory)}
+                onClick={() => setIsActive("inventory")}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   window.location.pathname === "/inventorymanagement" ||
                   window.location.pathname === "/productstock" ||
@@ -509,13 +510,13 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   Inventory
                 </div>
 
-                {isInventory ? (
+                {isActive === "inventory" ? (
                   <ArrowUp2 size="14" variant="Linear" color="#667185" />
                 ) : (
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
-              {isInventory && (
+              {isActive === "inventory" && (
                 <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
                   <Link
                     to="/inventorymanagement"
@@ -579,7 +580,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
 
               {/* =====================>>>>>>User Management */}
               <button
-                onClick={() => setIsUser(!isUser)}
+                onClick={() => setIsActive("user")}
                 className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                   window.location.pathname === "/usermanagement" ||
                   window.location.pathname === "/loghistory" ||
@@ -605,14 +606,14 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   User Management
                 </div>
 
-                {isUser ? (
+                {isActive === "user" ? (
                   <ArrowUp2 size="14" variant="Linear" color="#667185" />
                 ) : (
                   <ArrowDown2 size="14" variant="Linear" color="#667185" />
                 )}
               </button>
 
-              {isUser && (
+              {isActive === "user" && (
                 <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
                   <Link
                     to="/usermanagement"

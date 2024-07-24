@@ -51,3 +51,16 @@ export const DELETEROLE= getApiUrl('/roles');
 // export const GETAUSER = getApiUrl('/users/');
 // export const UPDATEUSER = getApiUrl('/users/');
 // export const DELETEUSER= getApiUrl('/users/');
+
+
+
+
+//=========================>>>> INVENTORY SECTION
+
+//=======>>>>  CATEGORY
+export const GETCATEGORY = getApiUrl('/inventory/category');
+export const CREATECATEGORY = getApiUrl('/inventory/category'); 
+export const GETACATEGORY = getApiUrl('/inventory/category/');
+export const UPDATECATEGORY = getApiUrl('/inventory/category/');
+export const DELETECATEGORY= getApiUrl('/inventory/category/');
+

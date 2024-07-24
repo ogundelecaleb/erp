@@ -16,7 +16,7 @@ import {
 const ProjectGrid = ({data}) => {
   return (
     <div className="overflow-auto">
-          <div className="bg-[#F9FAFB] p-[10px] md:p-[16px] h-[526px] overflow-auto lg:p-[20px] grid grid-cols-2  md:grid-cols-4 gap-[20px] ">
+          <div className="bg-[#F9FAFB] p-[10px] md:p-[16px] h-full overflow-auto lg:p-[20px] grid grid-cols-2  md:grid-cols-4 gap-[20px] ">
             {!data
               ? ""
               : data.map((project) => (
@@ -61,9 +61,9 @@ const ProjectGrid = ({data}) => {
 
                     <div className="flex items-center justify-between gap-[8px] mt-[16px] md:mt-[20px] text-[12px] md:text-[14px] text-[#667185]  font-normal">
                       <img
-                        src={project?.image}
+                        src={"./assets/userimage.png" ||project?.image}
                         alt="participant"
-                        className="w-[68px] h-[24px] "
+                        className="w-[24px] h-[24px] rounded-full "
                       />
 
                       <div className="flex items-center gap-[8px]">
