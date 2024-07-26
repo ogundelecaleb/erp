@@ -19,12 +19,13 @@ import {
 } from "@chakra-ui/react";
 import api from "../../api";
 import { enqueueSnackbar } from "notistack";
-import { createDeduction } from "../../api/apicalls";
+import { createTimeScheduling } from "../../api/apicalls";
 import { useQuery } from "@tanstack/react-query";
 
-const DeductionSetup = () => {
+const TimeSchedulingSetup = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [deleteId, setDeleteId] = useState("");
+  const [color, setColor] =useState("")
   const [formValue, setFormValue] = useState({
     name: "",
     description: "",
@@ -46,29 +47,29 @@ const DeductionSetup = () => {
   const closeCreateModal = () => {
     setIsCreateModal(false);
   };
-  const getProjectQuery = useQuery(["cat"], () => getDeductions(), {
+  const getProjectQuery = useQuery(["cat"], () => getTimeSchedulings(), {
     keepPreviousData: true,
     refetchOnWindowFocus: "always",
   });
 
-  async function getDeductions() {
+  async function getTimeSchedulings() {
     try {
       const response = await api.getCategory();
-      console.log("getDeduction===>", response);
+      console.log("getTimeScheduling===>", response);
 
       return response;
     } catch (error) {
       return error;
     }
   }
-  async function createDeduction() {
+  async function createTimeScheduling() {
     setIsLoading(true);
     try {
-      const response = await api.createDeduction({
+      const response = await api.createTimeScheduling({
         name: formValue.name,
         type: formValue.type,
       });
-      console.log("createDeduction===>", response);
+      console.log("createTimeScheduling===>", response);
       enqueueSnackbar(response?.message, { variant: "success" });
       setIsCreateModal(false);
       clearForm();
@@ -80,11 +81,11 @@ const DeductionSetup = () => {
     }
   }
 
-  async function deleteDeduction(id) {
+  async function deleteTimeScheduling(id) {
     setDeleteId(id);
     setIsLoading(true);
     try {
-      const response = await api.deleteDeduction(id);
+      const response = await api.deleteTimeScheduling(id);
       console.log("delete prject ===>", response);
       enqueueSnackbar(response?.message, { variant: "success" });
 
@@ -110,7 +111,7 @@ const DeductionSetup = () => {
         <div className="flex-between bg-white p-3">
           <div className="">
             <p className=" text-[16px] md:text-lg  text-[#000] leading-[24px] font-medium text-left ">
-              Items
+          Time Scheduling  Status
             </p>
           </div>
           <buttion
@@ -137,7 +138,15 @@ const DeductionSetup = () => {
                   className=" px-5  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                 >
                   <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                    Deduction Option
+                    Time
+                  </div>
+                </th>
+                <th
+                  scope="col"
+                  className=" px-5  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                >
+                  <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
+              Schedule
                   </div>
                 </th>
 
@@ -164,7 +173,7 @@ const DeductionSetup = () => {
                         alt=""
                       />
                       <h3 className="text-[30px] leading-[35px]  text-[#1A202C] font-extrabold mb-[6px]">
-                        No Deduction
+                        No TimeScheduling
                       </h3>
                     </td>
                   </tr>
@@ -176,6 +185,17 @@ const DeductionSetup = () => {
                       <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
                         <Menu variant="Bold" color="#667185" size="20" />
                       </td>
+                      <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
+                     
+                       <input
+                       type="time"
+                         
+                          className="w-[60px] md:w-[120px] border-[0.2px] p-2 rounded-md border-[#98A2B3]"
+
+                          value={color}
+                          onChange={(e)=> setColor(e.target.value)}
+                        />
+                    </td>
 
                       <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
                         <input
@@ -183,8 +203,9 @@ const DeductionSetup = () => {
                           value={result.name}
                         />
                       </td>
+                    
                       <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                        <button onClick={() => deleteDeduction(result.id)}>
+                        <button onClick={() => deleteTimeScheduling(result.id)}>
                           {" "}
                           {isLoading && deleteId === result.id ? (
                             <ClipLoader color={"#F44336"} size={20} />
@@ -226,7 +247,7 @@ const DeductionSetup = () => {
             color="#000000"
             className="text-[18px] md:text-[20px] text-[#000000] font-medium leading-[24px] md:leading-[24px]"
           >
-            Create New Deduction Option{" "}
+            Create New TimeScheduling Status{" "}
           </ModalHeader>
           <ModalCloseButton size={"sm"} />
           <Divider color="#98A2B3" />
@@ -242,7 +263,7 @@ const DeductionSetup = () => {
               <div className=" relative  mt-[16px]  flex items-center">
                 <input
                   type="text"
-                  placeholder="Deduction Name"
+                  placeholder="TimeScheduling Name"
                   className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                   required
                   autoComplete="on"
@@ -306,7 +327,7 @@ const DeductionSetup = () => {
               Cancel
             </button>
             <button
-              onClick={createDeduction}
+              onClick={createTimeScheduling}
               className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white"
             >
               {isLoading ? (
@@ -322,4 +343,4 @@ const DeductionSetup = () => {
   );
 };
 
-export default DeductionSetup;
+export default TimeSchedulingSetup;

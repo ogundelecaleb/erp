@@ -16,18 +16,19 @@ import {
   ModalHeader,
   ModalOverlay,
   Text,
-  useQuery,
 } from "@chakra-ui/react";
 import api from "../../api";
 import { enqueueSnackbar } from "notistack";
 import { createCategory } from "../../api/apicalls";
+import { useQuery } from "@tanstack/react-query";
 
 const CategorySetup = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [deleteId, setDeleteId] = useState("");
   const [formValue, setFormValue] = useState({
     name: "",
     description: "",
-    type: ""
+    type: "",
   });
   const [isCreateModal, setIsCreateModal] = useState(false);
   // const handleChange = (newValue) => {
@@ -45,12 +46,12 @@ const CategorySetup = () => {
   const closeCreateModal = () => {
     setIsCreateModal(false);
   };
-  const getProjectQuery = useQuery(["category"], () => getCategory(), {
+  const getProjectQuery = useQuery(["cat"], () => getCategorys(), {
     keepPreviousData: true,
     refetchOnWindowFocus: "always",
   });
 
-  async function getCategory() {
+  async function getCategorys() {
     try {
       const response = await api.getCategory();
       console.log("getCategory===>", response);
@@ -61,21 +62,37 @@ const CategorySetup = () => {
     }
   }
   async function createCategory() {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       const response = await api.createCategory({
         name: formValue.name,
         type: formValue.type,
-       
       });
       console.log("createCategory===>", response);
       enqueueSnackbar(response?.message, { variant: "success" });
-      setIsCreateModal(false)
-      clearForm()
-       getProjectQuery.refetch()
-     setIsLoading(false)
+      setIsCreateModal(false);
+      clearForm();
+      getProjectQuery.refetch();
+      setIsLoading(false);
     } catch (error) {
-      setIsLoading(false)
+      setIsLoading(false);
+      enqueueSnackbar(error?.message, { variant: "error" });
+    }
+  }
+
+  async function deleteCategory(id) {
+    setDeleteId(id);
+    setIsLoading(true);
+    try {
+      const response = await api.deleteCategory(id);
+      console.log("delete prject ===>", response);
+      enqueueSnackbar(response?.message, { variant: "success" });
+
+      getProjectQuery.refetch();
+      //refetch()
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
       enqueueSnackbar(error?.message, { variant: "error" });
     }
   }
@@ -84,7 +101,7 @@ const CategorySetup = () => {
     setFormValue({
       name: "",
       description: "",
-      type: ""
+      type: "",
     });
   };
   return (
@@ -136,38 +153,49 @@ const CategorySetup = () => {
             </thead>
             <tbody>
               {isLoading && <div>Loading...</div>}
-              {!isLoading && TaskSetupData.length === 0 && (
-                <tr>
-                  <td className="text-center" colspan="6">
-                    <img
-                      src="./nodata.gif"
-                      className="mx-auto mt-6 h-[70px] "
-                      alt=""
-                    />
-                    <h3 className="text-[30px] leading-[35px]  text-[#1A202C] font-extrabold mb-[6px]">
-                      No Project
-                    </h3>
-                  </td>
-                </tr>
-              )}
-              {TaskSetupData &&
-                TaskSetupData?.map((result) => (
-                  <tr key={result.name} className="mb-2 hover:bg-light-gray">
-                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      <Menu variant="Bold" color="#667185" size="20" />
-                    </td>
-
-                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      <input
-                        className="w-[180px] md:w-[292px] border-[0.2px] p-2 rounded-md border-[#98A2B3]"
-                        value={result.name}
+              {!isLoading &&
+                getProjectQuery?.data?.data?.product_categories?.length ===
+                  0 && (
+                  <tr>
+                    <td className="text-center" colspan="5">
+                      <img
+                        src="./nodata.gif"
+                        className="mx-auto mt-6 h-[70px] "
+                        alt=""
                       />
-                    </td>
-                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      <Trash variant="Bold" color="#F44336" size="20" />
+                      <h3 className="text-[30px] leading-[35px]  text-[#1A202C] font-extrabold mb-[6px]">
+                        No Category
+                      </h3>
                     </td>
                   </tr>
-                ))}
+                )}
+              {getProjectQuery?.data?.data?.product_categories &&
+                getProjectQuery?.data?.data?.product_categories?.map(
+                  (result) => (
+                    <tr key={result.name} className="mb-2 hover:bg-light-gray">
+                      <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                        <Menu variant="Bold" color="#667185" size="20" />
+                      </td>
+
+                      <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                        <input
+                          className="w-[180px] md:w-[292px] border-[0.2px] p-2 rounded-md border-[#98A2B3]"
+                          value={result.name}
+                        />
+                      </td>
+                      <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                        <button onClick={() => deleteCategory(result.id)}>
+                          {" "}
+                          {isLoading && deleteId === result.id ? (
+                            <ClipLoader color={"#F44336"} size={20} />
+                          ) : (
+                            <Trash variant="Bold" color="#F44336" size="20" />
+                          )}
+                        </button>
+                      </td>
+                    </tr>
+                  )
+                )}
             </tbody>
           </table>
         </div>
@@ -240,9 +268,7 @@ const CategorySetup = () => {
                   className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                   required
                   autoComplete="on"
-                 
                   name="type"
-               
                   value={formValue.type}
                   onChange={(e) => handleInputChange(e)}
                   autoCapitalize="off"
@@ -281,7 +307,6 @@ const CategorySetup = () => {
             </button>
             <button
               onClick={createCategory}
-
               className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white"
             >
               {isLoading ? (

@@ -14,6 +14,7 @@ import {
   Folder2,
   Home,
   Layer,
+  MessageText,
   Money2,
 } from "iconsax-react";
 
@@ -642,22 +643,134 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
               )}
             </div>
 
-            <Link
-              to="/finance"
-              className={` py-[10px] pl-[16px] flex items-center text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
-                window.location.pathname === "/finance"
-                  ? "text-[#F05800] font-medium rounded-md"
-                  : "text-[#667185] font-normal"
-              }`}
-            >
-              <Money2
-                className="mr-[12px]"
-                variant={
-                  window.location.pathname === "/finance" ? "Bold" : "Linear"
-                }
-              />
-              Finance
-            </Link>
+            <button
+                onClick={() => setIsActive("finance")}
+                className={` py-[10px] pl-[16px] flex items-center  justify-between w-full text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
+                  window.location.pathname ===  "/vendor" ||
+                  window.location.pathname === "/income"  ||
+                  window.location.pathname === "/financereport" ||
+                  window.location.pathname ===  "/financeanalytics" ||
+                  window.location.pathname === "/banking"  ||
+             
+                  window.location.pathname === "/expense"  ||
+                  window.location.pathname === "/customers" ||
+                  window.location.pathname === "/viewcustomers"
+                    ? "text-[#F05800] font-medium rounded-md"
+                    : "text-[#667185] font-normal"
+                }`}
+              >
+                <div className="flex items-center">
+                  {" "}
+                  <Money2
+                    className="mr-[12px]"
+                    variant={
+                      window.location.pathname ===  "/vendor" ||
+                      window.location.pathname === "/income"  ||
+                      window.location.pathname === "/financereport" ||
+                      window.location.pathname ===  "/financeanalytics" ||
+                      window.location.pathname === "/banking"  ||
+                 
+                      window.location.pathname === "/expense"  ||
+                      window.location.pathname === "/customers" ||
+                      window.location.pathname === "/viewcustomers"
+                        ? "Bold"
+                        : "Linear"
+                    }
+                  />
+                  Finance && Acc
+                </div>
+
+                {isActive === "finance" ? (
+                  <ArrowUp2 size="14" variant="Linear" color="#667185" />
+                ) : (
+                  <ArrowDown2 size="14" variant="Linear" color="#667185" />
+                )}
+              </button>
+              {isActive === "finance" && (
+                <ul className="ml-[26px] pl-[12px] py-[14px] border-l border-[#98A2B3]/50">
+                  <Link
+                    to="/customers"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/customers" ||
+                      window.location.pathname === "/viewcustomers"
+                        ? "bg-[#F7F9FC] font-medium "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Customer</li>
+                  </Link>
+
+                  <Link
+                    to="/vendor"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/vendor" ||
+                      window.location.pathname === "/vendor"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Vendor</li>
+                  </Link>
+                  <Link
+                    to="/banking"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/banking" ||
+                      window.location.pathname === "/banking"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Banking</li>
+                  </Link>
+                  <Link
+                    to="/income"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/income" ||
+                      window.location.pathname === "/income"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Income</li>
+                  </Link>
+                  <Link
+                    to="/expense"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/expense" ||
+                      window.location.pathname === "/expense"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Expense</li>
+                  </Link>
+                  <Link
+                    to="/financeanalytics"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/financeanalytics" ||
+                      window.location.pathname === "/financeanalytics"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Analytics</li>
+                  </Link>
+                  <Link
+                    to="/financereport"
+                    className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
+                      window.location.pathname === "/financereport" ||
+                      window.location.pathname === "/financereport"
+                        ? "bg-[#F7F9FC] font-medium  "
+                        : " font-normal"
+                    }`}
+                  >
+                    <li className="">Report</li>
+                  </Link>
+                 
+                </ul>
+              )}
+
+           
 
             {/* Analytics */}
             <Link
@@ -668,13 +781,13 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   : "text-[#667185] font-normal"
               }`}
             >
-              <Chart
+              <MessageText
                 className="mr-[12px]"
                 variant={
                   window.location.pathname === "/analytics" ? "Bold" : "Linear"
                 }
               />
-              Analytics
+              Communication
             </Link>
           </div>
         </div>

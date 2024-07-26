@@ -80,6 +80,14 @@ import Document from "./screens/Hrm/Document";
 import MonthlyAttendance from "./screens/Hrm/MonthlyAttendance";
 import Leave from "./screens/Hrm/Leave";
 import PayrollReport from "./screens/Hrm/PayrollReport";
+import Customer from "./screens/Finance/Customer";
+import ViewCustomer from "./screens/Finance/ViewCustomer";
+import Vendor from "./screens/Finance/Vendor";
+import Income from "./screens/Finance/Income";
+import FinanceReport from "./screens/Finance/FinanceReport";
+import FinanceAnalytics from "./screens/Finance/FinanceAnalytics";
+import Expense from "./screens/Finance/Expense";
+import Banking from "./screens/Finance/Banking";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -370,7 +378,51 @@ function App() {
                 exact={true}
                 element={<Analytics />}
               />
+
+              {/* //================>>>>>>>>>>>>>>>>>>>> Finance and accounting */}
+              <Route
+                path="/customers"
+                exact={true}
+                element={<Customer />}
+              />
+               <Route
+                path="/viewcustomers"
+                exact={true}
+                element={<ViewCustomer />}
+              />
+              <Route
+                path="/vendor"
+                exact={true}
+                element={<Vendor />}
+              />
+              <Route
+                path="/income"
+                exact={true}
+                element={<Income />}
+              />
+              <Route
+                path="/financereport"
+                exact={true}
+                element={<FinanceReport />}
+              />
+              <Route
+                path="/financeanalytics"
+                exact={true}
+                element={<FinanceAnalytics />}
+              />
+              <Route
+                path="/expense"
+                exact={true}
+                element={<Expense />}
+              />
+              <Route
+                path="/banking"
+                exact={true}
+                element={<Banking />}
+              />
             </Route>
+
+            
           </Routes>
         </Router>
       </QueryClientProvider>

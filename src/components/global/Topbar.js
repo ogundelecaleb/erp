@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { clearUserData } from "../../utils/utils";
 import { Logout } from "iconsax-react";
+import Moment from "moment";
 // import {IoMdInformationCircleOutline} from "react-icons/io"
 
 const Topbar = ({ setIsSidebar, userData }) => {
@@ -15,6 +16,16 @@ const Topbar = ({ setIsSidebar, userData }) => {
   const handleIsModalClose = () => {
     setIsModalOpen(false);
   };
+  function formatDate(datetimeStr) {
+    const date = Moment(datetimeStr);
+    const formattedDate = date.format("dddd, Do MMMM, YYYY");
+    return formattedDate;
+  }
+  function formatTime(datetimeStr) {
+    const date = Moment(datetimeStr);
+    const formattedTime = date.format("h:mm a");
+    return formattedTime;
+  }
 
   return (
     <div className="flex w-full items-center justify-between px-6 gap-[16px] py-2 border-l-[0.2px] border-[#D0D5DD]">
@@ -53,6 +64,17 @@ const Topbar = ({ setIsSidebar, userData }) => {
             />
           </svg>
         </button>
+        <div className="flex items-center gap-[16px]">
+          <div className="flex items-center">
+            <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+              {formatDate(new Date())}
+            </p>
+          </div>
+          <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
+          <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+            {formatTime(new Date())}
+          </p>
+        </div>
         <h4 className="text-[20px] text-[#1a202c] font-bold hidden md:block">
           {location.pathname === "/dashboard"
             ? "Dashboard"
@@ -87,7 +109,6 @@ const Topbar = ({ setIsSidebar, userData }) => {
       </div>
       <div className="flex flex-row gap-3">
         <div className="flex  gap-[12px] p-[8px] bg-gray-100/50  items-center rounded-[18px]">
-         
           <button
             class="bg-[#FAFAFA] rounded-md  items-center lg:pl-[8px] lg:pr-[16px] pl-[6px] pr-[14px] py-2 flex cursor-pointer "
             onClick={() => {

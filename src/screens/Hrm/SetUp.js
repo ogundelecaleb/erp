@@ -12,9 +12,10 @@ import TerminationSetup from "../../components/hrm/TerminationSetup";
 import PayslipSetup from "../../components/hrm/PayslipSetup";
 import AttendanceSetup from "../../components/hrm/AttendanceSetup";
 import LeaveStatusSetup from "../../components/hrm/LeaveStatusSetup";
+import TimeSchedulingSetup from "../../components/hrm/TimeSchedulingSetup";
 
 const SetUp = () => {
-  const [staged, setStaged] = useState("Item Category");
+  const [staged, setStaged] = useState("Branch");
 
   const Stages = [
     { id: 1, name: "Branch" },
@@ -28,6 +29,7 @@ const SetUp = () => {
     { id: 9, name: "Payslip  Status" },
     { id: 10, name: "Attendance  Status" },
     { id: 11, name: "Leave  Status" },
+    { id: 12, name: "Time Schedule" },
   ];
   return (
     <div className="p-[20px] bg-[#F2F2F2] h-screen ">
@@ -35,7 +37,7 @@ const SetUp = () => {
         <p>ProjectSetup</p>
       </div> */}
       <div className="flex justify-between gap-[30px]">
-        <div className="w-[411px] rounded-lg overflow-hidden ">
+        <div className="w-[360px] rounded-lg overflow-hidden ">
           {Stages &&
             Stages.map((stage, index) => (
               <button
@@ -65,9 +67,9 @@ const SetUp = () => {
 
         ) : staged === "Deduction Option" ? (
             <DeductionSetup />
-        ) : staged === "Leave  Status" ? (
+        ) : staged === "Leave Type" ? (
             <LeaveSetup />
-        ) : staged === "Termination" ? (
+        ) : staged === "Termination Type" ? (
             <TerminationSetup />
 
         ) : staged === "Payslip  Status" ? (
@@ -76,8 +78,10 @@ const SetUp = () => {
             <AttendanceSetup />
         ) : staged === "Leave  Status" ? (
             <LeaveStatusSetup />
+          ) : staged === "Time Schedule" ? (
+            <TimeSchedulingSetup />
         ) : (
-          ""
+    ""
         )}
       </div>
     </div>
