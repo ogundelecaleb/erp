@@ -88,6 +88,7 @@ import FinanceReport from "./screens/Finance/FinanceReport";
 import FinanceAnalytics from "./screens/Finance/FinanceAnalytics";
 import Expense from "./screens/Finance/Expense";
 import Banking from "./screens/Finance/Banking";
+import EditProposals from "./components/finance/EditProposals";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -389,7 +390,11 @@ function App() {
                 path="/viewcustomers"
                 exact={true}
                 element={<ViewCustomer />}
-              />
+              /> <Route
+              path="/customers/editproposals"
+              exact={true}
+              element={<EditProposals />}
+            />
               <Route
                 path="/vendor"
                 exact={true}

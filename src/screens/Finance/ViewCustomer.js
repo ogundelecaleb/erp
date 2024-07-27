@@ -8,12 +8,13 @@ import PersonalDetails from "../../components/hrm/PersonalDetails";
 import CompanyDetails from "../../components/hrm/CompanyDetails.js";
 import { Add, DocumentUpload, Edit, SearchNormal1 } from "iconsax-react";
 import CustomerDetails from "../../components/finance/CustomerDetails.js";
+import Proposal from "../../components/finance/Proposal.js";
 
 const ViewCustomer = () => {
   const [isOpenImportModal, setIsOpenImportModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isCreateModal, setIsCreateModal] = useState(false);
-  const [state, setState] = useState("personal");
+  const [state, setState] = useState("details");
 
   const toggleCreateModal = () => {
     setIsCreateModal(!isCreateModal);
@@ -92,26 +93,14 @@ const ViewCustomer = () => {
      
     </div>
   </div>
-    <div className="p-[20px] bg-[#F2F2F2]  ">
-      <div className="border-[0.2px] border-[#98a2b3] rounded-tr-[8px] rounded-tl-[8px]  overflow-hidden h-full w-full bg-[#ffff]  ">
-        <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px] block md:flex justify-between items-center ">
+    <div className="p-[20px] bg-[#F2F2F2] min-h-screen  ">
+      <div className="border-[0.2px] border-[#E4E7EC] rounded-tr-[8px] rounded-tl-[8px]  overflow-hidden h-full w-full bg-[#ffff]  ">
+        <div className=" p-[16px] md:p-[20px] block md:flex justify-between items-center ">
           <div className="flex items-center gap-[16px]">
             <div className="flex items-center">
-              <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                HRM /
-              </p>
-              <Link to="/emeployee">
-                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  &nbsp; Employee /
-                </p>
-              </Link>
-              <Link to="/employee/manageemployee">
-                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  &nbsp; Manage Employee /
-                </p>
-              </Link>
+              
               <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
-                &nbsp; Create Employee
+               Ogundele Caleb
               </p>
             </div>
           </div>
@@ -119,27 +108,63 @@ const ViewCustomer = () => {
           <div className="flex items-center gap-[16px] ">
             <ul className="p-[4px] md:p-[6px] bg-[#F7F9FC] rounded-md flex items center border-[0.2px] border-[#D0D5DD]  ">
               <li
-                onClick={() => setState("personal")}
+                onClick={() => setState("details")}
                 className={`px-[20px] md:px-[28px] py-[5px] rounded-md cursor-pointer ${
-                  state === "personal"
+                  state === "details"
                     ? "bg-[#fff] border-[0.2px] border-[#D0D5DD]"
                     : ""
                 }`}
               >
                 <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  Personal Details
+                  Details
                 </p>
               </li>
               <li
-                onClick={() => setState("company")}
+                onClick={() => setState("proposals")}
                 className={`px-[20px] md:px-[28px] py-[5px] rounded-md cursor-pointer ${
-                  state === "company"
+                  state === "proposals"
                     ? "bg-[#fff] border-[0.2px] border-[#D0D5DD]"
                     : ""
                 }`}
               >
                 <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  Company Details
+                  Proposals
+                </p>
+              </li>
+              <li
+                onClick={() => setState("invoices")}
+                className={`px-[20px] md:px-[28px] py-[5px] rounded-md cursor-pointer ${
+                  state === "invoices"
+                    ? "bg-[#fff] border-[0.2px] border-[#D0D5DD]"
+                    : ""
+                }`}
+              >
+                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                  Invoices
+                </p>
+              </li>
+              <li
+                onClick={() => setState("revenue")}
+                className={`px-[20px] md:px-[28px] py-[5px] rounded-md cursor-pointer ${
+                  state === "revenue"
+                    ? "bg-[#fff] border-[0.2px] border-[#D0D5DD]"
+                    : ""
+                }`}
+              >
+                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                  Revenue
+                </p>
+              </li>
+              <li
+                onClick={() => setState("project")}
+                className={`px-[20px] md:px-[28px] py-[5px] rounded-md cursor-pointer ${
+                  state === "project"
+                    ? "bg-[#fff] border-[0.2px] border-[#D0D5DD]"
+                    : ""
+                }`}
+              >
+                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                  Project
                 </p>
               </li>
             </ul>
@@ -147,7 +172,7 @@ const ViewCustomer = () => {
         </div>
        
     </div>
-    {state==="personal" ? (<CustomerDetails/>) : (<CompanyDetails/>)}
+    {state==="details" ? (<CustomerDetails/>) : state==="proposals" ? (<Proposal/>):(<CompanyDetails/>)}
     </div>
     </div>
   );
