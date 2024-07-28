@@ -158,7 +158,7 @@ const Proposal = () => {
                       </MenuButton>
                       <MenuList maxW="32" className="">
                         <MenuItem
-                          onClick={() => setIsViewModal(true)}
+                          onClick={() => navigate("/customers/viewproposals")}
                           w="full"
                           color="#718096"
                           mb="10px"
@@ -174,7 +174,7 @@ const Proposal = () => {
                           </p>
                         </MenuItem>
                         <MenuItem
-                          onClick={() => setIsViewModal(true)}
+                        onClick={() => navigate("/customers/viewinvoice")}
                           w="full"
                           color="#718096"
                           mb="10px"
@@ -190,7 +190,8 @@ const Proposal = () => {
                           </p>
                         </MenuItem>
                         <MenuItem
-                          //onClick={() => ToggleEditModal()}
+                                                 onClick={() => navigate("/customers/editproposals")}
+
                           w="full"
                           color="#718096"
                           mb="10px"
@@ -288,11 +289,11 @@ const Proposal = () => {
                               className=" px-[16px] md:px-[24px] pb-[30px] md:pb-[40px]"
                             >
                               <p className=" text-[16px] md:text-lg text-center  text-[#000] leading-[24px] font-medium  ">
-                                Delete Leave
+                                Delete Proposal
                               </p>
 
                               <p className="text-[14px]  text-[#667185] leading-[20px] font-normal text-center mt-2  ">
-                                Are you sure you want to delete this leave? This
+                                Are you sure you want to delete this proposal? This
                                 action cannot be undone.
                               </p>
                             </ModalBody>

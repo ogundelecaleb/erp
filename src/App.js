@@ -89,6 +89,11 @@ import FinanceAnalytics from "./screens/Finance/FinanceAnalytics";
 import Expense from "./screens/Finance/Expense";
 import Banking from "./screens/Finance/Banking";
 import EditProposals from "./components/finance/EditProposals";
+import ViewProposals from "./screens/Finance/ViewProposals";
+import ViewInvoice from "./screens/Finance/ViewInvoice";
+import EditProposal from "./screens/Finance/EditProposal";
+import EditInvoice from "./screens/Finance/EditInvoice";
+import InvoiceView from "./screens/Finance/InvoiceView";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -219,25 +224,23 @@ function App() {
                 element={<ReportInventory />}
               />
               <Route path="/hrmsetup" exact={true} element={<SetUp />} />
-
-              <Route path="/hrmreport" exact={true} element={<Report />} >
-              <Route
-                path="/hrmreport/monthlyattendance"
-                exact={true}
-                element={<MonthlyAttendance />}
-              />
-               <Route
-                path="/hrmreport/leave"
-                exact={true}
-                element={<Leave />}
-              />
-               <Route
-                path="/hrmreport/payroll"
-                exact={true}
-                element={<PayrollReport />}
-              />
+              <Route path="/hrmreport" exact={true} element={<Report />}>
+                <Route
+                  path="/hrmreport/monthlyattendance"
+                  exact={true}
+                  element={<MonthlyAttendance />}
+                />
+                <Route
+                  path="/hrmreport/leave"
+                  exact={true}
+                  element={<Leave />}
+                />
+                <Route
+                  path="/hrmreport/payroll"
+                  exact={true}
+                  element={<PayrollReport />}
+                />
               </Route>
-
               <Route
                 path="/manageleave"
                 exact={true}
@@ -248,9 +251,7 @@ function App() {
                 exact={true}
                 element={<ManageEmployeeSalary />}
               />
-
               <Route path="/hradmin" exact={true} element={<HrAdmin />} />
-
               {/* ============>>>>>> eployeee */}
               <Route path="/employee" exact={true} element={<Employee />}>
                 <Route
@@ -305,7 +306,6 @@ function App() {
                 />
               </Route>
               {/*=========>>>>>> End of employee management */}
-
               {/*==============>>>>>>> Begining of HR Admin */}
               <Route path="/hradmin" exact={true} element={<HrAdmin />}>
                 <Route path="/hradmin/award" exact={true} element={<Award />} />
@@ -314,97 +314,99 @@ function App() {
                   exact={true}
                   element={<Transfer />}
                 />
-                 <Route
+                <Route
                   path="/hradmin/resignation"
                   exact={true}
                   element={<Resignation />}
                 />
-                 <Route
-                  path="/hradmin/trip"
-                  exact={true}
-                  element={<Trip />}
-                />
-                 <Route
+                <Route path="/hradmin/trip" exact={true} element={<Trip />} />
+                <Route
                   path="/hradmin/promotion"
                   exact={true}
                   element={<Promotion />}
                 />
-                 <Route
+                <Route
                   path="/hradmin/compliant"
                   exact={true}
                   element={<Compliants />}
                 />
-                 <Route
+                <Route
                   path="/hradmin/warning"
                   exact={true}
                   element={<Warning />}
                 />
-                 <Route
+                <Route
                   path="/hradmin/termination"
                   exact={true}
                   element={<Termination />}
                 />
-                 <Route
+                <Route
                   path="/hradmin/annoucement"
                   exact={true}
                   element={<Annoucement />}
                 />
-                 <Route
+                <Route
                   path="/hradmin/holidays"
                   exact={true}
                   element={<Holidays />}
                 />
               </Route>
-
               {/*==============>>>>>>> End of HR Admin */}
-
               <Route
                 path="/companyanddocument"
                 exact={true}
                 element={<CompanyDocument />}
               >
-                  <Route
-                path="/companyanddocument/companypolicy"
-                exact={true}
-                element={<CompanyPolicy />}
-              />
                 <Route
-                path="/companyanddocument/document"
-                exact={true}
-                element={<Document />}
-              />
+                  path="/companyanddocument/companypolicy"
+                  exact={true}
+                  element={<CompanyPolicy />}
+                />
+                <Route
+                  path="/companyanddocument/document"
+                  exact={true}
+                  element={<Document />}
+                />
               </Route>
               <Route
                 path="/hrmanalytics"
                 exact={true}
                 element={<Analytics />}
               />
-
               {/* //================>>>>>>>>>>>>>>>>>>>> Finance and accounting */}
+              <Route path="/customers" exact={true} element={<Customer />} />
               <Route
-                path="/customers"
-                exact={true}
-                element={<Customer />}
-              />
-               <Route
                 path="/viewcustomers"
                 exact={true}
                 element={<ViewCustomer />}
-              /> <Route
-              path="/customers/editproposals"
-              exact={true}
-              element={<EditProposals />}
-            />
+              />{" "}
               <Route
-                path="/vendor"
+                path="/customers/editproposals"
                 exact={true}
-                element={<Vendor />}
+                element={<EditProposal />}
               />
               <Route
-                path="/income"
+                path="/customers/viewproposals"
                 exact={true}
-                element={<Income />}
+                element={<ViewProposals />}
               />
+              <Route
+                path="/customers/viewinvoice"
+                exact={true}
+                element={<ViewInvoice />}
+              />
+                <Route
+                path="/customers/editinvoice"
+                exact={true}
+                element={<EditInvoice />}
+              />
+                <Route
+                path="/customers/invoiceview"
+                exact={true}
+                element={<InvoiceView />}
+              />
+              <Route path="/vendor" exact={true} element={<Vendor />} />
+              <Route path="/income" exact={true} element={<Income />} />
               <Route
                 path="/financereport"
                 exact={true}
@@ -415,19 +417,9 @@ function App() {
                 exact={true}
                 element={<FinanceAnalytics />}
               />
-              <Route
-                path="/expense"
-                exact={true}
-                element={<Expense />}
-              />
-              <Route
-                path="/banking"
-                exact={true}
-                element={<Banking />}
-              />
+              <Route path="/expense" exact={true} element={<Expense />} />
+              <Route path="/banking" exact={true} element={<Banking />} />
             </Route>
-
-            
           </Routes>
         </Router>
       </QueryClientProvider>

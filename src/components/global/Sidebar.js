@@ -654,6 +654,10 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
              
                   window.location.pathname === "/expense"  ||
                   window.location.pathname === "/customers" ||
+                  window.location.pathname === "/customers/viewproposals" ||
+                  window.location.pathname === "/customers/editproposals" ||
+
+                  window.location.pathname === "/customers/viewinvoice" ||
                   window.location.pathname === "/viewcustomers"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
@@ -672,6 +676,9 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                  
                       window.location.pathname === "/expense"  ||
                       window.location.pathname === "/customers" ||
+                      window.location.pathname === "/customers/viewproposals" ||
+                      window.location.pathname === "/customers/editproposals" ||
+                      window.location.pathname === "/customers/viewinvoice" ||
                       window.location.pathname === "/viewcustomers"
                         ? "Bold"
                         : "Linear"
@@ -692,6 +699,10 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     to="/customers"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
                       window.location.pathname === "/customers" ||
+                      window.location.pathname === "/customers/viewproposals" ||
+                      window.location.pathname === "/customers/viewinvoice" ||
+                      window.location.pathname === "/customers/editproposals" ||
+
                       window.location.pathname === "/viewcustomers"
                         ? "bg-[#F7F9FC] font-medium "
                         : " font-normal"
