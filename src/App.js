@@ -94,6 +94,11 @@ import ViewInvoice from "./screens/Finance/ViewInvoice";
 import EditProposal from "./screens/Finance/EditProposal";
 import EditInvoice from "./screens/Finance/EditInvoice";
 import InvoiceView from "./screens/Finance/InvoiceView";
+import Account from "./screens/Finance/Account";
+import ChartOfAccount from "./screens/Finance/ChartOfAccount";
+import BankTransfer from "./screens/Finance/Transfer";
+import Revenue from "./screens/Finance/Revenue";
+import CreditNote from "./screens/Finance/CreditNote";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -406,7 +411,19 @@ function App() {
                 element={<InvoiceView />}
               />
               <Route path="/vendor" exact={true} element={<Vendor />} />
-              <Route path="/income" exact={true} element={<Income />} />
+              <Route path="/income" exact={true} element={<Income />} >
+                <Route
+                  path="/income/revenue"
+                  exact={true}
+                  element={<Revenue />}
+                />
+                <Route
+                  path="/income/creitnote"
+                  exact={true}
+                  element={<CreditNote />}
+                />
+              </Route>
+            
               <Route
                 path="/financereport"
                 exact={true}
@@ -418,7 +435,23 @@ function App() {
                 element={<FinanceAnalytics />}
               />
               <Route path="/expense" exact={true} element={<Expense />} />
-              <Route path="/banking" exact={true} element={<Banking />} />
+              <Route path="/banking" exact={true} element={<Banking />} >
+              <Route
+                path="/banking/account"
+                exact={true}
+                element={<Account />}
+              />
+               <Route
+                path="/banking/chartofaccount"
+                exact={true}
+                element={<ChartOfAccount />}
+              />
+               <Route
+                path="/banking/transfer"
+                exact={true}
+                element={<BankTransfer />}
+              />
+              </Route>
             </Route>
           </Routes>
         </Router>

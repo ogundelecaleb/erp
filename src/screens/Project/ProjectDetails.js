@@ -283,7 +283,7 @@ const ProjectDetails = () => {
               </td>
             </tr>
           </table>
-        </div>{" "}
+        </div>
         <Tabs>
           <TabList style={{}}>
             <Tab

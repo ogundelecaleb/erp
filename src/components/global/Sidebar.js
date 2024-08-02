@@ -651,12 +651,13 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/financereport" ||
                   window.location.pathname ===  "/financeanalytics" ||
                   window.location.pathname === "/banking"  ||
-             
                   window.location.pathname === "/expense"  ||
                   window.location.pathname === "/customers" ||
                   window.location.pathname === "/customers/viewproposals" ||
                   window.location.pathname === "/customers/editproposals" ||
-
+                  window.location.pathname === "/banking/transfer" ||
+                  window.location.pathname === "/banking/chartofaccount" ||
+                  window.location.pathname === "/banking/account" ||
                   window.location.pathname === "/customers/viewinvoice" ||
                   window.location.pathname === "/viewcustomers"
                     ? "text-[#F05800] font-medium rounded-md"
@@ -673,12 +674,14 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/financereport" ||
                       window.location.pathname ===  "/financeanalytics" ||
                       window.location.pathname === "/banking"  ||
-                 
                       window.location.pathname === "/expense"  ||
                       window.location.pathname === "/customers" ||
                       window.location.pathname === "/customers/viewproposals" ||
                       window.location.pathname === "/customers/editproposals" ||
                       window.location.pathname === "/customers/viewinvoice" ||
+                       window.location.pathname === "/banking/transfer" ||
+                      window.location.pathname === "/banking/chartofaccount" ||
+                      window.location.pathname === "/banking/account" ||
                       window.location.pathname === "/viewcustomers"
                         ? "Bold"
                         : "Linear"
@@ -723,9 +726,12 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     <li className="">Vendor</li>
                   </Link>
                   <Link
-                    to="/banking"
+                    to="/banking/account"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
                       window.location.pathname === "/banking" ||
+                      window.location.pathname === "/banking/transfer" ||
+                      window.location.pathname === "/banking/chartofaccount" ||
+                      window.location.pathname === "/banking/account" ||
                       window.location.pathname === "/banking"
                         ? "bg-[#F7F9FC] font-medium  "
                         : " font-normal"
