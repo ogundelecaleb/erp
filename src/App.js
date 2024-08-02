@@ -99,6 +99,9 @@ import ChartOfAccount from "./screens/Finance/ChartOfAccount";
 import BankTransfer from "./screens/Finance/Transfer";
 import Revenue from "./screens/Finance/Revenue";
 import CreditNote from "./screens/Finance/CreditNote";
+import Bill from "./screens/Finance/Bill";
+import Payment from "./screens/Finance/Payment";
+import DebitNote from "./screens/Finance/DebitNote";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -400,18 +403,18 @@ function App() {
                 exact={true}
                 element={<ViewInvoice />}
               />
-                <Route
+              <Route
                 path="/customers/editinvoice"
                 exact={true}
                 element={<EditInvoice />}
               />
-                <Route
+              <Route
                 path="/customers/invoiceview"
                 exact={true}
                 element={<InvoiceView />}
               />
               <Route path="/vendor" exact={true} element={<Vendor />} />
-              <Route path="/income" exact={true} element={<Income />} >
+              <Route path="/income" exact={true} element={<Income />}>
                 <Route
                   path="/income/revenue"
                   exact={true}
@@ -423,7 +426,6 @@ function App() {
                   element={<CreditNote />}
                 />
               </Route>
-            
               <Route
                 path="/financereport"
                 exact={true}
@@ -434,23 +436,35 @@ function App() {
                 exact={true}
                 element={<FinanceAnalytics />}
               />
-              <Route path="/expense" exact={true} element={<Expense />} />
-              <Route path="/banking" exact={true} element={<Banking />} >
-              <Route
-                path="/banking/account"
-                exact={true}
-                element={<Account />}
-              />
-               <Route
-                path="/banking/chartofaccount"
-                exact={true}
-                element={<ChartOfAccount />}
-              />
-               <Route
-                path="/banking/transfer"
-                exact={true}
-                element={<BankTransfer />}
-              />
+              <Route path="/expense" exact={true} element={<Expense />}>
+                <Route path="/expense/bill" exact={true} element={<Bill />} />
+                <Route
+                  path="/expense/payment"
+                  exact={true}
+                  element={<Payment />}
+                />
+                <Route
+                  path="/expense/debitnote"
+                  exact={true}
+                  element={<DebitNote />}
+                />
+              </Route>
+              <Route path="/banking" exact={true} element={<Banking />}>
+                <Route
+                  path="/banking/account"
+                  exact={true}
+                  element={<Account />}
+                />
+                <Route
+                  path="/banking/chartofaccount"
+                  exact={true}
+                  element={<ChartOfAccount />}
+                />
+                <Route
+                  path="/banking/transfer"
+                  exact={true}
+                  element={<BankTransfer />}
+                />
               </Route>
             </Route>
           </Routes>

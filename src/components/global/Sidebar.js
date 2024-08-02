@@ -261,6 +261,10 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/hradmin/award" ||
                       window.location.pathname === "/companyanddocument/document" ||
                       window.location.pathname === "/companyanddocument/companypolicy" ||
+                      window.location.pathname === "hrmreport/monthlyattendance"  ||
+                      window.location.pathname === "/hrmreport/leave"  ||
+                    
+                      window.location.pathname === "/hrmreport/payroll"  || 
                       window.location.pathname === "/hrmreport"
                         ? "Bold"
                         : "Linear"
@@ -345,9 +349,13 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     <li className="">Analytics</li>
                   </Link>
                   <Link
-                    to="/hrmreport"
+                    to="hrmreport/monthlyattendance"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]    leading-[18px] md:leading-[24px]  mb-[14px] ${
-                      window.location.pathname === "/hrmreport" 
+                      window.location.pathname === "hrmreport/monthlyattendance"  ||
+                      window.location.pathname === "/hrmreport/leave"  ||
+                      window.location.pathname === "/hrmreport"  ||
+                      window.location.pathname === "/hrmreport/payroll"  
+
                         ? "bg-[#F7F9FC] font-medium "
                         : " font-normal"
                     }`}
@@ -659,6 +667,11 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/banking/chartofaccount" ||
                   window.location.pathname === "/banking/account" ||
                   window.location.pathname === "/customers/viewinvoice" ||
+                  window.location.pathname === "/income/creitnote" ||
+                  window.location.pathname === "/income/revenue" ||
+                  window.location.pathname === "/expense/payment" ||
+                  window.location.pathname === "/expense/debitnote" ||
+                  window.location.pathname === "/expense/bill" ||
                   window.location.pathname === "/viewcustomers"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
@@ -682,6 +695,11 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                        window.location.pathname === "/banking/transfer" ||
                       window.location.pathname === "/banking/chartofaccount" ||
                       window.location.pathname === "/banking/account" ||
+                      window.location.pathname === "/income/creitnote" ||
+                      window.location.pathname === "/income/revenue" ||
+                      window.location.pathname === "/expense/payment" ||
+                      window.location.pathname === "/expense/debitnote" ||
+                      window.location.pathname === "/expense/bill" ||
                       window.location.pathname === "/viewcustomers"
                         ? "Bold"
                         : "Linear"
@@ -740,9 +758,11 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     <li className="">Banking</li>
                   </Link>
                   <Link
-                    to="/income"
+                    to="/income/revenue"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
                       window.location.pathname === "/income" ||
+                      window.location.pathname === "/income/creitnote" ||
+                      window.location.pathname === "/income/revenue" ||
                       window.location.pathname === "/income"
                         ? "bg-[#F7F9FC] font-medium  "
                         : " font-normal"
@@ -751,10 +771,12 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     <li className="">Income</li>
                   </Link>
                   <Link
-                    to="/expense"
+                    to="/expense/bill"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
                       window.location.pathname === "/expense" ||
-                      window.location.pathname === "/expense"
+                      window.location.pathname === "/expense/payment" ||
+                      window.location.pathname === "/expense/debitnote" ||
+                      window.location.pathname === "/expense/bill"
                         ? "bg-[#F7F9FC] font-medium  "
                         : " font-normal"
                     }`}

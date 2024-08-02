@@ -98,7 +98,7 @@ const CreditNote = () => {
           <div className="flex items-center gap-[16px]">
             <div className="flex items-center">
               <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-              Finance & Credit Noteing /{" "}
+                Finance & Credit Noteing /{" "}
               </p>
               <Link to="">
                 <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
@@ -144,7 +144,7 @@ const CreditNote = () => {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex px-5   gap-[6px] md:gap-[12px] items-center">
-                      Invoice
+                        Invoice
                       </div>
                     </th>
                     <th
@@ -152,7 +152,7 @@ const CreditNote = () => {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                      Customer
+                        Customer
                       </div>
                     </th>
                     <th
@@ -160,7 +160,7 @@ const CreditNote = () => {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                      Date
+                        Date
                       </div>
                     </th>
                     <th
@@ -168,7 +168,7 @@ const CreditNote = () => {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                      Amount
+                        Amount
                       </div>
                     </th>
                     <th
@@ -176,7 +176,7 @@ const CreditNote = () => {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                      Description
+                        Description
                       </div>
                     </th>
 
@@ -185,7 +185,7 @@ const CreditNote = () => {
                       className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                     >
                       <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                      Status
+                        Status
                       </div>
                     </th>
 
@@ -219,23 +219,23 @@ const CreditNote = () => {
                           TaskSummaryData?.map((result) => ( */}
                   <tr key="_" className="mb-2 hover:bg-light-gray">
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    #INV1021111
+                      #INV1021111
                     </td>
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
                       Ogundele Caleb
                     </td>
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    02-04-2024
+                      02-04-2024
                     </td>
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    $521,611.20
+                      $521,611.20
                     </td>
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    For payment of invoice
+                      For payment of invoice
                     </td>
 
                     <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    Fully used
+                      Fully used
                     </td>
                     <td className="whitespace-nowrap py-[16px] flex-item gap-2 bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
                       <button>
@@ -332,8 +332,8 @@ const CreditNote = () => {
                             </p>
 
                             <p className="text-[14px]  text-[#667185] leading-[20px] font-normal text-center mt-2  ">
-                              Are you sure you want to delete this Credit Note? This
-                              action cannot be undone.
+                              Are you sure you want to delete this Credit Note?
+                              This action cannot be undone.
                             </p>
                           </ModalBody>
                           <ModalFooter gap={"16px"}>
@@ -390,7 +390,7 @@ const CreditNote = () => {
             <div className="flex-item  gap-[24px] mb-[24px]">
               <div className="w-full  md:w-[60%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Credit Note
+                  Invoice
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <select
@@ -408,14 +408,14 @@ const CreditNote = () => {
                     autoCorrect="off"
                     spellCheck="false"
                   >
-                    <option value="">Select Credit Note</option>
+                    <option value="">Select invoice</option>
                     <option value="Monthly Payslip">new Credit Note</option>
                   </select>
                 </div>
               </div>
               <div className="w-full  md:w-[40%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Bank Type
+                  Status
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <select
@@ -424,7 +424,6 @@ const CreditNote = () => {
                     className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
                     name="state"
                     id="full-name"
                     //   value={formData.date}
@@ -433,48 +432,25 @@ const CreditNote = () => {
                     autoCorrect="off"
                     spellCheck="false"
                   >
-                    <option value="">Select bank type</option>
+                    <option value="">Select status</option>
                     <option value="Monthly Payslip">new Credit Note</option>
                   </select>
                 </div>
               </div>
             </div>
 
-            <div className="mb-[24px]">
-              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                Bank Name
-              </label>
-              <div className=" relative  mt-[16px]  flex items-center">
-                <input
-                  type="text"
-                  placeholder="Enter Title"
-                  className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
-                  autoComplete="on"
-                  autoFocus
-                  name="bank"
-                  id="full-name"
-                  //   value={formData.date}
-                  //   onChange={(e) => handleChange(e)}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                />
-              </div>
-            </div>
             <div className="flex-item  gap-[24px] mb-[24px]">
               <div className="w-full  md:w-[60%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Credit Note number
+                  Amount
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <input
                     type="text"
-                    placeholder="Enter Credit Note number"
+                    placeholder="Enter amount"
                     className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
                     name="state"
                     id="full-name"
                     //   value={formData.date}
@@ -483,111 +459,34 @@ const CreditNote = () => {
                     autoCorrect="off"
                     spellCheck="false"
                   />
-                   
                 </div>
               </div>
               <div className="w-full  md:w-[40%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Bank Branch
+                  Date
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <input
-                    type="text"
-                    placeholder="Enter bank branch"
+                    type="date"
+                    placeholder=""
                     className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
                     name="state"
-                    id="full-name"
+                    id="f"
                     //   value={formData.date}
                     //   onChange={(e) => handleChange(e)}
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck="false"
                   />
-                   
                 </div>
               </div>
             </div>
-            <div className="w-full mb-[24px]  ">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Bank Holder Name
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Enter bank holder name"
-                    className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="state"
-                    id="full-name"
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                   
-                </div>
-                </div>
 
-
-
-
-            <div className="flex-item  gap-[24px] mb-[24px]">
-              <div className="w-full  md:w-[60%]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Opening Balance
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Enter Credit Note number"
-                    className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="state"
-                    id="full-name"
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                   
-                </div>
-              </div>
-              <div className="w-full  md:w-[40%]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                 Contact Number
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Enter contact number"
-                    className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="state"
-                    id="full-name"
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                   
-                </div>
-              </div>
-            </div>
             <div className="mb-[24px]">
               <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-            Bank Address
+                Description
               </label>
               <div className=" relative  mt-[16px]  flex items-center">
                 <textarea
@@ -651,7 +550,7 @@ const CreditNote = () => {
             <div className="flex-item  gap-[24px] mb-[24px]">
               <div className="w-full  md:w-[60%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Credit Note
+                  Invoice
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <select
@@ -669,14 +568,14 @@ const CreditNote = () => {
                     autoCorrect="off"
                     spellCheck="false"
                   >
-                    <option value="">Select Credit Note</option>
+                    <option value="">Select invoice</option>
                     <option value="Monthly Payslip">new Credit Note</option>
                   </select>
                 </div>
               </div>
               <div className="w-full  md:w-[40%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Bank Type
+                  Status
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <select
@@ -685,7 +584,6 @@ const CreditNote = () => {
                     className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
                     name="state"
                     id="full-name"
                     //   value={formData.date}
@@ -694,48 +592,25 @@ const CreditNote = () => {
                     autoCorrect="off"
                     spellCheck="false"
                   >
-                    <option value="">Select bank type</option>
+                    <option value="">Select status</option>
                     <option value="Monthly Payslip">new Credit Note</option>
                   </select>
                 </div>
               </div>
             </div>
 
-            <div className="mb-[24px]">
-              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                Bank Name
-              </label>
-              <div className=" relative  mt-[16px]  flex items-center">
-                <input
-                  type="text"
-                  placeholder="Enter Title"
-                  className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
-                  autoComplete="on"
-                  autoFocus
-                  name="bank"
-                  id="full-name"
-                  //   value={formData.date}
-                  //   onChange={(e) => handleChange(e)}
-                  autoCapitalize="off"
-                  autoCorrect="off"
-                  spellCheck="false"
-                />
-              </div>
-            </div>
             <div className="flex-item  gap-[24px] mb-[24px]">
               <div className="w-full  md:w-[60%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Credit Note number
+                  Amount
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <input
                     type="text"
-                    placeholder="Enter Credit Note number"
+                    placeholder="Enter amount"
                     className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
                     name="state"
                     id="full-name"
                     //   value={formData.date}
@@ -744,111 +619,34 @@ const CreditNote = () => {
                     autoCorrect="off"
                     spellCheck="false"
                   />
-                   
                 </div>
               </div>
               <div className="w-full  md:w-[40%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Bank Branch
+                  Date
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <input
-                    type="text"
-                    placeholder="Enter bank branch"
+                    type="date"
+                    placeholder=""
                     className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
                     name="state"
-                    id="full-name"
+                    id="f"
                     //   value={formData.date}
                     //   onChange={(e) => handleChange(e)}
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck="false"
                   />
-                   
                 </div>
               </div>
             </div>
-            <div className="w-full mb-[24px]  ">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Bank Holder Name
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Enter bank holder name"
-                    className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="state"
-                    id="full-name"
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                   
-                </div>
-                </div>
 
-
-
-
-            <div className="flex-item  gap-[24px] mb-[24px]">
-              <div className="w-full  md:w-[60%]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Opening Balance
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Enter Credit Note number"
-                    className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="state"
-                    id="full-name"
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                   
-                </div>
-              </div>
-              <div className="w-full  md:w-[40%]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                 Contact Number
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="text"
-                    placeholder="Enter contact number"
-                    className="w-full h-[48px] px-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="state"
-                    id="full-name"
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                   
-                </div>
-              </div>
-            </div>
             <div className="mb-[24px]">
               <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-            Bank Address
+                Description
               </label>
               <div className=" relative  mt-[16px]  flex items-center">
                 <textarea
