@@ -2,16 +2,34 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { clearUserData } from "../../utils/utils";
-import { Logout } from "iconsax-react";
+import { ArrowDown, ArrowDown2, Logout } from "iconsax-react";
 import Moment from "moment";
-// import {IoMdInformationCircleOutline} from "react-icons/io"
+import {
+  Grid,
+  Flex,
+  Button,
+  Divider,
+  Modal,
+  Thead,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,Menu, MenuButton, MenuList, MenuItem 
+} from "@chakra-ui/react";
 
-const Topbar = ({ setIsSidebar, userData }) => {
+
+
+const Topbar = ({ setIsSidebar }) => {
   const [logo, setLogo] = useState("");
   // const [isOpen, setIsOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  let userData = localStorage.getItem("authData");
+  userData = JSON.parse(userData);
 
   const handleIsModalClose = () => {
     setIsModalOpen(false);
@@ -122,6 +140,25 @@ const Topbar = ({ setIsSidebar, userData }) => {
           >
             <Logout variant="Bold" size={24} color="#F44336" />
           </button>
+
+          <div className="flex items-center">
+            <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+              {userData?.user?.name}
+            </p>
+            <Menu>
+                    <MenuButton bg={"none"} as={Button}>
+                      <button className="h-[20px] w-[20px] md:h-[24px] md:w-[24px] rounded-[8px] hover:bg-[#F7F9FC] flex justify-center items-center">
+                      <ArrowDown2 size={16} color="#667185"/>
+                      </button>
+                    </MenuButton>
+                    <MenuList maxW="32" className="">
+                    <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                    Eaglion’s Workspace
+            </p>
+                     </MenuList>
+                  </Menu>
+           
+          </div>
         </div>
       </div>
     </div>

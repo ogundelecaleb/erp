@@ -1,9 +1,17 @@
+import { useQuery } from "@tanstack/react-query";
 import React, { useState } from "react";
 import { RiUploadCloud2Line } from "react-icons/ri";
 import { ClipLoader } from "react-spinners";
+import { getRoles } from "../../utils/helperFunctions";
 
 const CompanyDetails = () => {
   const [isLoading, setIsLoading] = useState(false);
+
+
+  const RoleQuery = useQuery(["roles"], () => getRoles(), {
+    keepPreviousData: true,
+    refetchOnWindowFocus: "always",
+  });
   return (
     <div>
       {" "}
@@ -302,7 +310,10 @@ const CompanyDetails = () => {
                     spellCheck="false"
                   >
                     <option value="Medium">Select Role</option>
-                    <option value="Low">Female</option>
+                    {RoleQuery?.data?.data  &&
+                    RoleQuery?.data?.data.data.map((result, index) => (
+                      <option key={index} value={result?.id}>{result?.name}</option>
+                    ))}
                   </select>
                 </div>
               </div>

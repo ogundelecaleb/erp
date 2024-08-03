@@ -672,6 +672,10 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/expense/payment" ||
                   window.location.pathname === "/expense/debitnote" ||
                   window.location.pathname === "/expense/bill" ||
+                  window.location.pathname === "/financereport/cashflow" ||
+                  window.location.pathname === "/financereport/expensesummary" ||
+                  window.location.pathname === "/financereport/taxsummary" ||
+                  window.location.pathname === "/financereport/incomesummary" ||
                   window.location.pathname === "/viewcustomers"
                     ? "text-[#F05800] font-medium rounded-md"
                     : "text-[#667185] font-normal"
@@ -700,6 +704,10 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/expense/payment" ||
                       window.location.pathname === "/expense/debitnote" ||
                       window.location.pathname === "/expense/bill" ||
+                      window.location.pathname === "/financereport/cashflow" ||
+                      window.location.pathname === "/financereport/expensesummary" ||
+                      window.location.pathname === "/financereport/taxsummary" ||
+                      window.location.pathname === "/financereport/incomesummary" ||
                       window.location.pathname === "/viewcustomers"
                         ? "Bold"
                         : "Linear"
@@ -795,9 +803,12 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                     <li className="">Analytics</li>
                   </Link>
                   <Link
-                    to="/financereport"
+                    to="/financereport/incomesummary"
                     className={` py-[6px] pl-[12px] flex items-center text-[12px]  text-[#667185] rounded-md  hover:bg-[#F7F9FC]  leading-[18px] md:leading-[24px]  mb-[14px] ${
-                      window.location.pathname === "/financereport" ||
+                      window.location.pathname === "/financereport/cashflow" ||
+                      window.location.pathname === "/financereport/expensesummary" ||
+                      window.location.pathname === "/financereport/taxsummary" ||
+                      window.location.pathname === "/financereport/incomesummary" ||
                       window.location.pathname === "/financereport"
                         ? "bg-[#F7F9FC] font-medium  "
                         : " font-normal"

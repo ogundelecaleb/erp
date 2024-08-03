@@ -102,6 +102,10 @@ import CreditNote from "./screens/Finance/CreditNote";
 import Bill from "./screens/Finance/Bill";
 import Payment from "./screens/Finance/Payment";
 import DebitNote from "./screens/Finance/DebitNote";
+import IncomeSummary from "./screens/Finance/IncomeSummary";
+import TaxSummary from "./screens/Finance/TaxSummary";
+import ExpenseSummary from "./screens/Finance/ExpenseSummary";
+import CashFlow from "./screens/Finance/CashFlow";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -430,7 +434,28 @@ function App() {
                 path="/financereport"
                 exact={true}
                 element={<FinanceReport />}
+              >
+               <Route
+                path="/financereport/incomesummary"
+                exact={true}
+                element={<IncomeSummary />}
               />
+               <Route
+                path="/financereport/taxsummary"
+                exact={true}
+                element={<TaxSummary />}
+              />
+               <Route
+                path="/financereport/expensesummary"
+                exact={true}
+                element={<ExpenseSummary />}
+              />
+               <Route
+                path="/financereport/cashflow"
+                exact={true}
+                element={<CashFlow />}
+              />
+              </Route>
               <Route
                 path="/financeanalytics"
                 exact={true}
