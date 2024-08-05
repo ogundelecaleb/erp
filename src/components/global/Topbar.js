@@ -2,7 +2,16 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { clearUserData } from "../../utils/utils";
-import { ArrowDown, ArrowDown2, Logout } from "iconsax-react";
+import {
+  Add,
+  ArrowDown,
+  ArrowDown2,
+  Logout,
+  Setting,
+  Setting2,
+  UserCirlceAdd,
+  UserEdit,
+} from "iconsax-react";
 import Moment from "moment";
 import {
   Grid,
@@ -17,10 +26,12 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Text,Menu, MenuButton, MenuList, MenuItem 
+  Text,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
-
-
 
 const Topbar = ({ setIsSidebar }) => {
   const [logo, setLogo] = useState("");
@@ -146,18 +157,94 @@ const Topbar = ({ setIsSidebar }) => {
               {userData?.user?.name}
             </p>
             <Menu>
-                    <MenuButton bg={"none"} as={Button}>
-                      <button className="h-[20px] w-[20px] md:h-[24px] md:w-[24px] rounded-[8px] hover:bg-[#F7F9FC] flex justify-center items-center">
-                      <ArrowDown2 size={16} color="#667185"/>
-                      </button>
-                    </MenuButton>
-                    <MenuList maxW="32" className="">
-                    <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+              <MenuButton bg={"none"} as={Button}>
+                <button className="h-[20px] w-[20px] md:h-[24px] md:w-[24px] rounded-[8px] hover:bg-[#F7F9FC] flex justify-center items-center">
+                  <ArrowDown2 size={16} color="#667185" />
+                </button>
+              </MenuButton>
+              <MenuList
+                maxW="289px"
+                w="289px"
+                className="border-[2px] p-[10px] md:p-[16px]"
+              >
+                <div className="flex-item gap-[16px]">
+                  <div className="h-[28px] w-[28px] md:h-[32px] md:w-[32px] rounded-[4px] bg-[#F9FAFB] flex justify-center items-center">
+                    {" "}
+                    <p className="text-[#475367] text-[12px] md:text-[12px] xl:text-[12px] font-bold leading-[24px] ">
+                      EA
+                    </p>
+                  </div>
+                  <p className="text-[#000000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
                     Eaglion’s Workspace
-            </p>
-                     </MenuList>
-                  </Menu>
-           
+                  </p>
+                </div>
+                <div className="flex-item justify-between mb-[20px] mt-[12px]">
+                  <button className="py-[5px] px-[12px] border-[0.2px] rounded-md border-[#98A2B3] w-[96px] flex-item gap-2">
+                    <Setting2 size={13} color="#98A2B3" />{" "}
+                    <p className="text-[#98A2B3] text-[10px]  xl:text-[12px] font-normal leading-[18px] ">
+                      Settings
+                    </p>
+                  </button>
+                  <button className="py-[5px] px-[12px] border-[0.2px] rounded-md border-[#98A2B3]  flex-item gap-2">
+                    <UserCirlceAdd size={13} color="#98A2B3" />{" "}
+                    <p className="text-[#98A2B3] text-[10px]  xl:text-[12px] font-normal leading-[18px] ">
+                      Invite members
+                    </p>
+                  </button>
+                </div>
+                <div>
+                  <p className="text-[#98A2B3] text-[10px]  xl:text-[12px] font-normal leading-[18px] ">
+                    ogundelecaleb@gmail.com
+                  </p>
+                </div>
+                <div className="flex-item gap-2">
+
+                  <div className="h-[28px] w-[28px] md:h-[32px] md:w-[32px] rounded-[4px] bg-[#F9FAFB] flex justify-center items-center">
+                    {" "}
+                    <p className="text-[#475367] text-[12px] md:text-[12px] xl:text-[12px] font-bold leading-[24px] ">
+                      EA
+                    </p>
+                  </div>
+                  <p className="text-[#000000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                    Eaglion’s Workspace
+                  </p>
+                </div>
+                <div className="flex-item gap-2">
+                  <div className="h-[28px] w-[28px] md:h-[32px] md:w-[32px] rounded-[4px] bg-[#F9FAFB] flex justify-center items-center">
+                    {" "}
+                    <p className="text-[#475367] text-[12px] md:text-[12px] xl:text-[12px] font-bold leading-[24px] ">
+                      EA
+                    </p>
+                  </div>
+                  <p className="text-[#000000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                    Eaglion’s Workspace
+                  </p>
+                </div>
+                <div className="py-[16px] border-t-[0.2px]  border-[#98A2B3] mt-[20px] ">
+                  <button className="flex-item gap-2 ">
+                    {" "}
+                    <Add size={20} color="#98A2B3" />{" "}
+                    <p className="text-[#98A2B3] text-[12px]  xl:text-[14px] font-normal leading-[18px] ">
+                      Create new worksapce
+                    </p>
+                  </button>
+                  <button className="flex-item gap-2 mt-[20px]">
+                    {" "}
+                    <UserEdit size={20} color="#98A2B3" />{" "}
+                    <p className="text-[#98A2B3] text-[12px]  xl:text-[14px] font-normal leading-[18px] ">
+                      Profile
+                    </p>
+                  </button>
+                  <button className="flex-item gap-2 mt-[20px]">
+                    {" "}
+                    <Logout size={20} color="#F44336" />{" "}
+                    <p className="text-[#F44336] text-[12px]  xl:text-[14px] font-normal leading-[18px] ">
+                     Log out
+                    </p>
+                  </button>
+                </div>
+              </MenuList>
+            </Menu>
           </div>
         </div>
       </div>
