@@ -351,7 +351,7 @@ const ProjectDetails = () => {
               <TaskBoard project={result} tasks={TASKS} />
             </TabPanel>
             <TabPanel>
-              <Milestone />
+              <Milestone  project={result} />
             </TabPanel>
             <TabPanel>
               <Document />

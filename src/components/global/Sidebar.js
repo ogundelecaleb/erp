@@ -68,9 +68,9 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
           </svg>
         </button>
       </div>
-      <div class="max-w-[260px] min-h-screen bg-[#FFFFFF] w-[260px]  p-[16px] md:p-[20px] sticky top-0  ">
+      <div class="max-w-[260px] min-h-screen bg-[#FFFFFF] w-[260px]  p-[16px] md:p-[20px] sticky top-0 overflow-y-auto ">
         <div className="relative">
-          <div className="relative min-h-screen overflow-y-visible">
+          <div className="relative h-screen overflow-y-auto no-scrollbar pb-[80px]">
             <img
               class=" h-[40px] w-[88px]   mb-[20px]"
               src="./assets/gtLogo.png"

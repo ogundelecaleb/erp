@@ -300,9 +300,9 @@ const Projects = () => {
                         className="w-full h-[137px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px] placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                         required
                         autoComplete="on"
-                        autoFocus
+                      
                         name="description"
-                        id="full-name"
+                        id=""
                         value={formValue.description}
                         onChange={(e) => handleInputChange(e)}
                         autoCapitalize="off"

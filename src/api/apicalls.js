@@ -29,6 +29,7 @@ import {
   DELETECATEGORY,
   GETACATEGORY,
 } from "../utils/config";
+import { CREATEMILESTONE, DELETEAMILESTONE, GETAMILESTONE, GETMILESTONES, UPDATEAMILESTONE } from "../utils/projectConfig";
 import { apiDelete, apiGet, apiGetCSV, apiPost, apiPut } from "../utils/utils";
 
 //dashboard
@@ -120,3 +121,22 @@ export function updateCategory(id, data) {
 export function deleteCategory(id) {
   return apiDelete(DELETECATEGORY + id);
 }
+
+
+// Milestone
+export function getMilestones(id, data) {
+  return apiGet(GETMILESTONES  + id, data);
+}
+export function getAMilestone(id, data = null) {
+  return apiGet(GETAMILESTONE + id, data);
+}
+export function updateAMilestone(id, data) {
+  return apiPut(UPDATEAMILESTONE + id, data);
+}
+export function deleteAMilestone(id) {
+  return apiDelete(DELETEAMILESTONE + id);
+}
+export function createMilestone(id, data) {
+  return apiPost(CREATEMILESTONE  + id + "/store", data);
+}
+

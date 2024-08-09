@@ -9,13 +9,26 @@ import {
 import React, { useState } from "react";
 import { ClipLoader } from "react-spinners";
 import ModalLeft from "../ModalLeft";
-import { Seekbar } from 'react-seekbar';
+import { Seekbar } from "react-seekbar";
+import { enqueueSnackbar } from "notistack";
+import api from "../../api";
 
-const Milestone = () => {
+const Milestone = ({ project }) => {
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [isCreateOpen, setIsCreateOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [position, setPosition] = useState(0);
+  const [formValue, setFormValue] = useState({
+    title: "",
+    status: "",
+    cost: "",
+
+    summary: "",
+    start_date: "",
+    end_date: "",
+  });
+
+  console.log("project for milestone===>>>", project);
 
   const handleSeek = (position) => {
     setPosition(position);
@@ -36,6 +49,42 @@ const Milestone = () => {
   function ToggleCreateModal() {
     setIsCreateOpen(!isCreateOpen);
   }
+  async function createMilestone() {
+    setIsLoading(true);
+    try {
+      const response = await api.createMilestone(project.id,{
+        title: formValue.title,
+        status: formValue.status,
+        cost: formValue.cost,
+        summary: formValue.summary,
+        start_date: formValue.start_date,
+        end_date: formValue.end_date,
+      });
+      console.log("create milestone===>", response);
+      enqueueSnackbar(response?.message, { variant: "success" });
+      ToggleCreateModal();
+      clearForm();
+      //  getProjectQuery.refetch()
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      enqueueSnackbar(error?.message, { variant: "error" });
+    }
+  }
+  function clearForm() {
+    setFormValue({
+      title: "",
+      status: "",
+      cost: "",
+      summary: "",
+      start_date: "",
+      end_date: "",
+    });
+  }
+
+  const handleInputChange = (e) => {
+    setFormValue({ ...formValue, [e.target.name]: e.target.value });
+  };
   return (
     <div>
       <div className="bg-[#F9FAFB] rounded-[8px] w-full h-[38vh] p-[4px] md:p-[10px] xl:p-[24px] overflow-auto">
@@ -55,11 +104,14 @@ const Milestone = () => {
                   Project milestone
                 </p>
                 <div className="flex-item gap-2">
-                  <button onClick={ToggleEditModal} className="border-[#98A2B3] border bg-white hover:bg-slate-50 rounded-2xl px-[24px] py-[6px] text-[14px]  leading-[20px] text-[#667185]   ">
+                  <button
+                    onClick={ToggleEditModal}
+                    className="border-[#98A2B3] border bg-white hover:bg-slate-50 rounded-2xl px-[24px] py-[6px] text-[14px]  leading-[20px] text-[#667185]   "
+                  >
                     Edit
                   </button>
-                  <button  className="border-[#98A2B3] border bg-white hover:bg-slate-50 rounded-2xl px-[24px] py-[6px] text-[14px]  leading-[20px] text-[#667185]   ">
-                  Delete
+                  <button className="border-[#98A2B3] border bg-white hover:bg-slate-50 rounded-2xl px-[24px] py-[6px] text-[14px]  leading-[20px] text-[#667185]   ">
+                    Delete
                   </button>
                 </div>
               </div>
@@ -118,14 +170,17 @@ const Milestone = () => {
           <p className="text-[14px]  leading-[20px] text-[#000]  ">
             Do you want to create a new milestone?
           </p>{" "}
-          <button onClick={ToggleCreateModal} className="px-[20px] py-[8px] bg-[#F05800] shadow text-white text-[14px]  leading-[20px] flex-item gap-2  rounded-[40px]">
+          <button
+            onClick={ToggleCreateModal}
+            className="px-[20px] py-[8px] bg-[#F05800] shadow text-white text-[14px]  leading-[20px] flex-item gap-2  rounded-[40px]"
+          >
             <Add size="22" color="#fff" /> <p>Create milestone</p>
           </button>
         </div>
       </div>
 
-       {/* Create Modal */}
-       <ModalLeft isOpen={isCreateOpen} onClose={HandleCreateModalClose}>
+      {/* Create Modal */}
+      <ModalLeft isOpen={isCreateOpen} onClose={HandleCreateModalClose}>
         <div>
           <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px]  md:flex justify-between items-center ">
             <div className="flex items-center gap-[16px]">
@@ -133,7 +188,7 @@ const Milestone = () => {
               <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
               <div className="flex items-center">
                 <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  Edit Milestone
+                  Create Milestone
                 </p>
               </div>
             </div>
@@ -154,13 +209,12 @@ const Milestone = () => {
                   type="text"
                   placeholder="Hiring Individual Positions"
                   className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                  required
                   autoComplete="on"
                   autoFocus
-                  name="full-name"
+                  name="title"
                   id="full-name"
-                  //value=""
-                  //onChange={() => {}}
+                  value={formValue.title}
+                  onChange={(e) => handleInputChange(e)}
                   autoCapitalize="off"
                   autoCorrect="off"
                   spellCheck="false"
@@ -172,7 +226,7 @@ const Milestone = () => {
               {" "}
               <div className="mb-[24px] w-[60%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                 Cost
+                  Cost
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <input
@@ -181,11 +235,10 @@ const Milestone = () => {
                     className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
-                    name="full-name"
-                    id="full-name"
-                    //value=""
-                    //onChange={() => {}}
+                    name="cost"
+                    id="cost"
+                    value={formValue.cost}
+                    onChange={(e) => handleInputChange(e)}
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck="false"
@@ -203,13 +256,15 @@ const Milestone = () => {
                     className="w-full h-[48px] pl-[16px] px-2 py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
-                    name="full-name"
-                    id="full-name"
+                    name="status"
+                    id="status"
+                    value={formValue.status}
+                    onChange={(e) => handleInputChange(e)}
                   >
-                    <option value="High">On Hold</option>
-                    <option value="Medium">Ongoing</option>
-                    <option value="Low">Completed</option>
+                    <option value="">select status</option>
+                    <option value="On Hold">On Hold</option>
+                    <option value="Ongoing">Ongoing</option>
+                    <option value="Completed">Completed</option>
                   </select>
                 </div>
               </div>
@@ -231,13 +286,11 @@ const Milestone = () => {
                     type="date"
                     placeholder="Project Name"
                     className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
                     autoComplete="on"
-                    autoFocus
-                    name="date"
-                    id="full-name"
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
+                    name="start_date"
+                    id="start_date"
+                    value={formValue.start_date}
+                    onChange={(e) => handleInputChange(e)}
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck="false"
@@ -260,11 +313,10 @@ const Milestone = () => {
                     className="w-full h-[48px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
                     required
                     autoComplete="on"
-                    autoFocus
-                    name="date"
-                    id="full-name"
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
+                    name="end_date"
+                    id="end_date"
+                    value={formValue.end_date}
+                    onChange={(e) => handleInputChange(e)}
                     autoCapitalize="off"
                     autoCorrect="off"
                     spellCheck="false"
@@ -274,7 +326,7 @@ const Milestone = () => {
             </div>
             <div className="mb-[24px]">
               <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-               Summary
+                Summary
               </label>
               <div className=" relative  mt-[16px]  flex items-center">
                 <textarea
@@ -284,18 +336,16 @@ const Milestone = () => {
                   required
                   autoComplete="on"
                   autoFocus
-                  name="full-name"
-                  id="full-name"
-                  //value=""
-                  //onChange={() => {}}
+                  name="summary"
+                  id="summary"
+                  value={formValue.summary}
+                  onChange={(e) => handleInputChange(e)}
                   autoCapitalize="off"
                   autoCorrect="off"
                   spellCheck="false"
                 />
               </div>
             </div>
-            
-
 
             <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
               <div className="flex-item gap-2">
@@ -303,11 +353,11 @@ const Milestone = () => {
                 <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
                   Cancel
                 </button>
-                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
-                  {!isLoading ? (
+                <button onClick={createMilestone} className="border-[0.2px]  border-[#98A2B3] min-w-[99px] bg-[#F05800] px-2 flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+                  {isLoading ? (
                     <ClipLoader color={"white"} size={20} />
                   ) : (
-                    <> Save changes</>
+                    <> Create Milestone</>
                   )}
                 </button>
               </div>
@@ -364,7 +414,7 @@ const Milestone = () => {
               {" "}
               <div className="mb-[24px] w-[60%]">
                 <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                 Cost
+                  Cost
                 </label>
                 <div className=" relative  mt-[16px]  flex items-center">
                   <input
@@ -466,7 +516,7 @@ const Milestone = () => {
             </div>
             <div className="mb-[24px]">
               <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-               Summary
+                Summary
               </label>
               <div className=" relative  mt-[16px]  flex items-center">
                 <textarea
@@ -488,16 +538,19 @@ const Milestone = () => {
             </div>
             <div className="mb-[24px]">
               <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-           Progress
+                Progress
               </label>
-
-
-              <Seekbar position={position} duration={100000} onSeek={handleSeek} outerColor="#F9FAFB" innerColor="#F05800" hoverColor="#F05800" width={"100%"}/>;
-
-
-
+              <Seekbar
+                position={position}
+                duration={100000}
+                onSeek={handleSeek}
+                outerColor="#F9FAFB"
+                innerColor="#F05800"
+                hoverColor="#F05800"
+                width={"100%"}
+              />
+              ;
             </div>
-
 
             <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
               <div className="flex-item gap-2">

@@ -32,6 +32,8 @@ import {
   MenuList,
   MenuItem,
 } from "@chakra-ui/react";
+import api from "../../api";
+
 
 const Topbar = ({ setIsSidebar }) => {
   const [logo, setLogo] = useState("");
@@ -137,27 +139,15 @@ const Topbar = ({ setIsSidebar }) => {
         </h4>{" "}
       </div>
       <div className="flex flex-row gap-3">
-        <div className="flex  gap-[12px] p-[8px] bg-gray-100/50  items-center rounded-[18px]">
-          <button
-            class="bg-[#FAFAFA] rounded-md  items-center lg:pl-[8px] lg:pr-[16px] pl-[6px] pr-[14px] py-2 flex cursor-pointer "
-            onClick={() => {
-              clearUserData();
-              if (isModalOpen === false) {
-                setIsModalOpen(true);
-              } else {
-                setIsModalOpen(false);
-              }
-            }}
-          >
-            <Logout variant="Bold" size={24} color="#F44336" />
-          </button>
+        <div className="flex  gap-[12px]  items-center rounded-[18px]">
+          
 
           <div className="flex items-center">
             <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
               {userData?.user?.name}
             </p>
             <Menu>
-              <MenuButton bg={"none"} as={Button}>
+              <MenuButton bg={"none"} >
                 <button className="h-[20px] w-[20px] md:h-[24px] md:w-[24px] rounded-[8px] hover:bg-[#F7F9FC] flex justify-center items-center">
                   <ArrowDown2 size={16} color="#667185" />
                 </button>
@@ -235,7 +225,13 @@ const Topbar = ({ setIsSidebar }) => {
                       Profile
                     </p>
                   </button>
-                  <button className="flex-item gap-2 mt-[20px]">
+                  <button  onClick={() => {
+                  // navigate("/login");
+                 
+                  api.logout();
+                  navigate("/login");
+                  // setIsOpen(false);
+                }} className="flex-item gap-2 mt-[20px]">
                     {" "}
                     <Logout size={20} color="#F44336" />{" "}
                     <p className="text-[#F44336] text-[12px]  xl:text-[14px] font-normal leading-[18px] ">
