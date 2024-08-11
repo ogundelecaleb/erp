@@ -519,6 +519,27 @@ export const Clients = [
     image: "./assets/user.png",
   },
 ];
+export const DirectMessage = [
+  {
+    name: "Raphh Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+    mesage: [
+      "How far Tosin, what’s the update on your end? Are you done with the design screens. Thanks",
+      "Omo Caleb! I never finish jeere... Yunno know say we wan protest ni abi you no follow join. 😂🤣"
+    ]
+  },
+  {
+    name: "Ogundele Ogi",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+  },
+  {
+    name: "Tosin Caleb",
+    email: "ogundelecaleb13@gmail.com",
+    image: "./assets/user.png",
+  },
+];
 
 export const TASKS = [
   {

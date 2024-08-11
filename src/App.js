@@ -106,6 +106,7 @@ import IncomeSummary from "./screens/Finance/IncomeSummary";
 import TaxSummary from "./screens/Finance/TaxSummary";
 import ExpenseSummary from "./screens/Finance/ExpenseSummary";
 import CashFlow from "./screens/Finance/CashFlow";
+import Communication from "./screens/Communication/Communication";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -491,6 +492,11 @@ function App() {
                   element={<BankTransfer />}
                 />
               </Route>
+              <Route
+                  path="/communication"
+                  exact={true}
+                  element={<Communication />}
+                />
             </Route>
           </Routes>
         </Router>

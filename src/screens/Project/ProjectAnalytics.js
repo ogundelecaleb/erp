@@ -92,8 +92,8 @@ const ProjectAnalytics = () => {
   const [isLoading, setIsLoading] = useState("");
   return (
     <div className="p-[20px] bg-[#F2F2F2]  ">
-      <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
+      <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <li className="border-[0.2px] mx-auto border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
           <div className="px-[20px] py-[24px]  flex-between">
           
             <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
@@ -113,7 +113,7 @@ const ProjectAnalytics = () => {
             </p>
           </div>
         </li>
-        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
+        <li className="border-[0.2px]  mx-auto border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
           <div className="px-[20px] py-[24px]  flex-between">
             {" "}
             <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
@@ -133,7 +133,7 @@ const ProjectAnalytics = () => {
             </p>
           </div>
         </li>
-        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
+        <li className="border-[0.2px]  mx-auto border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
           <div className="px-[20px] py-[24px]  flex-between">
             {" "}
             <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
@@ -153,7 +153,7 @@ const ProjectAnalytics = () => {
             </p>
           </div>
         </li>
-        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
+        <li className="border-[0.2px]  mx-auto border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
           <div className="px-[20px] py-[24px]  flex-between">
             {" "}
             <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
@@ -177,7 +177,7 @@ const ProjectAnalytics = () => {
       <div className="bg-white rounded-lg border-[0.2px] border-[#98a2b3] mt-[20px] h-[459px] w-full flex-center mt">
         <Line className="w-full" options={options} data={data} />
       </div>
-      <div className="flex gap-[30px]  mt-[24px]">
+      <div className="flex flex-col md:flex-row gap-[30px]  mt-[24px]">
        <TaskCard/>
        <ProjectStatus/>
       </div>

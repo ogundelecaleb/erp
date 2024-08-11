@@ -822,11 +822,11 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
 
            
 
-            {/* Analytics */}
+            {/* Communication */}
             <Link
-              to="/analytics"
+              to="/communication"
               className={` py-[10px] pl-[16px] flex items-center text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
-                window.location.pathname === "/analytics"
+                window.location.pathname === "/communication"
                   ? "text-[#F05800] font-medium rounded-md"
                   : "text-[#667185] font-normal"
               }`}
@@ -834,7 +834,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
               <MessageText
                 className="mr-[12px]"
                 variant={
-                  window.location.pathname === "/analytics" ? "Bold" : "Linear"
+                  window.location.pathname === "/communication" ? "Bold" : "Linear"
                 }
               />
               Communication

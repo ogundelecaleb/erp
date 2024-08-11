@@ -132,6 +132,7 @@ export const TaskCard = () => {
             </p>{" "}
           </button>
         </div>
+        <div className="overflow-x-auto">
 
         <div class="sm:-mx-6 lg:-mx-8">
           <div class="inline-block min-w-full  sm:px-6 lg:px-8">
@@ -223,6 +224,7 @@ export const TaskCard = () => {
               </table>
             </div>
           </div>
+        </div>
         </div>
       </div>
     )

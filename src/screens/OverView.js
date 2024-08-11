@@ -21,8 +21,14 @@ import {
 import { Doughnut, Line, Bar } from "react-chartjs-2";
 import faker from "faker";
 import { TaskAnalytics } from "../components/Data";
-import { ProjectStatus, TaskCard } from "../components/project/ProjectAnalytics";
-import { AccountBalance, LatestIncome } from "../components/finance/FinanceAnalytics";
+import {
+  ProjectStatus,
+  TaskCard,
+} from "../components/project/ProjectAnalytics";
+import {
+  AccountBalance,
+  LatestIncome,
+} from "../components/finance/FinanceAnalytics";
 import { CreatedDeal, ModifiedDeal } from "../components/crm/CrmAnalyttics";
 
 ChartJS.register(
@@ -97,8 +103,8 @@ const OverView = () => {
   const [isLoading, setIsLoading] = useState(false);
   return (
     <div className="p-[20px] bg-[#F2F2F2]  ">
-      <ul className="flex-item justify-between gap-[18px] md:gap-[24px] flex-wrap">
-        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
+      <ul className="flex-item justify-between gap-[18px] md:gap-[24px] flex-wrap mx-auto">
+        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] mx-auto bg-[#ffff] flex flex-col justify-between ">
           <div className="px-[20px] py-[24px]  flex-between">
             <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
               Total Employee
@@ -117,7 +123,7 @@ const OverView = () => {
             </p>
           </div>
         </li>
-        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
+        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full mx-auto max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
           <div className="px-[20px] py-[24px]  flex-between">
             {" "}
             <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
@@ -133,11 +139,11 @@ const OverView = () => {
               20
             </p>
             <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-             View projects
+              View projects
             </p>
           </div>
         </li>
-        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
+        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full mx-auto max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
           <div className="px-[20px] py-[24px]  flex-between">
             {" "}
             <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
@@ -153,15 +159,15 @@ const OverView = () => {
               50
             </p>
             <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-             View stock
+              View stock
             </p>
           </div>
         </li>
-        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] bg-[#ffff] flex flex-col justify-between ">
+        <li className="border-[0.2px] border-[#98a2b3] rounded-[8px] h-[156px] w-full max-w-[270px] mx-auto bg-[#ffff] flex flex-col justify-between ">
           <div className="px-[20px] py-[24px]  flex-between">
             {" "}
             <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
-             Total Task
+              Total Task
             </p>
             <buttion className="h-[32px] w-[32px] flex justify-center items-center bg-[#F0F2F5] rounded-md">
               <Task variant="Linear" color="#667185" size="16" />
@@ -193,91 +199,91 @@ const OverView = () => {
           <Bar options={options} data={data} />
         </div>
       </div>
-      <div className="flex gap-[30px]  mt-[24px]">
-       <TaskCard/>
-       <ProjectStatus/>
+      <div className="flex flex-col lg:flex-row gap-[30px]  mt-[24px]">
+        <TaskCard />
+        <ProjectStatus />
       </div>
       <div className="flex flex-col lg:flex-row gap-[30px]  mt-[24px]">
-       <AccountBalance/>
-       
-         <LatestIncome/>
-      </div>
-      <div class="sm:-mx-6 lg:-mx-8 mt-5">
-        <div class="inline-block min-w-full  sm:px-6 lg:px-8">
-          <div class="overflow-x-auto rounded-lg">
-            <table className="min-w-full mb-6 border-[0.8px] border-r-[0.8px]  border-l-[0.8px] border-[#E4E7EC] rounded-lg">
-              <thead className="bg-[#F9FAFB]">
-                <tr className="">
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex px-5   gap-[6px] md:gap-[12px] items-center">
-                      #
-                    </div>
-                  </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
-                      Username{" "}
-                    </div>
-                  </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
-                      Role
-                    </div>
-                  </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
-                      Last Login
-                    </div>
-                  </th>
+        <AccountBalance />
 
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
-                      IP Address
-                    </div>
-                  </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
-                      Country
-                    </div>
-                  </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
-                      Device
-                    </div>
-                  </th>
-                  <th
-                    scope="col"
-                    className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                  >
-                    <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
-                      OS
-                    </div>
-                  </th>
-                  
-                </tr>
-              </thead>
-              <tbody>
-                {/* {isLoading && <div>Loading...</div>}
+        <LatestIncome />
+      </div>
+      <div className="overflow-x-auto">
+        <div class="sm:-mx-6 lg:-mx-8 mt-5">
+          <div class="inline-block min-w-full  sm:px-6 lg:px-8 overflow-hidden">
+            <div class="overflow-x-auto rounded-lg">
+              <table className="min-w-full mb-6 border-[0.8px] border-r-[0.8px]  border-l-[0.8px] border-[#E4E7EC] rounded-lg">
+                <thead className="bg-[#F9FAFB]">
+                  <tr className="">
+                    <th
+                      scope="col"
+                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                    >
+                      <div className="flex px-5   gap-[6px] md:gap-[12px] items-center">
+                        #
+                      </div>
+                    </th>
+                    <th
+                      scope="col"
+                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                    >
+                      <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
+                        Username{" "}
+                      </div>
+                    </th>
+                    <th
+                      scope="col"
+                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                    >
+                      <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
+                        Role
+                      </div>
+                    </th>
+                    <th
+                      scope="col"
+                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                    >
+                      <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
+                        Last Login
+                      </div>
+                    </th>
+
+                    <th
+                      scope="col"
+                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                    >
+                      <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
+                        IP Address
+                      </div>
+                    </th>
+                    <th
+                      scope="col"
+                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                    >
+                      <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
+                        Country
+                      </div>
+                    </th>
+                    <th
+                      scope="col"
+                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                    >
+                      <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
+                        Device
+                      </div>
+                    </th>
+                    <th
+                      scope="col"
+                      className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                    >
+                      <div className="flex justify-center gap-[6px] md:gap-[12px] items-center my-0">
+                        OS
+                      </div>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* {isLoading && <div>Loading...</div>}
                 {!isLoading && TaskSummaryData.length === 0 && (
                   <tr>
                     <td className="text-center" colspan="6">
@@ -294,44 +300,39 @@ const OverView = () => {
                 )}
                 {TaskSummaryData &&
                   TaskSummaryData?.map((result) => ( */}
-                <tr key="_" className="mb-2 hover:bg-light-gray">
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    1
-                  </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    Ogundele Caleb
-                  </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    Staff{" "}
-                  </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    05-03-2024 12:00 AM{" "}
-                  </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    ** ** ** ****
-                  </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    Nigeria{" "}
-                  </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    Desktop{" "}
-                  </td>
-                  <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                    Windows{" "}
-                  </td>
-
-                 
-                </tr>
-                {/* ))} */}
-              </tbody>
-            </table>
+                  <tr key="_" className="mb-2 hover:bg-light-gray">
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                      1
+                    </td>
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                      Ogundele Caleb
+                    </td>
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                      Staff{" "}
+                    </td>
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                      05-03-2024 12:00 AM{" "}
+                    </td>
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                      ** ** ** ****
+                    </td>
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                      Nigeria{" "}
+                    </td>
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                      Desktop{" "}
+                    </td>
+                    <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
+                      Windows{" "}
+                    </td>
+                  </tr>
+                  {/* ))} */}
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
-
-
-
-
 
       <div className="flex flex-col lg:flex-row gap-[30px]  mt-[24px]">
         <CreatedDeal />

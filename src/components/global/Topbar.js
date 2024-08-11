@@ -95,7 +95,7 @@ const Topbar = ({ setIsSidebar }) => {
             />
           </svg>
         </button>
-        <div className="flex items-center gap-[16px]">
+        <div className="md:flex items-center gap-[16px] hidden">
           <div className="flex items-center">
             <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
               {formatDate(new Date())}

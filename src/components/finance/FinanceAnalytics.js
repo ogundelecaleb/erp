@@ -39,6 +39,7 @@ export const AccountBalance = () => {
           </p>{" "}
         </button>
       </div>
+      <div className="overflow-x-auto">
 
       <div class="sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full  sm:px-6 lg:px-8">
@@ -108,6 +109,7 @@ export const AccountBalance = () => {
           </div>
         </div>
       </div>
+      </div>
     </div>
   );
 };
@@ -126,6 +128,7 @@ export const LatestIncome = () => {
           </p>{" "}
         </button>
       </div>
+      <div className="overflow-x-auto">
 
       <div class="sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full  sm:px-6 lg:px-8">
@@ -196,6 +199,7 @@ export const LatestIncome = () => {
         </div>
       </div>
     </div>
+    </div>
   );
 };
 
@@ -213,6 +217,7 @@ export const LatestExpense = () => {
           </p>{" "}
         </button>
       </div>
+      <div className="overflow-x-auto">
 
       <div class="sm:-mx-6 lg:-mx-8">
         <div class="inline-block min-w-full  sm:px-6 lg:px-8">
@@ -294,6 +299,7 @@ export const LatestExpense = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
