@@ -261,8 +261,8 @@ const Topbar = ({ setIsSidebar }) => {
                     className="flex-item gap-2 mt-[20px]"
                   >
                     {" "}
-                    <Logout size={20} color="#F44336" />{" "}
-                    <p className="text-[#F44336] text-[12px]  xl:text-[14px] font-normal leading-[18px] ">
+                    <Logout size={20} color="#26ae5f" />{" "}
+                    <p className="text-[#26ae5f] text-[12px]  xl:text-[14px] font-normal leading-[18px] ">
                       Log out
                     </p>
                   </button>
@@ -307,7 +307,7 @@ const Topbar = ({ setIsSidebar }) => {
                 {" "}
                 <div className="mt-[20px] md:mt-[26px] lg:mt-[32px] mb-[14px] h-[80px] w-[80px] md:h-[120px] md:w-[120px] lg:h-[148px] lg:w-[148px] rounded-[8px] bg-[#FEEEE6] flex justify-center items-center">
                   {" "}
-                  <p className="text-[#F05800] text-[20px] md:text-[32px] xl:text-[24px] font-bold ">
+                  <p className="text-[#26ae5f] text-[20px] md:text-[32px] xl:text-[24px] font-bold ">
                     EA
                   </p>
                 </div>
@@ -323,7 +323,7 @@ const Topbar = ({ setIsSidebar }) => {
                   Name
                 </p>
                 <input
-                  className="flex  h-9 max-w-[410px] w-full mb-5 md:mb-6 rounded-md  border-input bg-background  text-sm shadow-sm text-[#667185] border-[0.2px] border-[#98A2B3] transition-colors file:border-0 file:border-r-[0.2px] file:h-9 file:bg-[#F9FAFB] file:text-[#667185] file:border-[#D0D5DD] file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-[#F05800] focus:border-[#F05800]  disabled:opacity-50"
+                  className="flex  h-9 max-w-[410px] w-full mb-5 md:mb-6 rounded-md  border-input bg-background  text-sm shadow-sm text-[#667185] border-[0.2px] border-[#98A2B3] transition-colors file:border-0 file:border-r-[0.2px] file:h-9 file:bg-[#F9FAFB] file:text-[#667185] file:border-[#D0D5DD] file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-[#26ae5f] focus:border-[#26ae5f]  disabled:opacity-50"
                   id="name"
                   name="name"
                   type="text"
@@ -332,7 +332,7 @@ const Topbar = ({ setIsSidebar }) => {
                 Email
                 </p>
                 <input
-                  className="flex  h-9 max-w-[410px] w-full mb-5 md:mb-6 rounded-md  border-input bg-background  text-sm shadow-sm text-[#667185] border-[0.2px] border-[#98A2B3] transition-colors file:border-0 file:border-r-[0.2px] file:h-9 file:bg-[#F9FAFB] file:text-[#667185] file:border-[#D0D5DD] file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-[#F05800] focus:border-[#F05800]  disabled:opacity-50"
+                  className="flex  h-9 max-w-[410px] w-full mb-5 md:mb-6 rounded-md  border-input bg-background  text-sm shadow-sm text-[#667185] border-[0.2px] border-[#98A2B3] transition-colors file:border-0 file:border-r-[0.2px] file:h-9 file:bg-[#F9FAFB] file:text-[#667185] file:border-[#D0D5DD] file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-[#26ae5f] focus:border-[#26ae5f]  disabled:opacity-50"
                   id="name"
                   name="name"
                   type="text"
@@ -357,7 +357,7 @@ const Topbar = ({ setIsSidebar }) => {
             <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
               Cancel
             </button>
-            <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+            <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#26ae5f] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
               {!isLoading ? (
                 <ClipLoader color={"white"} size={20} />
               ) : (
@@ -400,7 +400,7 @@ const Topbar = ({ setIsSidebar }) => {
               Name
             </p>
             <input
-              className="flex  h-9 max-w-[410px] w-full mb-5 md:mb-6 rounded-md  border-input bg-background  text-sm shadow-sm text-[#667185] border-[0.2px] border-[#98A2B3] transition-colors file:border-0 file:border-r-[0.2px] file:h-9 file:bg-[#F9FAFB] file:text-[#667185] file:border-[#D0D5DD] file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-[#F05800] focus:border-[#F05800]  disabled:opacity-50"
+              className="flex  h-9 max-w-[410px] w-full mb-5 md:mb-6 rounded-md  border-input bg-background  text-sm shadow-sm text-[#667185] border-[0.2px] border-[#98A2B3] transition-colors file:border-0 file:border-r-[0.2px] file:h-9 file:bg-[#F9FAFB] file:text-[#667185] file:border-[#D0D5DD] file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-[#26ae5f] focus:border-[#26ae5f]  disabled:opacity-50"
               id="name"
               name="name"
               type="text"
@@ -460,7 +460,7 @@ const Topbar = ({ setIsSidebar }) => {
             <button className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black">
               Cancel
             </button>
-            <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+            <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#26ae5f] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
               {!isLoading ? (
                 <ClipLoader color={"white"} size={20} />
               ) : (
@@ -491,7 +491,7 @@ const Topbar = ({ setIsSidebar }) => {
               {" "}
               Invite others by name or email
             </p>{" "}
-            <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+            <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#26ae5f] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
               {!isLoading ? (
                 <ClipLoader color={"white"} size={20} />
               ) : (
@@ -564,7 +564,7 @@ const Topbar = ({ setIsSidebar }) => {
                 >
                   Cancel
                 </button>
-                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#26ae5f] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
                   {!isLoading ? (
                     <ClipLoader color={"white"} size={20} />
                   ) : (
@@ -592,7 +592,7 @@ const Topbar = ({ setIsSidebar }) => {
                   Upload workspace picture
                 </p>
                 <input
-                  className="flex  h-9 max-w-[410px] w-full rounded-md  border-input bg-background  text-sm shadow-sm text-[#667185] border-[0.2px] border-[#98A2B3] transition-colors file:border-0 file:border-r-[0.2px] file:h-9 file:bg-[#F9FAFB] file:text-[#667185] file:border-[#D0D5DD] file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-[#F05800] focus:border-[#F05800]  disabled:opacity-50"
+                  className="flex  h-9 max-w-[410px] w-full rounded-md  border-input bg-background  text-sm shadow-sm text-[#667185] border-[0.2px] border-[#98A2B3] transition-colors file:border-0 file:border-r-[0.2px] file:h-9 file:bg-[#F9FAFB] file:text-[#667185] file:border-[#D0D5DD] file:text-sm file:font-medium placeholder:text-muted-foreground focus:outline-none focus:ring-[#26ae5f] focus:border-[#26ae5f]  disabled:opacity-50"
                   id="name"
                   name="name"
                   type="text"

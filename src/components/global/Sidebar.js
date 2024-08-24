@@ -72,8 +72,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
         <div className="relative">
           <div className="relative h-screen overflow-y-auto no-scrollbar pb-[80px]">
             <img
-              class=" h-[40px] w-[88px]   mb-[20px]"
-              src="./assets/gtLogo.png"
+              class=" h-[50px] w-[80px]   mb-[20px]"
+              src="./assets/vantLogo.jpg"
               alt="logo"
             />
 
@@ -81,7 +81,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
               to="/overview"
               className={` py-[10px] pl-[16px] flex items-center text-[14px]    leading-[20px] md:leading-[24px] ${
                 window.location.pathname === "/overview"
-                  ? "text-[#F05800] font-medium rounded-md"
+                  ? "text-[#26ae5f] font-medium rounded-md"
                   : "text-[#667185] font-normal"
               }`}
             >
@@ -106,7 +106,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/projectanalytics" ||
                   window.location.pathname === "/projectreport" ||
                   window.location.pathname === "/projectsetup"
-                    ? "text-[#F05800] font-medium rounded-md"
+                    ? "text-[#26ae5f] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
               >
@@ -222,7 +222,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/companyanddocument/document" ||
                   window.location.pathname === "/companyanddocument/companypolicy" ||
                   window.location.pathname === "/hrmreport"
-                    ? "text-[#F05800] font-medium rounded-md"
+                    ? "text-[#26ae5f] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
               >
@@ -385,10 +385,9 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/crmdeal" ||
                   window.location.pathname === "/crmanalytics" ||
                   window.location.pathname === "/crmreport" ||
-                  window.location.pathname === "/crmsetup" ||
-                  window.location.pathname === "/projectreport" ||
-                  window.location.pathname === "/projectsetup"
-                    ? "text-[#F05800] font-medium rounded-md"
+                  window.location.pathname === "/crmsetup" 
+                 
+                    ? "text-[#26ae5f] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
               >
@@ -401,9 +400,8 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                       window.location.pathname === "/crmdeal" ||
                       window.location.pathname === "/crmanalytics" ||
                       window.location.pathname === "/crmreport" ||
-                      window.location.pathname === "/crmsetup" ||
-                      window.location.pathname === "/projectreport" ||
-                      window.location.pathname === "/projectsetup"
+                      window.location.pathname === "/crmsetup" 
+                      
                         ? "Bold"
                         : "Linear"
                     }
@@ -492,7 +490,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/purchasedetails" ||
                   window.location.pathname === "/warehouse" ||
                   window.location.pathname === "/edititem"
-                    ? "text-[#F05800] font-medium rounded-md"
+                    ? "text-[#26ae5f] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
               >
@@ -595,7 +593,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/loghistory" ||
                   window.location.pathname === "/role" ||
                   window.location.pathname === "/updatepermission"
-                    ? "text-[#F05800] font-medium rounded-md"
+                    ? "text-[#26ae5f] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
               >
@@ -677,7 +675,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
                   window.location.pathname === "/financereport/taxsummary" ||
                   window.location.pathname === "/financereport/incomesummary" ||
                   window.location.pathname === "/viewcustomers"
-                    ? "text-[#F05800] font-medium rounded-md"
+                    ? "text-[#26ae5f] font-medium rounded-md"
                     : "text-[#667185] font-normal"
                 }`}
               >
@@ -827,7 +825,7 @@ const Sidebar = ({ isSidebarOpen, onClose, role }) => {
               to="/communication"
               className={` py-[10px] pl-[16px] flex items-center text-[14px]    leading-[20px] md:leading-[24px]  mt-[20px] ${
                 window.location.pathname === "/communication"
-                  ? "text-[#F05800] font-medium rounded-md"
+                  ? "text-[#26ae5f] font-medium rounded-md"
                   : "text-[#667185] font-normal"
               }`}
             >
