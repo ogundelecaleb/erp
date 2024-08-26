@@ -145,7 +145,11 @@ const Bill = () => {
           </div>
         </div>
       </div>
+      <div className="overflow-x-auto">
+
       <BillTable />
+      </div>
+
       {/* CReate Modal */}
       <ModalLeft isOpen={isCreate} onClose={closeCreateModal}>
         <div>

@@ -133,7 +133,11 @@ const BankTransfer = () => {
       </div>
     </div>
   </div>
+
+  <div className="overflow-x-auto">
+
   <TransferTable/>
+  </div>
 
 
 

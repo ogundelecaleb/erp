@@ -148,7 +148,7 @@ import {
             </div>
   
             <div>
-              <div className="px-[10px] md:px-[20px] py-[20px] m:py-[32px] flex-between flex-col md:flex-row gap-[20px]">
+              <div className="px-[10px] md:px-[20px] py-[20px] m:py-[32px] flex md:justify-between flex-col md:flex-row gap-[20px]">
                 <div className="flex gap-[16px]">
                   <img
                     src="./assets/qr.png"
@@ -235,6 +235,8 @@ import {
                   </ul>
                 </div>
               </div>
+              <div className="overflow-x-auto">
+
               <div class="sm:-mx-6 lg:-mx-8 mt-5">
                 <div class="inline-block min-w-full  sm:px-6 lg:px-8">
                   <div class="overflow-x-auto rounded-lg">
@@ -397,6 +399,7 @@ import {
                   </div>
                 </div>
               </div>
+              </div>
   
               <div className="flex justify-end mt-[24px] px-[16px] md:px-[20px]">
                 <div className=" max-w-[460px] w-full mb-[24px]   border-[0.2px] border-[#98a2b3] rounded-[8px] p-[14px] md:p-[20px] bg-white">
@@ -472,6 +475,8 @@ import {
                 </button>
               </div>
             </div>
+            <div className="overflow-x-auto">
+
             <div class="sm:-mx-6 lg:-mx-8 ">
               <div class="inline-block min-w-full  sm:px-6 lg:px-8">
                 <div class="overflow-x-auto rounded-lg">
@@ -562,6 +567,7 @@ import {
                   </table>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>

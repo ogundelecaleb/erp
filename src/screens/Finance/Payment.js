@@ -145,7 +145,11 @@ const Payment = () => {
           </div>
         </div>
       </div>
+      <div className="overflow-x-auto">
+
       <PaymentTable />
+      </div>
+
       {/* CReate Modal */}
       <ModalLeft isOpen={isCreate} onClose={closeCreateModal}>
         <div>

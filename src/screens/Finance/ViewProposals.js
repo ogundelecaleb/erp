@@ -166,7 +166,7 @@ const ViewProposals = () => {
           </div>
 
           <div>
-            <div className="px-[10px] md:px-[20px] py-[20px] m:py-[32px] flex-between flex-col md:flex-row gap-[20px]">
+            <div className="px-[10px] md:px-[20px] py-[20px] m:py-[32px] flex md:justify-between flex-col md:flex-row gap-[20px]">
               <div className="flex gap-[16px]">
                 <img
                   src="./assets/qr.png"
@@ -244,6 +244,8 @@ const ViewProposals = () => {
                 </ul>
               </div>
             </div>
+            <div className="overflow-x-auto">
+
             <div class="sm:-mx-6 lg:-mx-8 mt-5">
               <div class="inline-block min-w-full  sm:px-6 lg:px-8">
                 <div class="overflow-x-auto rounded-lg">
@@ -405,6 +407,7 @@ const ViewProposals = () => {
                   </table>
                 </div>
               </div>
+            </div>
             </div>
 
             <div className="flex justify-end mt-[24px] px-[16px] md:px-[20px]">

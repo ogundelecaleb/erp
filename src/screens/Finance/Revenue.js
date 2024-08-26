@@ -158,7 +158,12 @@ const Revenue = () => {
           </div>
         </div>
       </div>
+
+      <div className="overflow-x-auto">
+
       <RevenueTable />
+      </div>
+
       {/* CReate Modal */}
       <ModalLeft isOpen={isCreate} onClose={closeCreateModal}>
         <div>

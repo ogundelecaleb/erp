@@ -1,137 +1,137 @@
 import {
-    Add,
-    Book,
-    Calendar,
-    CloseCircle,
-    Courthouse,
-    DocumentDownload,
-    DocumentUpload,
-    Edit,
-    ElementEqual,
-    Eye,
-    FilterSearch,
-    Layer,
-    Maximize4,
-    Message2,
-    More,
-    Repeat,
-    RowHorizontal,
-    SearchNormal1,
-    Trash,
-  } from "iconsax-react";
-  import {
-    Grid,
-    Flex,
-    Button,
-    Divider,
-    Modal,
-    Thead,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalFooter,
-    ModalHeader,
-    ModalOverlay,
-    Text,
-  } from "@chakra-ui/react";
-  import React, { useState } from "react";
-  
-  import { ClipLoader } from "react-spinners";
-  
-  import ModalLeft from "../../components/ModalLeft";
-  import { Link, useNavigate } from "react-router-dom";
-  import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
-  
-  const Termination = () => {
-    const navigate = useNavigate();
-    const [isViewModal, setIsViewModal] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-    const [isDeleteOpen, setIsDeleteOpen] = useState(false);
-    const [isOpenImportModal, setIsOpenImportModal] = useState(false);
-    const [isCreateModal, setIsCreateModal] = useState(false);
-    const [isCreate, setIsCreate] = useState(false);
-    const [isDeleteModal, setIsDeleteModal] = useState(false);
-    const [isEditOpen, setIsEditOpen] = useState(false);
-  
-    function HandleEditModalClose() {
-      setIsEditOpen(false);
-    }
-  
-    function ToggleEditModal() {
-      setIsEditOpen(!isEditOpen);
-    }
-  
-    const toggleCreate = () => {
-      setIsCreate(!isCreate);
-    };
-    const closeCreateModal = () => {
-      setIsCreate(false);
-    };
-  
-    function ToggleDeleteModal(id) {
-      setIsDeleteModal(!isDeleteModal);
-    }
-    function closeDeleteModal() {
-      setIsDeleteModal(false);
-    }
-  
-    const toggleCreateModal = () => {
-      setIsCreateModal(!isCreateModal);
-    };
-  
-    const toggleDelete = () => {
-      setIsDeleteOpen(!isDeleteOpen);
-    };
-    const HandleDeleteModalClose = () => {
-      setIsDeleteOpen(false);
-    };
-    const result = [{ status: "Success" }];
-  
-    const closeViewModal = () => {
-      setIsViewModal(false);
-    };
-    return (
-      <div className="p-[20px] bg-[#F2F2F2] min-h-screen ">
-        <div className="border-[0.2px] border-[#98a2b3] rounded-[8px]  bg-[#ffff] ">
-          <div className="border-b border-b-[#E4E7EC] h-full p-[16px] md:p-[20px] block md:flex justify-between items-center ">
-            <div className="flex items-center gap-[16px]">
-              <div className="flex items-center">
+  Add,
+  Book,
+  Calendar,
+  CloseCircle,
+  Courthouse,
+  DocumentDownload,
+  DocumentUpload,
+  Edit,
+  ElementEqual,
+  Eye,
+  FilterSearch,
+  Layer,
+  Maximize4,
+  Message2,
+  More,
+  Repeat,
+  RowHorizontal,
+  SearchNormal1,
+  Trash,
+} from "iconsax-react";
+import {
+  Grid,
+  Flex,
+  Button,
+  Divider,
+  Modal,
+  Thead,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+} from "@chakra-ui/react";
+import React, { useState } from "react";
+
+import { ClipLoader } from "react-spinners";
+
+import ModalLeft from "../../components/ModalLeft";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+
+const Termination = () => {
+  const navigate = useNavigate();
+  const [isViewModal, setIsViewModal] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isDeleteOpen, setIsDeleteOpen] = useState(false);
+  const [isOpenImportModal, setIsOpenImportModal] = useState(false);
+  const [isCreateModal, setIsCreateModal] = useState(false);
+  const [isCreate, setIsCreate] = useState(false);
+  const [isDeleteModal, setIsDeleteModal] = useState(false);
+  const [isEditOpen, setIsEditOpen] = useState(false);
+
+  function HandleEditModalClose() {
+    setIsEditOpen(false);
+  }
+
+  function ToggleEditModal() {
+    setIsEditOpen(!isEditOpen);
+  }
+
+  const toggleCreate = () => {
+    setIsCreate(!isCreate);
+  };
+  const closeCreateModal = () => {
+    setIsCreate(false);
+  };
+
+  function ToggleDeleteModal(id) {
+    setIsDeleteModal(!isDeleteModal);
+  }
+  function closeDeleteModal() {
+    setIsDeleteModal(false);
+  }
+
+  const toggleCreateModal = () => {
+    setIsCreateModal(!isCreateModal);
+  };
+
+  const toggleDelete = () => {
+    setIsDeleteOpen(!isDeleteOpen);
+  };
+  const HandleDeleteModalClose = () => {
+    setIsDeleteOpen(false);
+  };
+  const result = [{ status: "Success" }];
+
+  const closeViewModal = () => {
+    setIsViewModal(false);
+  };
+  return (
+    <div className="p-[20px] bg-[#F2F2F2] min-h-screen ">
+      <div className="border-[0.2px] border-[#98a2b3] rounded-[8px]  bg-[#ffff] ">
+        <div className="border-b border-b-[#E4E7EC] h-full p-[16px] md:p-[20px] block md:flex justify-between items-center ">
+          <div className="flex items-center gap-[16px]">
+            <div className="flex items-center">
+              <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                HRM /{" "}
+              </p>
+              <Link to="/hradmin/award">
                 <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                  HRM /{" "}
+                  &nbsp; HR Admin /{" "}
                 </p>
-                <Link to="/hradmin/award">
-                  <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                    &nbsp; HR Admin /{" "}
-                  </p>
-                </Link>
-  
-                <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
-                  &nbsp; Termination
-                </p>
-              </div>
-              <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
-              <div className="flex items-center gap-[8px]">
-                <SearchNormal1 variant="Linear" color="#667185" size="16" />
-                <input
-                  className="w-full lg:w-[300px] py-[6px] text-[16px] text-[#344054] leading-[20px] placeholder:text-[#98A2B3] placeholder:text-[12px] border border-transparent  focus:outline-none focus:ring-[#F05800] focus:border-b-[#F05800] "
-                  placeholder="Search"
-                />
-              </div>
+              </Link>
+
+              <p className="text-[#000] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px]  ">
+                &nbsp; Termination
+              </p>
             </div>
-            <div className="flex items-center gap-[16px] ">
-              <button
-                onClick={() => toggleCreate()}
-                className="flex items-center gap-[8px] "
-              >
-                <p className="text-[14px] text-[#667185] leading-[20px]">
-                  Ceate termination
-                </p>
-  
-                <Add variant="Linear" color="#667185" size="16" />
-              </button>
+            <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
+            <div className="flex items-center gap-[8px]">
+              <SearchNormal1 variant="Linear" color="#667185" size="16" />
+              <input
+                className="w-full lg:w-[300px] py-[6px] text-[16px] text-[#344054] leading-[20px] placeholder:text-[#98A2B3] placeholder:text-[12px] border border-transparent  focus:outline-none focus:ring-[#F05800] focus:border-b-[#F05800] "
+                placeholder="Search"
+              />
             </div>
           </div>
-  
+          <div className="flex items-center gap-[16px] ">
+            <button
+              onClick={() => toggleCreate()}
+              className="flex items-center gap-[8px] "
+            >
+              <p className="text-[14px] text-[#667185] leading-[20px]">
+                Ceate termination
+              </p>
+
+              <Add variant="Linear" color="#667185" size="16" />
+            </button>
+          </div>
+        </div>
+        <div className="overflow-x-auto">
           <div class="sm:-mx-6 lg:-mx-8 ">
             <div class="inline-block min-w-full  sm:px-6 lg:px-8">
               <div class="overflow-x-auto rounded-lg">
@@ -143,24 +143,16 @@ import {
                         className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                       >
                         <div className="flex px-5   gap-[6px] md:gap-[12px] items-center">
-                        Employee
+                          Employee
                         </div>
                       </th>
-  
+
                       <th
                         scope="col"
                         className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                       >
                         <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Termination Type
-                        </div>
-                      </th>
-                      <th
-                        scope="col"
-                        className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
-                      >
-                        <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Notice Date
+                          Termination Type
                         </div>
                       </th>
                       <th
@@ -168,7 +160,7 @@ import {
                         className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                       >
                         <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Termination Date
+                          Notice Date
                         </div>
                       </th>
                       <th
@@ -176,12 +168,18 @@ import {
                         className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
                       >
                         <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
-                        Description
+                          Termination Date
                         </div>
                       </th>
-  
-                     
-  
+                      <th
+                        scope="col"
+                        className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
+                      >
+                        <div className="flex  gap-[6px] md:gap-[12px] items-center my-0">
+                          Description
+                        </div>
+                      </th>
+
                       <th
                         scope="col"
                         className="  border-b-[0.8px] border-[#E4E7EC] py-[12px] px-5  gap-[6px] md:gap-[12px] text-[14px] md:text-[16px] text-[#98A2B3]  font-medium leading-[20px] md:leading-[24px] tracking-[0.2%]"
@@ -214,20 +212,20 @@ import {
                       <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#000] font-medium text-left  ">
                         Ogundele Caleb
                       </td>
-  
+
                       <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      Voluntary Termination
+                        Voluntary Termination
                       </td>
                       <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      07-07-2024
+                        07-07-2024
                       </td>
                       <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      07-07-2024
+                        07-07-2024
                       </td>
                       <td className="whitespace-nowrap py-[16px] bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#667185] font-medium text-left  ">
-                      Want to make a career transition
+                        Want to make a career transition
                       </td>
-                     
+
                       <td className="whitespace-nowrap py-[16px] flex-item gap-2 bg-white  px-5  border-b-[0.8px] border-[#E4E7EC] text-[14px] leading-[24px] tracking-[0.2px] text-[#1A202C] font-medium text-left  ">
                         <button>
                           <Edit
@@ -237,7 +235,7 @@ import {
                             size="24"
                           />
                         </button>
-  
+
                         <button>
                           {" "}
                           <Trash
@@ -247,7 +245,7 @@ import {
                             size="24"
                           />
                         </button>
-  
+
                         <Modal
                           isCentered
                           isOpen={isDeleteModal}
@@ -321,10 +319,10 @@ import {
                               <p className=" text-[16px] md:text-lg text-center  text-[#000] leading-[24px] font-medium  ">
                                 Delete Termination
                               </p>
-  
+
                               <p className="text-[14px]  text-[#667185] leading-[20px] font-normal text-center mt-2  ">
-                                Are you sure you want to delete this termination? This
-                                action cannot be undone.
+                                Are you sure you want to delete this
+                                termination? This action cannot be undone.
                               </p>
                             </ModalBody>
                             <ModalFooter gap={"16px"}>
@@ -356,319 +354,316 @@ import {
             </div>
           </div>
         </div>
-  
-        {/* Create Modal */}
-        <ModalLeft isOpen={isCreate} onClose={closeCreateModal}>
-          <div>
-            <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px]  md:flex justify-between items-center ">
-              <div className="flex items-center gap-[16px]">
-                <Maximize4 variant="Linear" color="#667185" size="16" />{" "}
-                <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
-                <div className="flex items-center">
-                  <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                    Create New Termination
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <button onClick={closeCreateModal} className=" ">
-                  <CloseCircle variant="Linear" color="#667185" size="20" />
-                </button>
-              </div>
-            </div>
-  
-            <div className="p-[12px] md:p-[20px] xl:p-[24px]">
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-              Employee
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <select
-                    type="text"
-                    placeholder="Name"
-                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="full-name"
-                    id="full-name"
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  >
-                    <option value="">Select Employee</option>
-                    <option value="Monthly Payslip">Monthly Payslip</option>
-                  </select>
-                </div>
-              </div>
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                Termination Type
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <select
-                    type="text"
-                    placeholder=""
-                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  >
-                    <option value="">Select termination type</option>
-                    <option value="Monthly Payslip">Monthly Payslip</option>
-                  </select>
-                </div>
-              </div>
-  
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-             Notice Date
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="text"
-                    placeholder=""
-                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                </div>
-              </div>
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Termination Date{" "}
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="date"
-                    placeholder=""
-                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                </div>
-              </div>
-            
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Description
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <textarea
-                    type="text"
-                    placeholder="Enter description"
-                    className="w-full h-[164px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                </div>
-              </div>
-              <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
-                <div className="flex-item gap-2">
-                  {" "}
-                  <button
-                    onClick={closeCreateModal}
-                    className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black"
-                  >
-                    Cancel
-                  </button>
-                  <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
-                    {!isLoading ? (
-                      <ClipLoader color={"white"} size={20} />
-                    ) : (
-                      <> Create</>
-                    )}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ModalLeft>
-  
-        {/* Edit Modal */}
-        <ModalLeft isOpen={isEditOpen} onClose={HandleEditModalClose}>
-          <div>
-            <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px]  md:flex justify-between items-center ">
-              <div className="flex items-center gap-[16px]">
-                <Maximize4 variant="Linear" color="#667185" size="16" />{" "}
-                <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
-                <div className="flex items-center">
-                  <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
-                    Edit Termination
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <button onClick={HandleEditModalClose} className=" ">
-                  <CloseCircle variant="Linear" color="#667185" size="20" />
-                </button>
-              </div>
-            </div>
-  
-            <div className="p-[12px] md:p-[20px] xl:p-[24px]">
-            <div className="mb-[24px]">
-
-            <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-              Employee
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <select
-                    type="text"
-                    placeholder="Name"
-                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    name="full-name"
-                    id="full-name"
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  >
-                    <option value="">Select Employee</option>
-                    <option value="Monthly Payslip">Monthly Payslip</option>
-                  </select>
-                </div>
-              </div>
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                Termination Type
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <select
-                    type="text"
-                    placeholder=""
-                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  >
-                    <option value="">Select termination type</option>
-                    <option value="Monthly Payslip">Monthly Payslip</option>
-                  </select>
-                </div>
-              </div>
-  
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-             Notice Date
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="text"
-                    placeholder=""
-                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                </div>
-              </div>
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Termination Date{" "}
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <input
-                    type="date"
-                    placeholder=""
-                    className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    //value=""
-                    //onChange={() => {}}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                </div>
-              </div>
-            
-              <div className="mb-[24px]">
-                <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
-                  Description
-                </label>
-                <div className=" relative  mt-[16px]  flex items-center">
-                  <textarea
-                    type="text"
-                    placeholder="Enter description"
-                    className="w-full h-[164px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
-                    required
-                    autoComplete="on"
-                    autoFocus
-                    //   value={formData.date}
-                    //   onChange={(e) => handleChange(e)}
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    spellCheck="false"
-                  />
-                </div>
-              </div>
-  
-              <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
-                <div className="flex-item gap-2">
-                  {" "}
-                  <button
-                    onClick={HandleEditModalClose}
-                    className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black"
-                  >
-                    Cancel
-                  </button>
-                  <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
-                    {!isLoading ? (
-                      <ClipLoader color={"white"} size={20} />
-                    ) : (
-                      <> Create</>
-                    )}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </ModalLeft>
       </div>
-    );
-  };
-  
-  export default Termination;
-  
+
+      {/* Create Modal */}
+      <ModalLeft isOpen={isCreate} onClose={closeCreateModal}>
+        <div>
+          <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px]  md:flex justify-between items-center ">
+            <div className="flex items-center gap-[16px]">
+              <Maximize4 variant="Linear" color="#667185" size="16" />{" "}
+              <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
+              <div className="flex items-center">
+                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                  Create New Termination
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <button onClick={closeCreateModal} className=" ">
+                <CloseCircle variant="Linear" color="#667185" size="20" />
+              </button>
+            </div>
+          </div>
+
+          <div className="p-[12px] md:p-[20px] xl:p-[24px]">
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Employee
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <select
+                  type="text"
+                  placeholder="Name"
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  name="full-name"
+                  id="full-name"
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                >
+                  <option value="">Select Employee</option>
+                  <option value="Monthly Payslip">Monthly Payslip</option>
+                </select>
+              </div>
+            </div>
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Termination Type
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <select
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                >
+                  <option value="">Select termination type</option>
+                  <option value="Monthly Payslip">Monthly Payslip</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Notice Date
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <input
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Termination Date{" "}
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <input
+                  type="date"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Description
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <textarea
+                  type="text"
+                  placeholder="Enter description"
+                  className="w-full h-[164px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  //   value={formData.date}
+                  //   onChange={(e) => handleChange(e)}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+            <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
+              <div className="flex-item gap-2">
+                {" "}
+                <button
+                  onClick={closeCreateModal}
+                  className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black"
+                >
+                  Cancel
+                </button>
+                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+                  {!isLoading ? (
+                    <ClipLoader color={"white"} size={20} />
+                  ) : (
+                    <> Create</>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ModalLeft>
+
+      {/* Edit Modal */}
+      <ModalLeft isOpen={isEditOpen} onClose={HandleEditModalClose}>
+        <div>
+          <div className="border-b border-b-[#E4E7EC] p-[16px] md:p-[20px]  md:flex justify-between items-center ">
+            <div className="flex items-center gap-[16px]">
+              <Maximize4 variant="Linear" color="#667185" size="16" />{" "}
+              <div className="h-[32px] w-[1px] bg-[#D0D5DD]" />
+              <div className="flex items-center">
+                <p className="text-[#667185] text-[14px] md:text-[14px] xl:text-[16px] font-normal leading-[24px] ">
+                  Edit Termination
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <button onClick={HandleEditModalClose} className=" ">
+                <CloseCircle variant="Linear" color="#667185" size="20" />
+              </button>
+            </div>
+          </div>
+
+          <div className="p-[12px] md:p-[20px] xl:p-[24px]">
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Employee
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <select
+                  type="text"
+                  placeholder="Name"
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  name="full-name"
+                  id="full-name"
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                >
+                  <option value="">Select Employee</option>
+                  <option value="Monthly Payslip">Monthly Payslip</option>
+                </select>
+              </div>
+            </div>
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Termination Type
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <select
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                >
+                  <option value="">Select termination type</option>
+                  <option value="Monthly Payslip">Monthly Payslip</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Notice Date
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <input
+                  type="text"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Termination Date{" "}
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <input
+                  type="date"
+                  placeholder=""
+                  className="w-full h-[48px] pl-[16px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  //value=""
+                  //onChange={() => {}}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+
+            <div className="mb-[24px]">
+              <label className="text-[14px] text-[#667185] leading-[20px]   mb-[8px] md:mb-[16px]">
+                Description
+              </label>
+              <div className=" relative  mt-[16px]  flex items-center">
+                <textarea
+                  type="text"
+                  placeholder="Enter description"
+                  className="w-full h-[164px] pl-[24px] pr-[8px] py-[12px] text-[14px] text-[#344054] leading-[20px]  placeholder:text-[#98A2B3] placeholder:text-[12px]  border-[#D0D5DD] border-[0.2px] rounded-[8px] focus:outline-none focus:ring-[#F05800] focus:border-[#F05800] "
+                  required
+                  autoComplete="on"
+                  autoFocus
+                  //   value={formData.date}
+                  //   onChange={(e) => handleChange(e)}
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+
+            <div className="py-[20px] border-t border-b-[#E4E7EC] flex-item  justify-end">
+              <div className="flex-item gap-2">
+                {" "}
+                <button
+                  onClick={HandleEditModalClose}
+                  className="border-[0.2px]  border-[#98A2B3] w-[99px] text-center rounded-[8px] py-[12px] text-[14px] font-medium text-black"
+                >
+                  Cancel
+                </button>
+                <button className="border-[0.2px]  border-[#98A2B3] w-[99px] bg-[#F05800] flex items-center justify-center text-center rounded-[8px] py-[12px] text-[14px] font-medium text-white">
+                  {!isLoading ? (
+                    <ClipLoader color={"white"} size={20} />
+                  ) : (
+                    <> Create</>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ModalLeft>
+    </div>
+  );
+};
+
+export default Termination;

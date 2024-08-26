@@ -246,6 +246,9 @@ const Holidays = () => {
           </div>
         </div>
       </div>
+
+      <div className="overflow-x-auto">
+
       <div class="sm:-mx-6 lg:-mx-8 mt-5">
         <div class="inline-block min-w-full  sm:px-6 lg:px-8">
           <div class="overflow-x-auto rounded-lg">
@@ -443,6 +446,7 @@ const Holidays = () => {
             </table>
           </div>
         </div>
+      </div>
       </div>
       {/* Create Modal */}
       <ModalLeft isOpen={isCreate} onClose={closeCreateModal}>
